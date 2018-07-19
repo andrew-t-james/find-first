@@ -7,7 +7,7 @@ describe('<App/>', () => {
 
   beforeEach(() => wrapper = shallow(<App />));
 
-  test('should render without crashing', () => {
+  test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });

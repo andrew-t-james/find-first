@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "dev-server": "webpack-dev-server --mode development",
     "test": "jest --config=jest.config.json --watch",
-    "test:coverage": "react-scripts test --env=jsdom --coverage"
+    "test:coverage": "jest --config=jest.config.json --env=jsdom --coverage"
   },
   "dependencies": {
     "babel-cli": "6.26.0",
@@ -21,6 +21,7 @@
     "node-sass": "4.9.0",
     "react": "16.4.0",
     "react-dom": "16.4.0",
+    "react-fontawesome": "1.6.1",
     "react-redux": "5.0.7",
     "react-router-dom": "4.3.1",
     "redux": "4.0.0",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "babel-eslint": "8.2.6",
+    "babel-plugin-transform-react-stateless-component-name": "1.1.2",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
     "enzyme-to-json": "3.3.4",
@@ -46,7 +48,8 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
-      "!src/index.js"
+      "!src/index.js",
+      "!src/setupTest.js"
     ]
   }
 }

@@ -1,0 +1,28 @@
+.footer {
+  border: 1px solid salmon;
+  grid-area: footer;
+
+   &__nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+
+    &--item {
+      border: 1px solid green;
+      cursor: pointer;
+      height: 100%;
+      padding: 2rem 0;
+      text-align: center;
+      width: 100%;
+
+      & a {
+        text-decoration: none;
+      }
+    }
+  }
+ }
+
+ .active {
+   font-weight: 800;
+ }
