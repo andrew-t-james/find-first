@@ -1,32 +1,28 @@
 .footer {
-
-   &__nav {
+  &__nav {
     align-items: center;
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-
     &--item {
-      border: 1px solid green;
       cursor: pointer;
       height: 100%;
       padding: 2rem 0;
       text-align: center;
       width: 100%;
-
       & a {
         text-decoration: none;
       }
     }
   }
- }
+}
 
- .active {
-   font-weight: 800;
- }
+.active {
+  font-weight: 800;
+}
 
- @media screen and (min-width: 1024px) {
-   .footer {
-     height: calc(100vh - 8rem);
-   }
- }
+@media screen and (min-width: 1296px) {
+  .footer {
+    margin-top: calc(100vh - 66rem);
+  }
+}

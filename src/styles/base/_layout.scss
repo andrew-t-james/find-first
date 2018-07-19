@@ -7,22 +7,19 @@
 }
 
 .header {
-  border: 1px solid green;
   grid-area: header;
 }
 
 .content {
-  border: 1px solid red;
   grid-area: content;
   height: calc(100vh - 14rem);
 }
 
 .footer {
-  border: 1px solid salmon;
   grid-area: footer;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1296px) {
   .grid-container {
     display: grid;
     grid-template-areas: "header header header header header" "footer content content content content";
@@ -30,16 +27,13 @@
     grid-template-rows: 80px 1fr;
     height: 100%;
   }
-
   .header {
     grid-area: header;
   }
-
   .content {
     grid-area: content;
     height: calc(100vh - 8rem);
   }
-
   .footer {
     grid-area: footer;
   }

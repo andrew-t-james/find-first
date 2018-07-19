@@ -1,0 +1,9 @@
+.header {
+  background: var(--primary-header);
+}
+
+@media screen and (min-width: 1296px) {
+  .header {
+    height: 35rem;
+  }
+}
