@@ -18,7 +18,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <h2>
-        hello workd
+        hello world
       </h2>,
     },
     "ref": null,
@@ -27,10 +27,10 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "hello workd",
+        "children": "hello world",
       },
       "ref": null,
-      "rendered": "hello workd",
+      "rendered": "hello world",
       "type": "h2",
     },
     "type": "div",
@@ -42,7 +42,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <h2>
-          hello workd
+          hello world
         </h2>,
       },
       "ref": null,
@@ -51,10 +51,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "hello workd",
+          "children": "hello world",
         },
         "ref": null,
-        "rendered": "hello workd",
+        "rendered": "hello world",
         "type": "h2",
       },
       "type": "div",
