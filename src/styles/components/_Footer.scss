@@ -1,6 +1,4 @@
 .footer {
-  border: 1px solid salmon;
-  grid-area: footer;
 
    &__nav {
     align-items: center;
@@ -25,4 +23,10 @@
 
  .active {
    font-weight: 800;
+ }
+
+ @media screen and (min-width: 1024px) {
+   .footer {
+     height: calc(100vh - 8rem);
+   }
  }
