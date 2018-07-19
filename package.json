@@ -1,11 +1,10 @@
 {
-  "name": "expensify",
+  "name": "personal-project",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Andrew James",
   "license": "MIT",
   "scripts": {
-    "serve": "live-server public/",
     "build": "webpack --mode production",
     "dev-server": "webpack-dev-server --mode development",
     "test": "jest --config=jest.config.json --watch"
