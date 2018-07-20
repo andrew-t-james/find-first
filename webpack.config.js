@@ -37,7 +37,8 @@ module.exports =  env => {
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
-      hot: true
+      hot: true,
+      historyApiFallback: true
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
