@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search /> should match snapshot 1`] = `
+<div
+  className="search"
+>
+  <input
+    className="search__input"
+    name="query"
+    onChange={[Function]}
+    placeholder="Search Jobs"
+    type="text"
+    value=""
+  />
+</div>
+`;

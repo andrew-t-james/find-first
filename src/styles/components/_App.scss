@@ -1,0 +1,12 @@
+.content {
+  background: var(--primary-background);
+  color: var(--primary-font);
+}
+
+@media screen and (min-width: 1296px) {
+  .content {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 90%;
+  }
+}
