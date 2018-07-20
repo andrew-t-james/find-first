@@ -8,7 +8,9 @@
     "build": "webpack --mode production --env production",
     "dev": "webpack-dev-server --mode development",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json --watch",
-    "test:coverage": "jest --config=jest.config.json --env=jsdom --coverage"
+    "test:coverage": "jest --config=jest.config.json --env=jsdom --coverage",
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build"
   },
   "dependencies": {
     "babel-cli": "6.26.0",
