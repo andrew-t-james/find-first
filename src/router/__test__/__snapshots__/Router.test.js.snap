@@ -18,6 +18,11 @@ exports[`<Router /> should match snapshot 1`] = `
         exact={true}
         path="/"
       />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/dashboard"
+      />
     </Switch>
     <Footer />
   </div>
