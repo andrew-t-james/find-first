@@ -6,3 +6,6 @@ deploy:
   on:
     repo: andrew-t-james/personal-project
   strategy: git
+  language: node_js
+  node_js:
+  - "10.7.0"
