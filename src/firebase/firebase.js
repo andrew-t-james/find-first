@@ -13,19 +13,14 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().set({
-  name: 'Andrew James',
-  age: 39,
-  isSingle: false,
-  location: {
-    city: 'Denver',
-    state: 'Colorado'
-  }
-});
+// database.ref().set({
+//   name: 'Andrew James',
+//   age: 39,
+//   isSingle: false,
+//   location: {
+//     city: 'Denver',
+//     state: 'Colorado'
+//   }
+// });
 
-database.ref('age').set(77);
-database.ref('location/city').set('Denverista');
-database.ref('attributes').set({
-  height: 81,
-  weight: 250
-});
+database.ref('isSingle').remove();
