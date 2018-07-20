@@ -1,5 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -16,29 +19,32 @@ module.exports =  env => {
     entry: './src/index.js',
     output: {
       path: path.join(__dirname, 'public'),
-      filename: 'bundle.js'
+      filename: '[name].[hash].js'
     },
     module: {
-      rules: [{
-        loader: 'babel-loader',
-        test: /\.js$/,
-        exclude: /node_modules/
-      }, {
-        test: /\.s?css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      }]
+      rules: [
+        {
+          loader: 'babel-loader',
+          test: /\.js$/,
+          exclude: /node_modules/
+        },
+        {
+          test: /\.s?css$/,
+          use:  ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        }
+      ]
     },
-    devtool: 'cheap-module-eval-source-map',
+    devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
-      hot: true
+      hot: true,
+      historyApiFallback: true
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
+      new MiniCssExtractPlugin({
+        filename: isProduction ? '[name].[hash].css' :  '[name].css'
+      }),
       new webpack.DefinePlugin({
         'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
         'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
@@ -46,6 +52,12 @@ module.exports =  env => {
         'process.env.FIREBASE_PROJECT_ID:': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
         'process.env.FIREBASE_STORAGE_BUCKET:': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
         'process.env.FIREBASE_STORAGE_BUCKET:': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID)
+      }),
+      new HtmlWebpackPlugin({
+        inject: false,
+        hash: true,
+        template: './src/index.html',
+        filename: 'index.html'
       })
     ]
   };

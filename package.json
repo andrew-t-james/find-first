@@ -5,10 +5,12 @@
   "author": "Andrew James",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --env production",
     "dev": "webpack-dev-server --mode development",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json --watch",
-    "test:coverage": "jest --config=jest.config.json --env=jsdom --coverage"
+    "test:coverage": "jest --config=jest.config.json --env=jsdom --coverage",
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build"
   },
   "dependencies": {
     "babel-cli": "6.26.0",
@@ -18,6 +20,7 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.11",
+    "express": "4.16.3",
     "firebase": "4.2.0",
     "node-sass": "4.9.0",
     "react": "16.4.0",
@@ -35,7 +38,6 @@
   },
   "devDependencies": {
     "babel-eslint": "8.2.6",
-    "babel-plugin-transform-react-stateless-component-name": "1.1.2",
     "cross-env": "5.2.0",
     "dotenv": "6.0.0",
     "enzyme": "3.3.0",
@@ -45,8 +47,11 @@
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-jest": "21.18.0",
     "eslint-plugin-react": "7.10.0",
+    "html-webpack-plugin": "3.2.0",
     "jest": "23.4.1",
-    "webpack-cli": "3.0.4"
+    "mini-css-extract-plugin": "0.4.1",
+    "webpack-cli": "3.0.4",
+    "webpack-md5-hash": "0.0.6"
   },
   "jest": {
     "collectCoverageFrom": [
