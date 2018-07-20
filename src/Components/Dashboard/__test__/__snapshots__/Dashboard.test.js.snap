@@ -1,12 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Dashboard /> should match snapshot 1`] = `
-<main
-  className="content"
+<div
+  className="grid-container"
 >
-  <h2>
-    Main
-  </h2>
-  <Search />
-</main>
+  <header
+    className="header"
+  >
+    <h1>
+      header
+    </h1>
+  </header>
+  <main
+    className="content"
+  >
+    <h2>
+      Main
+    </h2>
+    <Search />
+  </main>
+  <Footer />
+</div>
 `;

@@ -2,29 +2,22 @@
 
 exports[`<Router /> should match snapshot 1`] = `
 <BrowserRouter>
-  <div
-    className="grid-container"
-  >
-    <header
-      className="header"
-    >
-      <h1>
-        header
-      </h1>
-    </header>
-    <Switch>
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/dashboard"
-      />
-    </Switch>
-    <Footer />
-  </div>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/dashboard"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/sign-up"
+    />
+  </Switch>
 </BrowserRouter>
 `;
