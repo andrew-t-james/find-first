@@ -34,7 +34,7 @@ module.exports =  env => {
         }
       ]
     },
-    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       hot: true
@@ -42,7 +42,7 @@ module.exports =  env => {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new MiniCssExtractPlugin({
-        filename: 'style.[contenthash].css'
+        filename: isProduction ? '[name].[hash].css' :  '[name].css'
       }),
       new webpack.DefinePlugin({
         'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
