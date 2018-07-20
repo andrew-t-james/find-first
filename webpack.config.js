@@ -32,7 +32,7 @@ module.exports =  env => {
         ]
       }]
     },
-    devtool: 'cheap-module-eval-source-map',
+    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       hot: true
