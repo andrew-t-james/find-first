@@ -5,3 +5,4 @@ deploy:
   app: find-first
   on:
     repo: andrew-t-james/personal-project
+  strategy: git
