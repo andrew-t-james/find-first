@@ -54,10 +54,10 @@ module.exports =  env => {
         'process.env.FIREBASE_STORAGE_BUCKET:': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID)
       }),
       new HtmlWebpackPlugin({
-        inject: false,
-        hash: true,
         template: './src/index.html',
-        filename: 'index.html'
+        filename: 'index.html',
+        inject: true,
+        hash: true
       })
     ]
   };
