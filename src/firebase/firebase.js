@@ -12,6 +12,11 @@ const config = {
 firebase.initializeApp(config);
 
 const database = firebase.database();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+export { database, googleAuthProvider, firebase as default };
+
+
 // * how to push into firebase
 database.ref('notes').push({
   title: 'todo',
