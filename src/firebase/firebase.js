@@ -11,10 +11,16 @@ const config = {
 
 firebase.initializeApp(config);
 
-const database = firebase.database();
-const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+export const database = firebase.database();
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
 
-export { firebase, googleAuthProvider, database as default };
+export const googleOAuthLogin = () => firebase.auth().signInWithPopup(googleAuthProvider);
+export const githubOAuthLogin = () => firebase.auth().signInWithPopup(githubAuthProvider);
+
+export const logout = () => firebase.auth().signOut();
+
+export { firebase };
 
 
 // * how to push into firebase

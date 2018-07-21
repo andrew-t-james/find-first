@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './styles/styles.scss';
 import Router from './router/Router';
 import { Provider } from 'react-redux';
-import configureStore from './store/configureStore';
 import { firebase } from './firebase/firebase';
+import configureStore from './store/configureStore';
+import { googleLogin, googleLogout } from './Actions/auth';
 
 const store = configureStore();
 
