@@ -18,7 +18,7 @@ database.ref('notes').push({
   body: 'go for a run'
 });
 
-// * editing arrya data in firebase
+// * editing array data in firebase
 database.ref('notes/-LHu-AHZ3jixVR0wryuZ').update({
   title: 'dont todo',
   body: 'yeah not doing it'
@@ -56,6 +56,7 @@ database.ref('notes/-LHu-AHZ3jixVR0wryuZ').update({
 database.ref('notes').on('child_removed', snapshot => {
   console.log(snapshot.key, snapshot.val());
 });
+
 
 // database.ref('notes')
 //   .once('value')
