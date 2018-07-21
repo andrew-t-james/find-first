@@ -40,6 +40,7 @@ export class SignUp extends Component {
             value={password}
             onChange={this.handleChange}
           />
+          <button>Sign Up</button>
         </form>
       </section>
     );

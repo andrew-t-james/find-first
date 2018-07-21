@@ -23,6 +23,9 @@ exports[`<SignUp /> should match snapshot 1`] = `
       type="password"
       value=""
     />
+    <button>
+      Sign Up
+    </button>
   </form>
 </section>
 `;

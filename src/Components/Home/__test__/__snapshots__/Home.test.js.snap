@@ -3,5 +3,15 @@
 exports[`<Home /> should match snapshot 1`] = `
 <section>
   <SignIn />
+  <p>
+    Dont have and account ? 
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
+      to="/sign-up"
+    >
+      Sign Up
+    </NavLink>
+  </p>
 </section>
 `;
