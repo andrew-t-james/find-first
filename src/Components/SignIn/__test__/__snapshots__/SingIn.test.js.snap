@@ -17,11 +17,11 @@ exports[`<SignIn /> should match snapshot 1`] = `
       type="password"
       value=""
     />
-    <button
-      type="submit"
-    >
-      Submit
-    </button>
   </form>
+  <button
+    onClick={[Function]}
+  >
+    Google
+  </button>
 </section>
 `;
