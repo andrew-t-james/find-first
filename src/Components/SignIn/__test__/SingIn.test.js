@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { SignIn, mapDispatchToProps } from '../SignIn';
-import { googleSignInAction } from '../../../Actions/auth';
+import { googleSignInAction, googleSignOutAction } from '../../../Actions/auth';
 
 jest.mock('../../../firebase/firebase.js');
 
@@ -58,6 +58,15 @@ describe('<SignIn />', () => {
       const actionToDispatch = googleSignInAction(mockUser);
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.googleLogin();
+
+      expect(mockDispatch).toHaveBeenCalled();
+    });
+
+    test('should call dispatch googleLogout is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = googleSignOutAction();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.googleLogout();
 
       expect(mockDispatch).toHaveBeenCalled();
     });

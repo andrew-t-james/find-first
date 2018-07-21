@@ -13,9 +13,9 @@ describe('auth actions', () => {
     };
     const expected = {
       type: 'GOOGLE_LOGIN',
-      id,
-      name,
-      image
+      user: {
+        ...mockUser
+      }
     };
     const result = googleSignInAction(mockUser);
     expect(result).toEqual(expected);
