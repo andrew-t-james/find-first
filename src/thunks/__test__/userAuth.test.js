@@ -15,7 +15,8 @@ describe('auth thunks', () => {
     const thunk = googleLogin();
     const mockUser = {
       uid: 1,
-      displayName: 'Steve'
+      displayName: 'Steve',
+      photoURL: 'some-url'
     };
     const actionToDispatch = googleSignInAction(mockUser);
     await thunk(mockDispatch);

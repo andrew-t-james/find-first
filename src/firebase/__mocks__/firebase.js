@@ -1,7 +1,8 @@
 const mockUser = {
   user: {
     uid: 1,
-    displayName: 'Steve'
+    displayName: 'Steve',
+    photoURL: 'some-url'
   }
 };
 

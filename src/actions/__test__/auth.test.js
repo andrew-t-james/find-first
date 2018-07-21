@@ -5,15 +5,17 @@ describe('auth actions', () => {
     const { googleSignInAction } = auth;
     const id = 1;
     const name = 'Steve';
+    const image = 'some-url';
     const mockUser = {
       uid: id,
-      displayName: name
+      displayName: name,
+      photoURL: image
     };
     const expected = {
       type: 'GOOGLE_LOGIN',
-      user: {
-        ...mockUser
-      }
+      id,
+      name,
+      image
     };
     const result = googleSignInAction(mockUser);
     expect(result).toEqual(expected);

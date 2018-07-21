@@ -1,6 +1,8 @@
 export const googleSignInAction = user => ({
   type: 'GOOGLE_LOGIN',
-  user
+  id: user.uid,
+  name: user.displayName,
+  image: user.photoURL
 });
 
 export const googleSignOutAction = () => ({
