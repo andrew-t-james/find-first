@@ -12,17 +12,22 @@ const config = {
 firebase.initializeApp(config);
 
 const database = firebase.database();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+export { firebase, googleAuthProvider, database as default };
+
+
 // * how to push into firebase
-database.ref('notes').push({
-  title: 'todo',
-  body: 'go for a run'
-});
+// database.ref('notes').push({
+//   title: 'todo',
+//   body: 'go for a run'
+// });
 
 // * editing array data in firebase
-database.ref('notes/-LHu-AHZ3jixVR0wryuZ').update({
-  title: 'dont todo',
-  body: 'yeah not doing it'
-});
+// database.ref('notes/-LHu-AHZ3jixVR0wryuZ').update({
+//   title: 'dont todo',
+//   body: 'yeah not doing it'
+// });
 
 
 
@@ -53,9 +58,9 @@ database.ref('notes/-LHu-AHZ3jixVR0wryuZ').update({
 //   console.log(expenses);
 // });
 
-database.ref('notes').on('child_removed', snapshot => {
-  console.log(snapshot.key, snapshot.val());
-});
+// database.ref('notes').on('child_removed', snapshot => {
+//   console.log(snapshot.key, snapshot.val());
+// });
 
 
 // database.ref('notes')

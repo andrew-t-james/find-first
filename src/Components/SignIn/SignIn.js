@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { googleLogin } from '../../actions/auth';
 
 export class SignIn extends Component {
   constructor() {
@@ -13,6 +15,11 @@ export class SignIn extends Component {
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
+  }
+
+  handleGoogleLogin = () => {
+    const { googleLogin } = this.props;
+    googleLogin();
   }
 
   render() {
@@ -33,15 +40,19 @@ export class SignIn extends Component {
             value={password}
             onChange={this.handleChange}
           />
-          <button
-            type="submit"
-          >
-          Submit
-          </button>
         </form>
+        <button
+          onClick={this.handleGoogleLogin}
+        >
+          Google
+        </button>
       </section>
     );
   }
 }
 
-export default SignIn;
+const mapDispatchToProps = dispatch => ({
+  googleLogin: () => dispatch(googleLogin())
+});
+
+export default connect(null, mapDispatchToProps)(SignIn);
