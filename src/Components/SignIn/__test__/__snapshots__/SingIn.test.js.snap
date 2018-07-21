@@ -19,9 +19,15 @@ exports[`<SignIn /> should match snapshot 1`] = `
     />
   </form>
   <button
+    className="google"
     onClick={[Function]}
   >
     Google
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Sign Out
   </button>
 </section>
 `;

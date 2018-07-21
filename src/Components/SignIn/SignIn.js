@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { googleLogin } from '../../actions/auth';
+import { googleLogin, googleLogout } from '../../thunks/auth';
 
 export class SignIn extends Component {
   constructor() {
@@ -18,8 +18,11 @@ export class SignIn extends Component {
   }
 
   handleGoogleLogin = () => {
-    const { googleLogin } = this.props;
-    googleLogin();
+    this.props.googleLogin();
+  }
+
+  handleGoogleSignOut = () => {
+    this.props.googleLogout();
   }
 
   render() {
@@ -42,17 +45,24 @@ export class SignIn extends Component {
           />
         </form>
         <button
+          className="google"
           onClick={this.handleGoogleLogin}
         >
           Google
         </button>
+        <button onClick={this.handleGoogleSignOut}>Sign Out</button>
       </section>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  googleLogin: () => dispatch(googleLogin())
+export const mapDispatchToProps = dispatch => ({
+  googleLogin: () => dispatch(googleLogin()),
+  googleLogout: () => dispatch(googleLogout())
 });
 
 export default connect(null, mapDispatchToProps)(SignIn);
+
+SignIn.propTypes = {
+  googleLogin: PropTypes.func
+};

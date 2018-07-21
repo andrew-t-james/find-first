@@ -1,11 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SignIn } from '../SignIn';
+import { SignIn, mapDispatchToProps } from '../SignIn';
+import { googleSignInAction } from '../../../Actions/auth';
+
+jest.mock('../../../firebase/firebase.js');
 
 describe('<SignIn />', () => {
   let wrapper;
-
-  beforeEach(() => wrapper = shallow(<SignIn />));
+  const mockGoogleLogin = jest.fn();
+  beforeEach(() => wrapper = shallow(
+    <SignIn
+      googleLogin={mockGoogleLogin}
+    />
+  ));
 
   test('should update email state on change', () => {
     const mockEvent = {
@@ -29,7 +36,30 @@ describe('<SignIn />', () => {
     expect(wrapper.state('password')).toEqual('weak');
   });
 
+  test('should call handleGoogleLogin onClick', () => {
+    wrapper.find('.google').simulate('click');
+
+    expect(mockGoogleLogin).toHaveBeenCalled();
+  });
+
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  describe('mapDispatchToPops', () => {
+    test('should call dispatch googleLogin is called', () => {
+      const mockDispatch = jest.fn();
+      const id = 1;
+      const name = 'Steve';
+      const mockUser = {
+        uid: id,
+        displayName: name
+      };
+      const actionToDispatch = googleSignInAction(mockUser);
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.googleLogin();
+
+      expect(mockDispatch).toHaveBeenCalled();
+    });
   });
 });
