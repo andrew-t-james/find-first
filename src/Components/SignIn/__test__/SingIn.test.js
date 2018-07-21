@@ -1,16 +1,21 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { SignIn, mapDispatchToProps } from '../SignIn';
-import { googleSignInAction, googleSignOutAction } from '../../../Actions/auth';
+import { googleSignInAction, googleSignOutAction, githubLoginAction } from '../../../Actions/auth';
 
 jest.mock('../../../firebase/firebase.js');
 
 describe('<SignIn />', () => {
   let wrapper;
   const mockGoogleLogin = jest.fn();
+  const mockGithubLogin = jest.fn();
+  const mockGoogleSignOut = jest.fn();
+
   beforeEach(() => wrapper = shallow(
     <SignIn
       googleLogin={mockGoogleLogin}
+      githubLogin={mockGithubLogin}
+      googleLogout={mockGoogleSignOut}
     />
   ));
 
@@ -42,6 +47,18 @@ describe('<SignIn />', () => {
     expect(mockGoogleLogin).toHaveBeenCalled();
   });
 
+  test('should call handleGithubLogin onClick', () => {
+    wrapper.find('.github').simulate('click');
+
+    expect(mockGithubLogin).toHaveBeenCalled();
+  });
+
+  test('should call handleGoogleSignOut onClick', () => {
+    wrapper.find('.sign-out').simulate('click');
+
+    expect(mockGoogleSignOut).toHaveBeenCalled();
+  });
+
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
@@ -58,6 +75,21 @@ describe('<SignIn />', () => {
       const actionToDispatch = googleSignInAction(mockUser);
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.googleLogin();
+
+      expect(mockDispatch).toHaveBeenCalled();
+    });
+
+    test('should call dispatch githubSingIn is called', () => {
+      const mockDispatch = jest.fn();
+      const id = 1;
+      const name = 'Steve';
+      const mockUser = {
+        uid: id,
+        displayName: name
+      };
+      const actionToDispatch = googleSignInAction(mockUser);
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.githubLogin();
 
       expect(mockDispatch).toHaveBeenCalled();
     });

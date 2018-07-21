@@ -42,6 +42,7 @@ describe('<SignUp />', () => {
     wrapper.instance().handleChange(mockEvent);
     expect(wrapper.state('password')).toEqual('me');
   });
+
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });

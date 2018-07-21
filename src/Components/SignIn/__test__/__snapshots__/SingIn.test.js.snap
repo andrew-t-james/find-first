@@ -25,6 +25,13 @@ exports[`<SignIn /> should match snapshot 1`] = `
     Google
   </button>
   <button
+    className="github"
+    onClick={[Function]}
+  >
+    GitHub
+  </button>
+  <button
+    className="sign-out"
     onClick={[Function]}
   >
     Sign Out

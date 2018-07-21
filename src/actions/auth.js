@@ -6,3 +6,8 @@ export const googleSignInAction = user => ({
 export const googleSignOutAction = () => ({
   type: 'GOOGLE_LOGOUT'
 });
+
+export const githubLoginAction = user => ({
+  type: 'GITHUB_LOGIN',
+  user
+});
