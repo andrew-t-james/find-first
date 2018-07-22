@@ -16,7 +16,7 @@ export class SignIn extends Component {
 
   render() {
     return (
-      <section>
+      <section className="sign-in">
         <button
           className="google"
           onClick={() => this.handleLogin(googleOAuthLogin, googleSignInAction)}
