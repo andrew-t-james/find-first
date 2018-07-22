@@ -11,3 +11,8 @@ export const githubLoginAction = user => ({
   type: 'GITHUB_LOGIN',
   user
 });
+
+export const twitterLoginAction = user => ({
+  type: 'TWITTER_LOGIN',
+  user
+});

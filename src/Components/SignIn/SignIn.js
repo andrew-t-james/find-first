@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { googleLogin, googleLogout } from '../../thunks/auth';
-import { googleSignInAction, googleSignOutAction, githubLoginAction } from '../../Actions/auth';
-import { googleOAuthLogin, githubOAuthLogin, logout } from '../../firebase/firebase';
+import { googleSignInAction, googleSignOutAction, githubLoginAction, twitterLoginAction } from '../../Actions/auth';
+import { googleOAuthLogin, githubOAuthLogin, logout, twitterOAuthLogin } from '../../firebase/firebase';
 
 export class SignIn extends Component {
   handleLogin = (authProvider, loginAction) => {
@@ -31,7 +31,7 @@ export class SignIn extends Component {
         </button>
         <button
           className="twitter"
-          // onClick={() => this.handleLogin()}
+          onClick={() => this.handleLogin(twitterOAuthLogin, twitterLoginAction)}
         >
           Twitter
         </button>

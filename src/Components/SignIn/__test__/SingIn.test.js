@@ -18,14 +18,20 @@ describe('<SignIn />', () => {
     />
   ));
 
-  test('should call handleGoogleLogin onClick', () => {
+  test('should call handleGoogleLogin onClick google button', () => {
     wrapper.find('.google').simulate('click');
 
     expect(mockGoogleLogin).toHaveBeenCalled();
   });
 
-  test('should call handleGithubLogin onClick', () => {
+  test('should call handleLogin onClick github button', () => {
     wrapper.find('.github').simulate('click');
+
+    expect(mockGoogleLogin).toHaveBeenCalled();
+  });
+
+  test('should call handleLogin onClick twitter button', () => {
+    wrapper.find('.twitter').simulate('click');
 
     expect(mockGoogleLogin).toHaveBeenCalled();
   });
