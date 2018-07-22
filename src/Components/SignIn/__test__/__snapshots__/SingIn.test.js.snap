@@ -2,22 +2,6 @@
 
 exports[`<SignIn /> should match snapshot 1`] = `
 <section>
-  <form
-    action=""
-  >
-    <input
-      name="email"
-      onChange={[Function]}
-      type="text"
-      value=""
-    />
-    <input
-      name="password"
-      onChange={[Function]}
-      type="password"
-      value=""
-    />
-  </form>
   <button
     className="google"
     onClick={[Function]}
@@ -29,6 +13,12 @@ exports[`<SignIn /> should match snapshot 1`] = `
     onClick={[Function]}
   >
     GitHub
+  </button>
+  <button
+    className="twitter"
+    onClick={[Function]}
+  >
+    Twitter
   </button>
   <button
     className="sign-out"

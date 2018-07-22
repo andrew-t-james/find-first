@@ -1,6 +1,7 @@
 import { googleLogin, githubLogin, googleLogout } from '../auth';
 import { googleSignInAction, googleSignOutAction, githubLoginAction } from '../../Actions/auth';
-import { firebase, logout } from '../../firebase/firebase';
+import { firebase, logout, googleOAuthLogin } from '../../firebase/firebase';
+import { githubOAuthLogin } from '../../firebase/__mocks__/firebase';
 
 jest.mock('../../firebase/firebase');
 
@@ -12,7 +13,7 @@ describe('auth thunks', () => {
   });
 
   test('should call googleSignInAction', async () => {
-    const thunk = googleLogin();
+    const thunk = googleLogin(googleOAuthLogin, googleSignInAction);
     const mockUser = {
       uid: 1,
       displayName: 'Steve',
@@ -24,7 +25,7 @@ describe('auth thunks', () => {
   });
 
   test('should call gitHubSignAction', async () => {
-    const thunk = githubLogin();
+    const thunk = googleLogin(githubOAuthLogin, githubLoginAction);
     const mockUser = {
       uid: 1,
       displayName: 'Steve',
@@ -34,8 +35,9 @@ describe('auth thunks', () => {
     await thunk(mockDispatch);
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
-  test('should call firebase.auth.signOut', async () => {
-    const thunk = googleLogout();
+
+  test('should call googleLogout', async () => {
+    const thunk = googleLogout(logout, googleSignOutAction);
     const actionToDispatch = googleSignOutAction();
     await thunk(mockDispatch);
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);

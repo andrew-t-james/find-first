@@ -14,43 +14,26 @@ describe('<SignIn />', () => {
   beforeEach(() => wrapper = shallow(
     <SignIn
       googleLogin={mockGoogleLogin}
-      githubLogin={mockGithubLogin}
       googleLogout={mockGoogleSignOut}
     />
   ));
 
-  test('should update email state on change', () => {
-    const mockEvent = {
-      target: {
-        name: 'email',
-        value: 'me@mail.com'
-      }
-    };
-    wrapper.instance().handleChange(mockEvent);
-    expect(wrapper.state('email')).toEqual('me@mail.com');
-  });
-
-  test('should update password state on change', () => {
-    const mockEvent = {
-      target: {
-        name: 'password',
-        value: 'weak'
-      }
-    };
-    wrapper.instance().handleChange(mockEvent);
-    expect(wrapper.state('password')).toEqual('weak');
-  });
-
-  test('should call handleGoogleLogin onClick', () => {
+  test('should call handleGoogleLogin onClick google button', () => {
     wrapper.find('.google').simulate('click');
 
     expect(mockGoogleLogin).toHaveBeenCalled();
   });
 
-  test('should call handleGithubLogin onClick', () => {
+  test('should call handleLogin onClick github button', () => {
     wrapper.find('.github').simulate('click');
 
-    expect(mockGithubLogin).toHaveBeenCalled();
+    expect(mockGoogleLogin).toHaveBeenCalled();
+  });
+
+  test('should call handleLogin onClick twitter button', () => {
+    wrapper.find('.twitter').simulate('click');
+
+    expect(mockGoogleLogin).toHaveBeenCalled();
   });
 
   test('should call handleGoogleSignOut onClick', () => {
@@ -79,20 +62,20 @@ describe('<SignIn />', () => {
       expect(mockDispatch).toHaveBeenCalled();
     });
 
-    test('should call dispatch githubSingIn is called', () => {
-      const mockDispatch = jest.fn();
-      const id = 1;
-      const name = 'Steve';
-      const mockUser = {
-        uid: id,
-        displayName: name
-      };
-      const actionToDispatch = googleSignInAction(mockUser);
-      const mappedProps = mapDispatchToProps(mockDispatch);
-      mappedProps.githubLogin();
+    // test('should call dispatch githubSingIn is called', () => {
+    //   const mockDispatch = jest.fn();
+    //   const id = 1;
+    //   const name = 'Steve';
+    //   const mockUser = {
+    //     uid: id,
+    //     displayName: name
+    //   };
+    //   const actionToDispatch = googleSignInAction(mockUser);
+    //   const mappedProps = mapDispatchToProps(mockDispatch);
+    //   mappedProps.githubLogin();
 
-      expect(mockDispatch).toHaveBeenCalled();
-    });
+    //   expect(mockDispatch).toHaveBeenCalled();
+    // });
 
     test('should call dispatch googleLogout is called', () => {
       const mockDispatch = jest.fn();

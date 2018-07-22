@@ -1,78 +1,54 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { googleLogin, googleLogout, githubLogin } from '../../thunks/auth';
+import { googleLogin, googleLogout } from '../../thunks/auth';
+import { googleSignInAction, googleSignOutAction, githubLoginAction, twitterLoginAction } from '../../Actions/auth';
+import { googleOAuthLogin, githubOAuthLogin, logout, twitterOAuthLogin } from '../../firebase/firebase';
 
 export class SignIn extends Component {
-  constructor() {
-    super();
-    this.state = {
-      email: '',
-      password: ''
-    };
+  handleLogin = (authProvider, loginAction) => {
+    this.props.googleLogin(authProvider, loginAction);
   }
 
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  }
-
-  handleGoogleLogin = () => {
-    this.props.googleLogin();
-  }
-
-  handleGitHubLogin = () => {
-    this.props.githubLogin();
-  }
-
-  handleGoogleSignOut = () => {
-    this.props.googleLogout();
+  handleSignOut = (authLogOut, logOutAction) => {
+    this.props.googleLogout(authLogOut, logOutAction);
   }
 
   render() {
-    const { email, password } = this.state;
-
     return (
       <section>
-        <form action="">
-          <input
-            type="text"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          />
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-          />
-        </form>
         <button
           className="google"
-          onClick={this.handleGoogleLogin}
+          onClick={() => this.handleLogin(googleOAuthLogin, googleSignInAction)}
         >
           Google
         </button>
         <button
           className="github"
-          onClick={this.handleGitHubLogin}
+          onClick={() => this.handleLogin(githubOAuthLogin, githubLoginAction)}
         >
           GitHub
         </button>
         <button
+          className="twitter"
+          onClick={() => this.handleLogin(twitterOAuthLogin, twitterLoginAction)}
+        >
+          Twitter
+        </button>
+        <button
           className="sign-out"
-          onClick={this.handleGoogleSignOut}
-        >Sign Out</button>
+          onClick={() => this.handleSignOut(logout, googleSignOutAction)}
+        >
+         Sign Out
+        </button>
       </section>
     );
   }
 }
 
 export const mapDispatchToProps = dispatch => ({
-  googleLogin: () => dispatch(googleLogin()),
-  githubLogin: () => dispatch(githubLogin()),
-  googleLogout: () => dispatch(googleLogout())
+  googleLogin: (authProvider, loginAction) => dispatch(googleLogin(authProvider, loginAction)),
+  googleLogout: (authLogout, logOutAction) => dispatch(googleLogout(authLogout, logOutAction))
 });
 
 export default connect(null, mapDispatchToProps)(SignIn);
