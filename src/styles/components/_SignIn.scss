@@ -1,7 +1,6 @@
 .sign-in {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -30,4 +29,10 @@
 
 .github {
   background: #34495e;
+}
+
+@media screen and (min-width: 1024px) {
+  .sign-in {
+    justify-content: center;
+  }
 }
