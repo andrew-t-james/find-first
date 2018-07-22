@@ -6,7 +6,10 @@ import PropTypes from 'prop-types';
 const Home = () => {
   return (
     <section className="home">
-      <h1 className="home__heading">Some Catchy Title Here</h1>
+      <div className="logo-section">
+        <h1 className="home__heading">Some Catchy Title Here</h1>
+        <NavLink to="/dashboard">Dashboard</NavLink>
+      </div>
       <SignIn />
     </section>
   );

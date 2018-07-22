@@ -16,30 +16,34 @@ export class SignIn extends Component {
 
   render() {
     return (
-      <section className="sign-in">
+      <section className="sign-in login-section">
         <button
-          className="google"
+          className="google auth-button"
           onClick={() => this.handleLogin(googleOAuthLogin, googleSignInAction)}
         >
           Google
+          <i className="fab fa-google"></i>
         </button>
         <button
-          className="github"
+          className="github auth-button"
           onClick={() => this.handleLogin(githubOAuthLogin, githubLoginAction)}
         >
           GitHub
+          <i className="fab fa-github"></i>
         </button>
         <button
-          className="twitter"
+          className="twitter auth-button"
           onClick={() => this.handleLogin(twitterOAuthLogin, twitterLoginAction)}
         >
           Twitter
+          <i className="fab fa-twitter"></i>
         </button>
         <button
-          className="facebook"
+          className="facebook auth-button"
           onClick={() => this.handleLogin(facebookOAuthLogin, facebookLoginAction)}
         >
           Facebook
+          <i className="fab fa-facebook"></i>
         </button>
         <button
           className="sign-out"

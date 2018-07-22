@@ -5,18 +5,29 @@
   align-items: center;
 }
 
+.auth-button {
+  color: var(--primary-light-background);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25rem;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+}
+
 .google {
-  background: red;
+  background: #e74c3c;
 }
 
 .twitter {
-  background: salmon;
+  background: #3498db;
 }
 
 .facebook {
-  background: green;
+  background: #3742fa;
 }
 
 .github {
-  background: orange;
+  background: #34495e;
 }

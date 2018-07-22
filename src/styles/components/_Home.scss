@@ -9,3 +9,26 @@
     margin-bottom: 2rem;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .home {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "logo-section logo-section login-section login-section" "logo-section logo-section login-section login-section" "logo-section logo-section login-section login-section";
+  }
+
+  .logo-section {
+    grid-area: logo-section;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .login-section {
+    grid-area: login-section;
+  }
+
+}
