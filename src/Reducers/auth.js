@@ -18,6 +18,12 @@ export const authReducer = (state = {}, action) => {
         image: action.user.photoURL,
         name: action.user.displayName
       };
+    case 'FACEBOOK_LOGIN':
+      return {
+        id: action.user.uid,
+        image: action.user.photoURL,
+        name: action.user.displayName
+      };
     case 'GOOGLE_LOGOUT':
       return {};
     default:

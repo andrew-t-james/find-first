@@ -21,6 +21,12 @@ exports[`<SignIn /> should match snapshot 1`] = `
     Twitter
   </button>
   <button
+    className="facebook"
+    onClick={[Function]}
+  >
+    Facebook
+  </button>
+  <button
     className="sign-out"
     onClick={[Function]}
   >

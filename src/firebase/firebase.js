@@ -15,10 +15,12 @@ export const database = firebase.database();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
 export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
+export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 
 export const googleOAuthLogin = () => firebase.auth().signInWithPopup(googleAuthProvider);
 export const githubOAuthLogin = () => firebase.auth().signInWithPopup(githubAuthProvider);
 export const twitterOAuthLogin = () => firebase.auth().signInWithPopup(twitterAuthProvider);
+export const facebookOAuthLogin = () => firebase.auth().signInWithPopup(facebookAuthProvider);
 export const logout = () => firebase.auth().signOut();
 
 export { firebase };

@@ -35,7 +35,11 @@ describe('<SignIn />', () => {
 
     expect(mockGoogleLogin).toHaveBeenCalled();
   });
+  test('should call handleLogin onClick facebook button', () => {
+    wrapper.find('.facebook').simulate('click');
 
+    expect(mockGoogleLogin).toHaveBeenCalled();
+  });
   test('should call handleGoogleSignOut onClick', () => {
     wrapper.find('.sign-out').simulate('click');
 

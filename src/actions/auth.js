@@ -16,3 +16,8 @@ export const twitterLoginAction = user => ({
   type: 'TWITTER_LOGIN',
   user
 });
+
+export const facebookLoginAction = user => ({
+  type: 'FACEBOOK_LOGIN',
+  user
+});
