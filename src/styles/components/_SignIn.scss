@@ -1,0 +1,38 @@
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-button {
+  color: var(--primary-light-background);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25rem;
+  margin-bottom: 2rem;
+  border-radius: 2px;
+}
+
+.google {
+  background: #e74c3c;
+}
+
+.twitter {
+  background: #3498db;
+}
+
+.facebook {
+  background: #3742fa;
+}
+
+.github {
+  background: #34495e;
+}
+
+@media screen and (min-width: 1024px) {
+  .sign-in {
+    justify-content: center;
+  }
+}

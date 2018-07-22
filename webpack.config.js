@@ -30,7 +30,7 @@ module.exports =  env => {
         },
         {
           test: /\.s?css$/,
-          use:  ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+          use:  ['css-hot-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
         }
       ]
     },

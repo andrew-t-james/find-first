@@ -1,17 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Home /> should match snapshot 1`] = `
-<section>
-  <Connect(SignIn) />
-  <p>
-    Dont have and account ? 
+<section
+  className="home"
+>
+  <div
+    className="logo-section"
+  >
+    <h1
+      className="home__heading"
+    >
+      Some Catchy Title Here
+    </h1>
     <NavLink
       activeClassName="active"
       aria-current="page"
-      to="/sign-up"
+      to="/dashboard"
     >
-      Sign Up
+      Dashboard
     </NavLink>
-  </p>
+  </div>
+  <Connect(SignIn) />
 </section>
 `;
