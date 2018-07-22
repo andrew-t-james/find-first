@@ -1,23 +1,13 @@
-import { googleOAuthLogin, githubOAuthLogin, logout } from '../firebase/firebase';
-import { googleSignInAction, googleSignOutAction, githubLoginAction } from '../Actions/auth';
-
-export const googleLogin = () => {
+export const googleLogin = (authProvider, loginAction) => {
   return async dispatch => {
-    const googleUser = await googleOAuthLogin();
-    dispatch(googleSignInAction(googleUser.user));
+    const newUser = await authProvider();
+    dispatch(loginAction(newUser.user));
   };
 };
 
-export const googleLogout = () => {
+export const googleLogout = (authLogout, logoutAction) => {
   return async dispatch => {
-    await logout();
-    dispatch(googleSignOutAction());
-  };
-};
-
-export const githubLogin = () => {
-  return async dispatch => {
-    const githubUser = await githubOAuthLogin();
-    dispatch(githubLoginAction(githubUser.user));
+    await authLogout();
+    dispatch(logoutAction());
   };
 };
