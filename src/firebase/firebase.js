@@ -33,7 +33,7 @@ export { firebase };
 // });
 
 // * editing array data in firebase
-// database.ref('notes/-LHu-AHZ3jixVR0wryuZ').update({
+// database.ref('notes/-LI6UR9CVl1FaV46zinX').update({
 //   title: 'dont todo',
 //   body: 'yeah not doing it'
 // });
