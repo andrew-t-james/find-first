@@ -5,7 +5,7 @@ exports[`<Card /> should match snapshot 1`] = `
   className="card"
 >
   <h2>
-    card title goes here
+    card title goes here!!!
   </h2>
   <p>
     card image
