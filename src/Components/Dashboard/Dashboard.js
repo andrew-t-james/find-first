@@ -1,5 +1,6 @@
 import React from 'react';
 import Search from '../Search/Search';
+import Card from '../Card/Card';
 import Footer from '../Footer/Footer';
 import PropTypes from 'prop-types';
 
@@ -9,7 +10,22 @@ const Dashboard = () => {
       <header className="header"><h1>header</h1></header>
       <main className="content">
         <h2>Main</h2>
-        <Search />
+        <section className="cards-container">
+          <Search />
+          <section className="cards-section">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </section>
+        </section>
       </main>
       <Footer />
     </div>

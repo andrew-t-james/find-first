@@ -1,0 +1,33 @@
+.cards-container {
+  margin: 0 auto;
+  max-width: 980px;
+  border: 1px solid orange;
+  padding: 0 3rem;
+}
+
+.cards-section {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  grid-column-gap: 3rem;
+  grid-row-gap: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  background: #fff;
+  margin: 0;
+  color: #47596b;
+  font-family: monospace;
+  border-radius: .5em;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  transition: all ease-in-out .2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}

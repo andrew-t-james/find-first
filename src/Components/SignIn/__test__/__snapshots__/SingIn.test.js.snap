@@ -2,49 +2,53 @@
 
 exports[`<SignIn /> should match snapshot 1`] = `
 <section
-  className="sign-in login-section"
+  className="login-section"
 >
-  <button
-    className="google auth-button"
-    onClick={[Function]}
+  <div
+    className="sign-in"
   >
-    Google
-    <i
-      className="fab fa-google"
-    />
-  </button>
-  <button
-    className="github auth-button"
-    onClick={[Function]}
-  >
-    GitHub
-    <i
-      className="fab fa-github"
-    />
-  </button>
-  <button
-    className="twitter auth-button"
-    onClick={[Function]}
-  >
-    Twitter
-    <i
-      className="fab fa-twitter"
-    />
-  </button>
-  <button
-    className="facebook auth-button"
-    onClick={[Function]}
-  >
-    Facebook
-    <i
-      className="fab fa-facebook"
-    />
-  </button>
-  <button
-    className="sign-out"
-    onClick={[Function]}
-  >
-    Sign Out
-  </button>
+    <button
+      className="google auth-button"
+      onClick={[Function]}
+    >
+      Google
+      <i
+        className="fab fa-google"
+      />
+    </button>
+    <button
+      className="github auth-button"
+      onClick={[Function]}
+    >
+      GitHub
+      <i
+        className="fab fa-github"
+      />
+    </button>
+    <button
+      className="twitter auth-button"
+      onClick={[Function]}
+    >
+      Twitter
+      <i
+        className="fab fa-twitter"
+      />
+    </button>
+    <button
+      className="facebook auth-button"
+      onClick={[Function]}
+    >
+      Facebook
+      <i
+        className="fab fa-facebook"
+      />
+    </button>
+    <button
+      className="sign-out"
+      onClick={[Function]}
+    >
+      Sign Out
+    </button>
+  </div>
 </section>
 `;
