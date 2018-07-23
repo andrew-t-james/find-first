@@ -3,7 +3,7 @@ import SignIn from '../SignIn/SignIn';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Home = () => {
+const Home = ({ user }) => {
   return (
     <section className="home">
       <div className="logo-section">
@@ -15,8 +15,8 @@ const Home = () => {
   );
 };
 
+export default Home;
+
 Home.propTypes = {
 
 };
-
-export default Home;

@@ -16,41 +16,43 @@ export class SignIn extends Component {
 
   render() {
     return (
-      <section className="sign-in login-section">
-        <button
-          className="google auth-button"
-          onClick={() => this.handleLogin(googleOAuthLogin, googleSignInAction)}
-        >
+      <section className="login-section">
+        <div className="sign-in">
+          <button
+            className="google auth-button"
+            onClick={() => this.handleLogin(googleOAuthLogin, googleSignInAction)}
+          >
           Google
-          <i className="fab fa-google"></i>
-        </button>
-        <button
-          className="github auth-button"
-          onClick={() => this.handleLogin(githubOAuthLogin, githubLoginAction)}
-        >
+            <i className="fab fa-google"></i>
+          </button>
+          <button
+            className="github auth-button"
+            onClick={() => this.handleLogin(githubOAuthLogin, githubLoginAction)}
+          >
           GitHub
-          <i className="fab fa-github"></i>
-        </button>
-        <button
-          className="twitter auth-button"
-          onClick={() => this.handleLogin(twitterOAuthLogin, twitterLoginAction)}
-        >
+            <i className="fab fa-github"></i>
+          </button>
+          <button
+            className="twitter auth-button"
+            onClick={() => this.handleLogin(twitterOAuthLogin, twitterLoginAction)}
+          >
           Twitter
-          <i className="fab fa-twitter"></i>
-        </button>
-        <button
-          className="facebook auth-button"
-          onClick={() => this.handleLogin(facebookOAuthLogin, facebookLoginAction)}
-        >
+            <i className="fab fa-twitter"></i>
+          </button>
+          <button
+            className="facebook auth-button"
+            onClick={() => this.handleLogin(facebookOAuthLogin, facebookLoginAction)}
+          >
           Facebook
-          <i className="fab fa-facebook"></i>
-        </button>
-        <button
-          className="sign-out"
-          onClick={() => this.handleSignOut(logout, googleSignOutAction)}
-        >
+            <i className="fab fa-facebook"></i>
+          </button>
+          <button
+            className="sign-out"
+            onClick={() => this.handleSignOut(logout, googleSignOutAction)}
+          >
          Sign Out
-        </button>
+          </button>
+        </div>
       </section>
     );
   }
