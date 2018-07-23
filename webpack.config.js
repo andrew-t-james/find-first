@@ -31,6 +31,14 @@ module.exports =  env => {
         {
           test: /\.s?css$/,
           use:  ['css-hot-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        },
+        {
+          test: /\.(png|svg|jpg|gif)$/,
+          use: [
+            {
+              loader: 'file-loader'
+            }
+          ]
         }
       ]
     },

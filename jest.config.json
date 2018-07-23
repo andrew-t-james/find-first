@@ -4,5 +4,8 @@
   ],
   "setupFiles": [
     "<rootDir>/src/setupTests.js"
-  ]
+  ],
+  "moduleNameMapper": {
+    "\\.(css|jpg|png|svg)$": "<rootDir>/src/mock-data/empty-module.js"
+  }
 }
