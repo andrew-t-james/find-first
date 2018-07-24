@@ -6,7 +6,8 @@ const githubJobCleaner = jobs => {
     location: job.location,
     description: job.description,
     type: job.type,
-    url: job.url
+    url: job.url,
+    image: job.company_logo
   }));
 };
 

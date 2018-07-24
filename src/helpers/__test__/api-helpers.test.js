@@ -6,7 +6,17 @@ describe('githubApiRequest', () => {
     location: 'Somewhere USA',
     description: 'Description',
     type: 'Full Time',
-    url: 'https://some-url-here'
+    url: 'https://some-url-here',
+    company_logo: 'https://some-url-here'
+  }];
+
+  const mockCleanedJobs = [{
+    title: 'Job Title',
+    location: 'Somewhere USA',
+    description: 'Description',
+    type: 'Full Time',
+    url: 'https://some-url-here',
+    image: 'https://some-url-here'
   }];
 
   test('should call fetch', async () => {
@@ -36,7 +46,7 @@ describe('githubApiRequest', () => {
     }));
 
     const result = await githubApiRequest();
-    expect(result).toEqual(mockGithubResponse);
+    expect(result).toEqual(mockCleanedJobs);
   });
 
 });

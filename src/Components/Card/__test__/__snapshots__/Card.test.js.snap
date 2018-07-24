@@ -5,6 +5,14 @@ exports[`<Card /> should match snapshot 1`] = `
   className="card"
 >
   <h2 />
+  <img
+    style={
+      Object {
+        "height": "3rem",
+        "width": "3rem",
+      }
+    }
+  />
   <p />
   <p />
 </div>
