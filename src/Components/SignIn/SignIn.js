@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { googleLogin, googleLogout } from '../../thunks/auth';
 import SlideMenu from 'react-slide-menu';
 import { googleSignInAction, googleSignOutAction, githubLoginAction, twitterLoginAction, facebookLoginAction } from '../../Actions/auth';
 import { googleOAuthLogin, githubOAuthLogin, logout, twitterOAuthLogin, facebookOAuthLogin } from '../../firebase/firebase';
+import { googleLogin, googleLogout } from '../../thunks/auth';
+
+import { toggleMenu } from '../../Actions/menu';
+import { nav } from '../../helpers/nav';
 
 import menuIcon from '../../images/menu.svg';
 
 export class SignIn extends Component {
-  constructor() {
-    super();
-    this.state = {
-      slideMenuActive: true,
-      nav: [
-        {id: 'home', label: 'Home', path: '/'},
-        {id: 'sign-in', label: 'Sign-In', path: '/sign-in'},
-        {id: 'dashboard', label: 'Dashboard', path: '/dashboard'}
-      ]
-    };
-  }
-
   handleLogin = (authProvider, loginAction) => {
     this.props.googleLogin(authProvider, loginAction);
   }
@@ -29,25 +20,19 @@ export class SignIn extends Component {
     this.props.googleLogout(authLogOut, logOutAction);
   }
 
-  toggleMenu = () => {
-    const { slideMenuActive } = this.state;
-    this.setState({ slideMenuActive: !this.state.slideMenuActive });
-  }
-
   render() {
-    const { slideMenuActive, nav } = this.state;
+    const { slideMenuActive, toggleMenu } = this.props;
 
     return (
       <SlideMenu
         active={slideMenuActive}
         nav={nav}
         reactRouter={true}
-        closeMenu={() => this.setState({slideMenuActive: false})}
       >
         <section className="login-section">
           <div
             className="home__menu"
-            onClick={this.toggleMenu}
+            onClick={toggleMenu}
           >
             <img className="home__menu--icon" src={menuIcon}/>
           </div>
@@ -93,12 +78,17 @@ export class SignIn extends Component {
   }
 }
 
-export const mapDispatchToProps = dispatch => ({
-  googleLogin: (authProvider, loginAction) => dispatch(googleLogin(authProvider, loginAction)),
-  googleLogout: (authLogout, logOutAction) => dispatch(googleLogout(authLogout, logOutAction))
+export const mapStateToProps = state => ({
+  slideMenuActive: state.slideMenuActive
 });
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export const mapDispatchToProps = dispatch => ({
+  googleLogin: (authProvider, loginAction) => dispatch(googleLogin(authProvider, loginAction)),
+  googleLogout: (authLogout, logOutAction) => dispatch(googleLogout(authLogout, logOutAction)),
+  toggleMenu: () => dispatch(toggleMenu())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
 
 SignIn.propTypes = {
   googleLogin: PropTypes.func,

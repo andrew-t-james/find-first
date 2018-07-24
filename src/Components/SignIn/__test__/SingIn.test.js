@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SignIn, mapDispatchToProps } from '../SignIn';
+import { SignIn, mapDispatchToProps, mapStateToProps } from '../SignIn';
 import { googleSignInAction, googleSignOutAction, githubLoginAction } from '../../../Actions/auth';
+import { toggleMenu } from '../../../Actions/menu';
 
 jest.mock('../../../firebase/firebase.js');
 
@@ -10,11 +11,13 @@ describe('<SignIn />', () => {
   const mockGoogleLogin = jest.fn();
   const mockGithubLogin = jest.fn();
   const mockGoogleSignOut = jest.fn();
+  const mockToggleMenu = jest.fn();
 
   beforeEach(() => wrapper = shallow(
     <SignIn
       googleLogin={mockGoogleLogin}
       googleLogout={mockGoogleSignOut}
+      toggleMenu={mockToggleMenu}
     />
   ));
 
@@ -50,6 +53,22 @@ describe('<SignIn />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  describe('mapStateToProps', () => {
+    test('should add slideMenuActive to prop', () => {
+      const mockState = {
+        slideMenuActive: false
+      };
+      const expectedState = {
+        slideMenuActive: false
+      };
+      const mappedProps = mapStateToProps(mockState);
+
+      expect(mappedProps).toEqual(expectedState);
+    });
+
+  });
+
+
   describe('mapDispatchToPops', () => {
     test('should call dispatch googleLogin is called', () => {
       const mockDispatch = jest.fn();
@@ -66,26 +85,20 @@ describe('<SignIn />', () => {
       expect(mockDispatch).toHaveBeenCalled();
     });
 
-    // test('should call dispatch githubSingIn is called', () => {
-    //   const mockDispatch = jest.fn();
-    //   const id = 1;
-    //   const name = 'Steve';
-    //   const mockUser = {
-    //     uid: id,
-    //     displayName: name
-    //   };
-    //   const actionToDispatch = googleSignInAction(mockUser);
-    //   const mappedProps = mapDispatchToProps(mockDispatch);
-    //   mappedProps.githubLogin();
-
-    //   expect(mockDispatch).toHaveBeenCalled();
-    // });
-
     test('should call dispatch googleLogout is called', () => {
       const mockDispatch = jest.fn();
       const actionToDispatch = googleSignOutAction();
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.googleLogout();
+
+      expect(mockDispatch).toHaveBeenCalled();
+    });
+
+    test('should call dispatch when toggleMenu is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = toggleMenu();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.toggleMenu();
 
       expect(mockDispatch).toHaveBeenCalled();
     });

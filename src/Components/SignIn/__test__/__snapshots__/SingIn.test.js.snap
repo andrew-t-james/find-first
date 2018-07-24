@@ -2,8 +2,6 @@
 
 exports[`<SignIn /> should match snapshot 1`] = `
 <e
-  active={true}
-  closeMenu={[Function]}
   nav={
     Array [
       Object {
@@ -30,7 +28,7 @@ exports[`<SignIn /> should match snapshot 1`] = `
   >
     <div
       className="home__menu"
-      onClick={[Function]}
+      onClick={[MockFunction]}
     >
       <img
         className="home__menu--icon"
