@@ -92,6 +92,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
 
 SignIn.propTypes = {
   googleLogin: PropTypes.func,
-  githubLogin: PropTypes.func,
-  googleLogout: PropTypes.func
+  googleLogout: PropTypes.func,
+  toggleMenu: PropTypes.func,
+  slideMenuActive: PropTypes.bool
 };

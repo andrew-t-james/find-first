@@ -57,5 +57,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 Home.propTypes = {
   toggleMenu: PropTypes.func,
-  githubJobs: PropTypes.func
+  githubJobs: PropTypes.func,
+  slideMenuActive: PropTypes.bool
 };
