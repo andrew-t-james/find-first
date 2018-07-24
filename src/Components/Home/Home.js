@@ -32,7 +32,7 @@ export class Home extends Component {
         <section className="home">
           <div className="logo-section">
             <div
-              className="home__menu"
+              className="home__menu--icon"
               onClick={toggleMenu}
             >
               <img className="home__menu--icon" src={menuIcon}/>

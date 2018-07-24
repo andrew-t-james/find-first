@@ -30,7 +30,7 @@ exports[`<Home /> should match snapshot 1`] = `
       className="logo-section"
     >
       <div
-        className="home__menu"
+        className="home__menu--icon"
         onClick={[MockFunction]}
       >
         <img

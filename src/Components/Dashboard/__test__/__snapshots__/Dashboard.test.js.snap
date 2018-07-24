@@ -8,28 +8,11 @@ exports[`<Dashboard /> should match snapshot 1`] = `
   <main
     className="content"
   >
-    <h2>
-      Main
-    </h2>
     <section
       className="cards-container"
     >
       <Search />
-      <section
-        className="cards-section"
-      >
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </section>
+      <Connect(CardContainer) />
     </section>
   </main>
   <Footer />
