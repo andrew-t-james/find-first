@@ -15,6 +15,7 @@ import menuIcon from '../../images/menu.svg';
 
 export class Home extends Component {
   componentDidMount = async () => {
+    // TODO Add try catch for error handling here
     const githubJobListings = await githubApiRequest();
     this.props.githubJobs(githubJobListings);
   }
@@ -55,5 +56,6 @@ export const mapDispatchToProps = dispatch => ({
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 Home.propTypes = {
-
+  toggleMenu: PropTypes.func,
+  githubJobs: PropTypes.func
 };

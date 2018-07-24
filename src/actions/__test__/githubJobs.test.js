@@ -1,5 +1,0 @@
-describe('githubApiRequest', () => {
-  test('should ', () => {
-
-  });
-});
