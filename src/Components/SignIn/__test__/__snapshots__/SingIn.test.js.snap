@@ -1,54 +1,86 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SignIn /> should match snapshot 1`] = `
-<section
-  className="login-section"
+<e
+  nav={
+    Array [
+      Object {
+        "id": "home",
+        "label": "Home",
+        "path": "/",
+      },
+      Object {
+        "id": "sign-in",
+        "label": "Sign-In",
+        "path": "/sign-in",
+      },
+      Object {
+        "id": "dashboard",
+        "label": "Dashboard",
+        "path": "/dashboard",
+      },
+    ]
+  }
+  reactRouter={true}
 >
-  <div
-    className="sign-in"
+  <section
+    className="login-section"
   >
-    <button
-      className="google auth-button"
-      onClick={[Function]}
+    <div
+      className="home__menu"
+      onClick={[MockFunction]}
     >
-      Google
-      <i
-        className="fab fa-google"
+      <img
+        className="home__menu--icon"
+        src=""
       />
-    </button>
-    <button
-      className="github auth-button"
-      onClick={[Function]}
+    </div>
+    <div
+      className="sign-in"
     >
-      GitHub
-      <i
-        className="fab fa-github"
-      />
-    </button>
-    <button
-      className="twitter auth-button"
-      onClick={[Function]}
-    >
-      Twitter
-      <i
-        className="fab fa-twitter"
-      />
-    </button>
-    <button
-      className="facebook auth-button"
-      onClick={[Function]}
-    >
-      Facebook
-      <i
-        className="fab fa-facebook"
-      />
-    </button>
-    <button
-      className="sign-out"
-      onClick={[Function]}
-    >
-      Sign Out
-    </button>
-  </div>
-</section>
+      <button
+        className="google auth-button"
+        onClick={[Function]}
+      >
+        Google
+        <i
+          className="fab fa-google"
+        />
+      </button>
+      <button
+        className="github auth-button"
+        onClick={[Function]}
+      >
+        GitHub
+        <i
+          className="fab fa-github"
+        />
+      </button>
+      <button
+        className="twitter auth-button"
+        onClick={[Function]}
+      >
+        Twitter
+        <i
+          className="fab fa-twitter"
+        />
+      </button>
+      <button
+        className="facebook auth-button"
+        onClick={[Function]}
+      >
+        Facebook
+        <i
+          className="fab fa-facebook"
+        />
+      </button>
+      <button
+        className="sign-out"
+        onClick={[Function]}
+      >
+        Sign Out
+      </button>
+    </div>
+  </section>
+</e>
 `;

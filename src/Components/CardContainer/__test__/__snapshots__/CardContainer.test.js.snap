@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardContainer /> should match snapshot 1`] = `
+<section
+  className="cards-section"
+>
+  <Card
+    id={1}
+    key="A dope dev job"
+    location="remote"
+    title="A dope dev job"
+  />
+  <Card
+    id={2}
+    key="Another dope dev job"
+    location="remote"
+    title="Another dope dev job"
+  />
+</section>
+`;

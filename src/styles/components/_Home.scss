@@ -3,18 +3,30 @@
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "logo-section logo-section logo-section logo-section" "logo-section logo-section logo-section logo-section" "login-section login-section login-section login-section" "login-section login-section login-section login-section";
+  grid-template-areas: "logo-section logo-section logo-section logo-section" "logo-section logo-section logo-section logo-section";
+  position: relative;
+
+  &__menu--icon {
+    height: 8rem;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+  }
 }
 
 .logo-section {
   grid-area: logo-section;
   background: var(--primary-dark-background);
-  height: 20rem;
+  height: 100vh;
 }
 
 .login-section {
-  grid-area: login-section;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--primary-dark-background);
 }
 
 @media screen and (min-width: 1024px) {
@@ -34,7 +46,6 @@
     grid-area: login-section;
   }
 
-  .login-section,
   .logo-section {
     display: flex;
     justify-content: center;

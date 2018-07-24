@@ -1,25 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Home /> should match snapshot 1`] = `
-<section
-  className="home"
+<e
+  nav={
+    Array [
+      Object {
+        "id": "home",
+        "label": "Home",
+        "path": "/",
+      },
+      Object {
+        "id": "sign-in",
+        "label": "Sign-In",
+        "path": "/sign-in",
+      },
+      Object {
+        "id": "dashboard",
+        "label": "Dashboard",
+        "path": "/dashboard",
+      },
+    ]
+  }
+  reactRouter={true}
 >
-  <div
-    className="logo-section"
+  <section
+    className="home"
   >
-    <h1
-      className="home__heading"
+    <div
+      className="logo-section"
     >
-      Some Catchy Title Here
-    </h1>
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      to="/dashboard"
-    >
-      Dashboard
-    </NavLink>
-  </div>
-  <Connect(SignIn) />
-</section>
+      <div
+        className="home__menu--icon"
+        onClick={[MockFunction]}
+      >
+        <img
+          className="home__menu--icon"
+          src=""
+        />
+      </div>
+    </div>
+  </section>
+</e>
 `;

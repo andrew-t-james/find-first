@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = () => {
+const Card = ({ title, location, type }) => {
   return (
     <div className="card">
-      <h2>card title goes here!!!</h2>
-      <p>card image</p>
-      <p>card description</p>
+      <h2>{title}</h2>
+      <p>{location}</p>
+      <p>{type}</p>
     </div>
   );
 };

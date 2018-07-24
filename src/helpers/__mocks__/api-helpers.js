@@ -1,0 +1,1 @@
+export const githubApiRequest = jest.fn().mockImplementation(() => Promise.resolve());
