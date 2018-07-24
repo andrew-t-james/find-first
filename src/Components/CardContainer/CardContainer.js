@@ -21,5 +21,5 @@ export const mapStateToProps = state => ({
 export default connect(mapStateToProps)(CardContainer);
 
 CardContainer.propTypes = {
-
+  githubJobs: PropTypes.arrayOf(PropTypes.object)
 };
