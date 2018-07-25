@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<JobDetail /> should match snapshot 1`] = `
+<div>
+  <Header />
+  <Link
+    replace={false}
+    to="/dashboard"
+  >
+    ◀ back
+  </Link>
+  <main
+    className="content"
+  >
+    <section
+      className="job-detail-container"
+    >
+      <h1>
+        Title
+      </h1>
+      <p
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "description",
+          }
+        }
+      />
+    </section>
+  </main>
+</div>
+`;

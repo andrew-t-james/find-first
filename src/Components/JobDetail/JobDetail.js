@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Header } from '../Header/Header';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const JobDetail = ({ title, description }) => {
+export const JobDetail = ({ title, description }) => {
   return (
     <div>
       <Header />
@@ -19,12 +18,5 @@ const JobDetail = ({ title, description }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  jobs: state.githubJobs
-});
 
-export default withRouter(connect(mapStateToProps)(JobDetail));
-
-JobDetail.propTypes = {
-
-};
+export default withRouter(JobDetail);
