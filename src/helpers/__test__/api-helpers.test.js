@@ -1,6 +1,8 @@
 import { githubApiRequest, githubJobCleaner  } from '../api-helpers';
+import { mockRandom } from 'jest-mock-random';
 
 describe('githubApiRequest', () => {
+  mockRandom(0.1);
   const mockGithubResponse = [{
     title: 'Job Title',
     location: 'Somewhere USA',
@@ -8,7 +10,8 @@ describe('githubApiRequest', () => {
     type: 'Full Time',
     url: 'https://some-url-here',
     company_logo: 'https://some-url-here',
-    company: 'Some Name'
+    company: 'Some Name',
+    id: 10001
   }];
 
   const mockCleanedJobs = [{
@@ -18,7 +21,8 @@ describe('githubApiRequest', () => {
     type: 'Full Time',
     url: 'https://some-url-here',
     image: 'https://some-url-here',
-    company: 'Some Name'
+    company: 'Some Name',
+    id: 10001
   }];
 
   test('should call fetch', async () => {
@@ -56,7 +60,5 @@ describe('githubApiRequest', () => {
       const result = githubJobCleaner(mockGithubResponse);
       expect(result).toEqual(mockCleanedJobs);
     });
-
   });
-
 });

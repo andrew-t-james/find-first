@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = ({ title, location, company, type }) => {
+const Card = ({ title, image, location, company, type }) => {
   return (
     <div className="card">
       <header className="card__header">
@@ -9,7 +9,10 @@ const Card = ({ title, location, company, type }) => {
         <p className="card__type">{type}</p>
       </header>
       <h3 className="card__title">{title}</h3>
-      <p className="card__location">{location}</p>
+      <footer className="card__footer">
+        <img src={image} alt={company}/>
+        <p className="card__location">{location}</p>
+      </footer>
     </div>
   );
 };

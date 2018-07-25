@@ -34,31 +34,43 @@
   box-shadow: 0 1px 3px rgba(0,0,0,.08);
   transition: all ease-in-out .2s;
   cursor: pointer;
+  min-height: 15rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  &__location,
+  &__type {
+  color: lighten(#62748B, 20%);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      height: 3rem;
+      max-width: 9rem;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  }
 }
 
-.card:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
-}
 
-.card__header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-  align-items: center;
-}
-
+.card
 .card__company {
   font-weight: 800;
-}
-
-.card__title {
-  margin-bottom: 1rem;
-  font-weight: 400;
-}
-
-.card__location,
-.card__type {
-  color: lighten(#62748B, 20%);
-  text-align: right;
 }
