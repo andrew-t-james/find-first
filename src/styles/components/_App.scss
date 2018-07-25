@@ -5,8 +5,8 @@
 
 @media screen and (min-width: 1296px) {
   .content {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
     width: 90%;
   }
 }

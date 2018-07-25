@@ -1,11 +1,12 @@
 .job-detail {
   h1,h2,h3,h4,h5,h6 {
-    color: var(--primary-font)
+    color: var(--primary-font);
+    font-size: 2.5rem;
   }
 
   &__header {
     background: var(--primary-dark-background);
-    height: 10rem;
+    height: 15rem;
   }
 
   &__image {
@@ -34,9 +35,11 @@
 .job-detail-container {
   margin: 0 auto;
   max-width: 980px;
-  padding: 0 3rem;
   background: var(--primary-background);
   padding: 2rem 3rem;
+  position: relative;
+  bottom: 5rem;
+  border-top-left-radius: var(--border-radius);
 
   * {
     margin-bottom: 2rem;

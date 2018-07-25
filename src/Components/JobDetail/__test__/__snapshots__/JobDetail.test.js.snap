@@ -21,13 +21,14 @@ exports[`<JobDetail /> should match snapshot 1`] = `
         replace={false}
         to="/dashboard"
       >
-        ← back to job listings
+        ← Back to Job Listings
       </Link>
       <img
         alt="Title"
         className="job-detail__image"
       />
       <a
+        rel="noopener noreferrer"
         target="_blank"
       >
         Apply Here →

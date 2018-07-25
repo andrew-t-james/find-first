@@ -11,7 +11,7 @@ export const JobDetail = ({ title, description, url, image }) => {
       </header>
       <section className="job-detail-container">
         <div className="job-detail--buttons">
-          <Link to="/dashboard">&larr; back to job listings</Link>
+          <Link to="/dashboard">&larr; Back to Job Listings</Link>
           <img src={image} alt={title} className="job-detail__image"/>
           <a href={url} target="_blank" rel="noopener noreferrer" >Apply Here &rarr;</a>
         </div>
