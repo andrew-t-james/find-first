@@ -13,7 +13,7 @@ export const JobDetail = ({ title, description, url, image }) => {
         <div className="job-detail--buttons">
           <Link to="/dashboard">&larr; back to job listings</Link>
           <img src={image} alt={title} className="job-detail__image"/>
-          <a href={url} target="_blank" >Apply Here &rarr;</a>
+          <a href={url} target="_blank" rel="noopener noreferrer" >Apply Here &rarr;</a>
         </div>
         <h1 className="job-detail__tile">{title}</h1>
         <p className="job-detail__copy" dangerouslySetInnerHTML={{ __html: description }}/>
