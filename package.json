@@ -5,7 +5,8 @@
   "author": "Andrew James",
   "license": "MIT",
   "engines": {
-    "node": "10.7.0"
+    "node": "10.7.0",
+    "yarn": "1.7.0"
   },
   "scripts": {
     "build": "webpack --mode production --env production",
