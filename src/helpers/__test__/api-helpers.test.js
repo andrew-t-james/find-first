@@ -1,4 +1,4 @@
-import { githubApiRequest  } from '../api-helpers';
+import { githubApiRequest, githubJobCleaner  } from '../api-helpers';
 
 describe('githubApiRequest', () => {
   const mockGithubResponse = [{
@@ -7,7 +7,8 @@ describe('githubApiRequest', () => {
     description: 'Description',
     type: 'Full Time',
     url: 'https://some-url-here',
-    company_logo: 'https://some-url-here'
+    company_logo: 'https://some-url-here',
+    company: 'Some Name'
   }];
 
   const mockCleanedJobs = [{
@@ -16,7 +17,8 @@ describe('githubApiRequest', () => {
     description: 'Description',
     type: 'Full Time',
     url: 'https://some-url-here',
-    image: 'https://some-url-here'
+    image: 'https://some-url-here',
+    company: 'Some Name'
   }];
 
   test('should call fetch', async () => {
@@ -47,6 +49,14 @@ describe('githubApiRequest', () => {
 
     const result = await githubApiRequest();
     expect(result).toEqual(mockCleanedJobs);
+  });
+
+  describe('githubJobCleaner', () => {
+    test('should return cleaned data', () => {
+      const result = githubJobCleaner(mockGithubResponse);
+      expect(result).toEqual(mockCleanedJobs);
+    });
+
   });
 
 });

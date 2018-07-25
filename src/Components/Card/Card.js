@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = ({ title, location, type, image }) => {
+const Card = ({ title, location, company, type }) => {
   return (
     <div className="card">
-      <h2>{title}</h2>
-      <img src={image} style={{height: '3rem', width: '3rem'}}/>
-      <p>{location}</p>
-      <p>{type}</p>
+      <header className="card__header">
+        <h2 className="card__company">{company}</h2>
+        <p className="card__type">{type}</p>
+      </header>
+      <h3 className="card__title">{title}</h3>
+      <p className="card__location">{location}</p>
     </div>
   );
 };
@@ -15,5 +17,8 @@ const Card = ({ title, location, type, image }) => {
 export default Card;
 
 Card.propTypes = {
-
+  title: PropTypes.string,
+  location: PropTypes.string,
+  company: PropTypes.string,
+  type: PropTypes.string
 };

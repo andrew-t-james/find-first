@@ -1,13 +1,12 @@
-const githubJobCleaner = jobs => {
-  // const regex = /(&nbsp;|<([^>]+)>)/ig;
-
+export const githubJobCleaner = jobs => {
   return jobs.map(job => ({
     title: job.title,
     location: job.location,
     description: job.description,
     type: job.type,
     url: job.url,
-    image: job.company_logo
+    image: job.company_logo,
+    company: job.company
   }));
 };
 
