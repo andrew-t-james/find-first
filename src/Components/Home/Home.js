@@ -4,22 +4,12 @@ import { connect } from 'react-redux';
 import SignIn from '../SignIn/SignIn';
 import PropTypes from 'prop-types';
 import SlideMenu from 'react-slide-menu';
-
 import { toggleMenu } from '../../Actions/menu';
-import { githubJobsAction } from '../../Actions/github';
-
 import { nav } from '../../helpers/nav';
-import { githubApiRequest } from '../../helpers/api-helpers';
 
 import menuIcon from '../../images/menu.svg';
 
 export class Home extends Component {
-  componentDidMount = async () => {
-    // TODO Add try catch for error handling here
-    const githubJobListings = await githubApiRequest();
-    this.props.githubJobs(githubJobListings);
-  }
-
   render() {
     const { slideMenuActive, toggleMenu } = this.props;
 
@@ -49,14 +39,12 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  toggleMenu: () => dispatch(toggleMenu()),
-  githubJobs: jobs => dispatch(githubJobsAction(jobs))
+  toggleMenu: () => dispatch(toggleMenu())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 Home.propTypes = {
   toggleMenu: PropTypes.func,
-  githubJobs: PropTypes.func,
   slideMenuActive: PropTypes.bool
 };

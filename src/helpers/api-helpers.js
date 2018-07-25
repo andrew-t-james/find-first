@@ -1,5 +1,5 @@
 const githubJobCleaner = jobs => {
-  const regex = /(&nbsp;|<([^>]+)>)/ig;
+  // const regex = /(&nbsp;|<([^>]+)>)/ig;
 
   return jobs.map(job => ({
     title: job.title,

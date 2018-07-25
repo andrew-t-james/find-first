@@ -1,3 +1,4 @@
+
 export const googleLogin = (authProvider, loginAction) => {
   return async dispatch => {
     const newUser = await authProvider();
