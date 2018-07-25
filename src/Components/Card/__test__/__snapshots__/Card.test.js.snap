@@ -7,14 +7,14 @@ exports[`<Card /> should match snapshot 1`] = `
   <header
     className="card__header"
   >
-    <img
-      className="card__image"
+    <h2
+      className="card__company"
     />
     <p
       className="card__type"
     />
   </header>
-  <h2
+  <h3
     className="card__title"
   />
   <p
