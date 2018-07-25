@@ -6,7 +6,8 @@ export const githubJobCleaner = jobs => {
     type: job.type,
     url: job.url,
     image: job.company_logo,
-    company: job.company
+    company: job.company,
+    id: Math.floor(Math.random() * 100000 + 1)
   }));
 };
 

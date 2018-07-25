@@ -4,17 +4,29 @@ exports[`<CardContainer /> should match snapshot 1`] = `
 <section
   className="cards-section"
 >
-  <Card
-    id={1}
-    key="A dope dev job"
-    location="remote"
-    title="A dope dev job"
-  />
-  <Card
-    id={2}
-    key="Another dope dev job"
-    location="remote"
-    title="Another dope dev job"
-  />
+  <Link
+    key="1"
+    replace={false}
+    to="/job/1"
+  >
+    <Card
+      id={1}
+      key="1"
+      location="remote"
+      title="A dope dev job"
+    />
+  </Link>
+  <Link
+    key="2"
+    replace={false}
+    to="/job/2"
+  >
+    <Card
+      id={2}
+      key="2"
+      location="remote"
+      title="Another dope dev job"
+    />
+  </Link>
 </section>
 `;

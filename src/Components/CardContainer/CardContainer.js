@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 
 export const CardContainer = ({ githubJobs }) => {
-  const renderJobs = githubJobs.map(job => <Card {...job} key={job.title}/>);
+  const renderJobs = githubJobs.map(job =>
+    <Link to={`/job/${job.id}`} key={job.id} >
+      <Card {...job} key={job.id}/>
+    </Link>
+  );
 
   return (
     <section className="cards-section">

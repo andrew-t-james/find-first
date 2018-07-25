@@ -17,8 +17,13 @@ exports[`<Card /> should match snapshot 1`] = `
   <h3
     className="card__title"
   />
-  <p
-    className="card__location"
-  />
+  <footer
+    className="card__footer"
+  >
+    <img />
+    <p
+      className="card__location"
+    />
+  </footer>
 </div>
 `;

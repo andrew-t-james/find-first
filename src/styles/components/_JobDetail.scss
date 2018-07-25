@@ -1,0 +1,48 @@
+.job-detail {
+  h1,h2,h3,h4,h5,h6 {
+    color: var(--primary-font)
+  }
+
+  &__header {
+    background: var(--primary-dark-background);
+    height: 10rem;
+  }
+
+  &__image {
+    max-height: 5rem;
+  }
+
+  &--buttons {
+    margin: 2rem 0;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & a {
+      color: var(--primary-font);
+      padding: 1rem 2rem;
+      transition: all .2s ease-in;
+
+      &:hover {
+        background: #eef2f6;
+      }
+    }
+  }
+}
+
+.job-detail-container {
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 3rem;
+  background: var(--primary-background);
+  padding: 2rem 3rem;
+
+  * {
+    margin-bottom: 2rem;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+}
