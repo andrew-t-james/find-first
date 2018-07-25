@@ -24,6 +24,31 @@ describe('<Dashboard />', () => {
     expect(mockGithubJobs).toHaveBeenCalled();
   });
 
+  describe('mapStateToProps', () => {
+    test('should map githubJobs to props', () => {
+      const mockState = {
+        githubJobs: [
+          {
+            id: 1,
+            title: 'Dev'
+          }
+        ]
+      };
+
+      const expectedState = {
+        jobs: [
+          {
+            id: 1,
+            title: 'Dev'
+          }
+        ]
+      };
+
+      const mappedProps = mapStateToProps(mockState);
+      expect(mappedProps).toEqual(expectedState);
+    });
+  });
+
   describe('mapDispatchToProps', () => {
     test('should call dispatch when gitHubJobs is called', () => {
       const mockDispatch = jest.fn();

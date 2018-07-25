@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import { connect } from 'react-redux';
 import CardContainer from '../CardContainer/CardContainer';
 import Footer from '../Footer/Footer';
+import Loader from '../Loader/Loader';
 import PropTypes from 'prop-types';
 import { githubJobsThunk } from '../../thunks/jobListings';
 
@@ -19,13 +20,22 @@ export class Dashboard extends Component {
   }
 
   render() {
+    const { isLoading } = this.props;
+
     return (
       <div className="grid-container">
         <Header />
         <main className="content">
           <section className="cards-container">
             <Search />
-            <CardContainer />
+            {isLoading
+              ?
+              <div className="loader-container">
+                <Loader />
+              </div>
+              :
+              <CardContainer />
+            }
           </section>
         </main>
         <Footer />
@@ -35,7 +45,8 @@ export class Dashboard extends Component {
 }
 
 export const mapStateToProps = state => ({
-  jobs: state.githubJobs
+  jobs: state.githubJobs,
+  isLoading: state.isLoading
 });
 
 export const mapDispatchToProps = dispatch => ({
