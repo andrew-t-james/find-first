@@ -1,7 +1,4 @@
-export const isLoading = () => ({
-  type: 'LOADING'
-});
-
-export const notLoading = () => ({
-  type: 'NOT_LOADING'
+export const isLoadingAction = bool => ({
+  type: 'IS_LOADING',
+  isLoading: bool
 });

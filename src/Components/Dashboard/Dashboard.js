@@ -20,7 +20,8 @@ export class Dashboard extends Component {
   }
 
   render() {
-    const isLoading = true;
+    const { isLoading } = this.props;
+
     return (
       <div className="grid-container">
         <Header />
@@ -44,7 +45,8 @@ export class Dashboard extends Component {
 }
 
 export const mapStateToProps = state => ({
-  jobs: state.githubJobs
+  jobs: state.githubJobs,
+  isLoading: state.isLoading
 });
 
 export const mapDispatchToProps = dispatch => ({
