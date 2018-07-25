@@ -1,0 +1,271 @@
+:root {
+  --primary-font: #424949;
+  --primary-dark-background: #1e90ff;
+  --primary-background: #F8F8FB;
+  --primary-light-background: #EAECEE;
+  --border-radius: 2px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background: var(--primary-light-background);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.6rem; }
+
+button {
+  cursor: pointer;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit; }
+
+button:disabled {
+  cursor: default; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "header header header header" "content content content content" "footer footer footer footer";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 8rem 1fr 6rem;
+  height: 100%; }
+
+.header {
+  grid-area: header; }
+
+.content {
+  grid-area: content;
+  height: 100%;
+  overflow-y: scroll; }
+
+.footer {
+  grid-area: footer; }
+
+@media screen and (min-width: 1296px) {
+  .grid-container {
+    display: grid;
+    grid-template-areas: "header header header header header" "footer content content content content";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 80px 1fr;
+    height: 100%; }
+  .header {
+    grid-area: header; }
+  .content {
+    grid-area: content;
+    height: calc(100vh - 8rem); }
+  .footer {
+    grid-area: footer; } }
+
+.home {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "logo-section logo-section logo-section logo-section" "logo-section logo-section logo-section logo-section";
+  position: relative; }
+  .home__menu--icon {
+    height: 8rem;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0; }
+
+.logo-section {
+  grid-area: logo-section;
+  background: var(--primary-dark-background);
+  height: 100vh; }
+
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--primary-dark-background); }
+
+@media screen and (min-width: 1024px) {
+  .home {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "logo-section logo-section login-section login-section" "logo-section logo-section login-section login-section" "logo-section logo-section login-section login-section"; }
+  .logo-section {
+    grid-area: logo-section; }
+  .login-section {
+    grid-area: login-section; }
+  .logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; } }
+
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--primary-background);
+  border-radius: 3px;
+  padding: 3rem 4rem; }
+
+.auth-button {
+  color: var(--primary-light-background);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20rem;
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius);
+  font-size: 1.9rem; }
+
+.google {
+  background: #e74c3c; }
+
+.twitter {
+  background: #69ABE9; }
+
+.facebook {
+  background: #3742fa; }
+
+.github {
+  background: #34495e; }
+
+@media screen and (min-width: 1024px) {
+  .sign-in {
+    padding: 7rem 6rem; } }
+
+.cards-container {
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 3rem;
+  min-height: calc(100vh - 20rem); }
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 40rem); }
+
+.cards-section {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  grid-column-gap: 3rem;
+  grid-row-gap: 2rem;
+  margin-bottom: 3rem; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  background: #fff;
+  margin: 0;
+  color: #47596b;
+  font-family: monospace;
+  border-radius: .5em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all ease-in-out .2s;
+  cursor: pointer; }
+
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08); }
+
+.card__image {
+  height: 5rem;
+  width: 6rem; }
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  align-items: center; }
+
+.card__title {
+  margin-bottom: 1rem; }
+
+.card__location {
+  text-align: right; }
+
+.content {
+  background: var(--primary-background);
+  color: var(--primary-font); }
+
+@media screen and (min-width: 1296px) {
+  .content {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 90%; } }
+
+.header {
+  background: var(--primary-dark-background); }
+
+@media screen and (min-width: 1296px) {
+  .header {
+    height: 35rem; } }
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 0; }
+
+.search__input {
+  border: 0;
+  box-shadow: 0 1.5rem 3rem rgba(50, 50, 93, 0.1), 0 0.5rem 1.5rem rgba(0, 0, 0, 0.07);
+  display: block;
+  font-size: 1.3rem;
+  max-width: 100%;
+  padding: 2rem;
+  width: 25rem;
+  border-radius: 4px; }
+  .search__input input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset; }
+
+@media screen and (min-width: 600px) {
+  .search__input {
+    width: 45rem; } }
+
+@media screen and (min-width: 800px) {
+  .search__input {
+    width: 50rem; } }
+
+@media screen and (min-width: 1296px) {
+  .search__input {
+    width: 60rem; } }
+
+.footer__nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none; }
+  .footer__nav--item {
+    cursor: pointer;
+    height: 100%;
+    padding: 2rem 0;
+    text-align: center;
+    width: 100%; }
+    .footer__nav--item a {
+      text-decoration: none; }
+
+.active {
+  font-weight: 800; }
+
+@media screen and (min-width: 1296px) {
+  .footer {
+    margin-top: calc(100vh - 66rem); } }
+
+
+/*# sourceMappingURL=main.a88ef31b9f11bf04165f.css.map*/
