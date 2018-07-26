@@ -4,8 +4,8 @@ import Card from '../Card/Card';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export const CardContainer = ({ githubJobs }) => {
-  const renderJobs = githubJobs.map(job =>
+export const CardContainer = ({ jobs }) => {
+  const renderJobs = jobs.map(job =>
     <Link to={`/job/${job.id}`} key={job.id} >
       <Card {...job} key={job.id}/>
     </Link>
@@ -13,17 +13,13 @@ export const CardContainer = ({ githubJobs }) => {
 
   return (
     <section className="cards-section">
-      {githubJobs.length ? renderJobs : null}
+      {jobs.length ? renderJobs : null}
     </section>
   );
 };
 
-export const mapStateToProps = state => ({
-  githubJobs: state.githubJobs
-});
-
-export default connect(mapStateToProps)(CardContainer);
+export default CardContainer;
 
 CardContainer.propTypes = {
-  githubJobs: PropTypes.arrayOf(PropTypes.object)
+  jobs: PropTypes.arrayOf(PropTypes.object)
 };

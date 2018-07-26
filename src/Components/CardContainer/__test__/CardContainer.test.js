@@ -16,22 +16,9 @@ describe('<CardContainer />', () => {
     }
   ];
 
-  beforeEach(() => wrapper = shallow(<CardContainer githubJobs={mockJobs} />));
+  beforeEach(() => wrapper = shallow(<CardContainer jobs={mockJobs} />));
 
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
-
-  describe('mapStateToProps', () => {
-    const mockState = {
-      githubJobs: mockJobs
-    };
-    const expectedState = {
-      githubJobs: mockJobs
-    };
-
-    const mappedProps = mapStateToProps(mockState);
-    expect(mappedProps).toEqual(expectedState);
-  });
-
 });
