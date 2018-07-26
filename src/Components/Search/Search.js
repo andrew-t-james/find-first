@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 export class Search extends Component {
   constructor() {
@@ -12,6 +13,8 @@ export class Search extends Component {
   handleUpdate = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
+
+    this.props.filterJobs(value);
   }
 
   render() {
@@ -32,4 +35,12 @@ export class Search extends Component {
   }
 }
 
-export default Search;
+export const mapStateToProps = state => ({
+  jobs: state.githubJobs
+});
+
+export const mapDispatchToProps = dispatch => ({
+  filterJobs: value => dispatch(filterJobs(value))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

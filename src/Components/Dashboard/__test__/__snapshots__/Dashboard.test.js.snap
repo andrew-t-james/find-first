@@ -11,8 +11,21 @@ exports[`<Dashboard /> should match snapshot 1`] = `
     <section
       className="cards-container"
     >
-      <Search />
-      <Connect(CardContainer) />
+      <div
+        className="search"
+      >
+        <input
+          className="search__input"
+          name="query"
+          onChange={[Function]}
+          placeholder="Search Jobs"
+          type="text"
+          value=""
+        />
+      </div>
+      <CardContainer
+        jobs={Array []}
+      />
     </section>
   </main>
   <Footer />

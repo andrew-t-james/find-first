@@ -4,8 +4,23 @@ import { Search } from '../Search';
 
 describe('<Search />', () => {
   let wrapper;
+  const mockFilter = jest.fn();
+  const mockJobs = [
+    {
+      title: 'title',
+      id: 1,
+      description: 'description',
+      image: 'url-here'
+    },
+    {
+      title: 'title',
+      id: 2,
+      description: 'description',
+      image: 'url-here'
+    }
+  ];
 
-  beforeEach(() => wrapper = shallow(<Search />));
+  beforeEach(() => wrapper = shallow(<Search filterJobs={mockFilter} jobs={mockJobs}/>));
 
   describe('handleUpdate', () => {
     test('should update state onChange', () => {
