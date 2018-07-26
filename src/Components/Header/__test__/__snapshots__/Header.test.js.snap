@@ -7,5 +7,19 @@ exports[`<Header /> should match snapshot 1`] = `
   <h1>
     header
   </h1>
+  <div
+    className="user-info"
+  >
+    <h2
+      className="user-info__heading"
+    >
+      Joben
+    </h2>
+    <img
+      alt="Joben"
+      className="user-info__image"
+      src="some-url-here"
+    />
+  </div>
 </div>
 `;

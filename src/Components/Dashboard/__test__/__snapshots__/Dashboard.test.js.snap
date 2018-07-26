@@ -4,7 +4,7 @@ exports[`<Dashboard /> should match snapshot 1`] = `
 <div
   className="grid-container"
 >
-  <Header />
+  <Connect(Header) />
   <main
     className="content"
   >
