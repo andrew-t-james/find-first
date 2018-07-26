@@ -36,7 +36,7 @@ export class Dashboard extends Component {
 
   filterJobs = value => {
     const { jobs } = this.state;
-    const filteredJobs = this.props.jobs.filter(job => job.title.toLowerCase().indexOf(value.toLowerCase()) > -1);
+    const filteredJobs = this.props.jobs.filter(job => job.title.toLowerCase().includes(value.toLowerCase()));
     this.setState({ jobs: filteredJobs });
   }
 
