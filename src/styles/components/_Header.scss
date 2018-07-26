@@ -2,6 +2,27 @@
   background: var(--primary-dark-background);
 }
 
+.user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 18%;
+
+  &__heading {
+    font-weight: 100;
+    font-size: 2.9rem;
+    color: var(--primary-background);
+    margin: 2rem 0;
+  }
+
+  &__image {
+    height: 5rem;
+    border-radius: 50%;
+    border: 2px solid var(--primary-light-background);
+  }
+}
+
 @media screen and (min-width: 1296px) {
   .header {
     height: 35rem;
