@@ -23,8 +23,8 @@ exports[`<Dashboard /> should match snapshot 1`] = `
           value=""
         />
       </div>
-      <Route
-        component={[Function]}
+      <CardContainer
+        jobs={Array []}
       />
     </section>
   </main>
