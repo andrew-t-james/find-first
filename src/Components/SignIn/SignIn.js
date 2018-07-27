@@ -30,46 +30,45 @@ export class SignIn extends Component {
         reactRouter={true}
       >
         <section className="login-section">
-          <div
-            className="home__menu"
-            onClick={toggleMenu}
-          >
-            <img className="home__menu--icon" src={menuIcon}/>
+          <div class={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
+            <div class="line-menu half start"></div>
+            <div class="line-menu"></div>
+            <div class="line-menu half end"></div>
           </div>
           <div className="sign-in">
             <button
               className="google auth-button"
               onClick={() => this.handleLogin(googleOAuthLogin, googleSignInAction)}
             >
-          Google
+              Google
               <i className="fab fa-google"></i>
             </button>
             <button
               className="github auth-button"
               onClick={() => this.handleLogin(githubOAuthLogin, githubLoginAction)}
             >
-          GitHub
+              GitHub
               <i className="fab fa-github"></i>
             </button>
             <button
               className="twitter auth-button"
               onClick={() => this.handleLogin(twitterOAuthLogin, twitterLoginAction)}
             >
-          Twitter
+              Twitter
               <i className="fab fa-twitter"></i>
             </button>
             <button
               className="facebook auth-button"
               onClick={() => this.handleLogin(facebookOAuthLogin, facebookLoginAction)}
             >
-          Facebook
+              Facebook
               <i className="fab fa-facebook"></i>
             </button>
             <button
               className="sign-out"
               onClick={() => this.handleSignOut(logout, googleSignOutAction)}
             >
-         Sign Out
+              Sign Out
             </button>
           </div>
         </section>

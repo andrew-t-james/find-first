@@ -1,3 +1,4 @@
+import { Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import Card from '../Card/Card';
 import Header from '../Header/Header';
@@ -65,7 +66,7 @@ export class Dashboard extends Component {
                 <Loader />
               </div>
               :
-              <CardContainer jobs={jobs} />
+              <Route component={() => <CardContainer jobs={jobs} />} />
             }
           </section>
         </main>

@@ -7,42 +7,52 @@ exports[`<Footer /> should match snapshot 1`] = `
   <ul
     className="footer__nav"
   >
-    <li
-      className="footer__nav--item active"
-    >
-      <a
-        href=""
-      >
-        navigation
-      </a>
-    </li>
-    <li
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
       className="footer__nav--item"
+      exact={true}
+      to="/dashboard"
     >
-      <a
-        href=""
-      >
-        navigation
-      </a>
-    </li>
-    <li
+      <i
+        className="far fa-clone"
+      />
+      Dashboard
+    </NavLink>
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
       className="footer__nav--item"
+      exact={true}
+      to="/"
     >
-      <a
-        href=""
-      >
-        navigation
-      </a>
-    </li>
-    <li
+      <i
+        className="far fa-user-circle"
+      />
+      Home
+    </NavLink>
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
       className="footer__nav--item"
+      exact={true}
+      to="/sign-in"
     >
-      <a
-        href=""
-      >
-        navigation
-      </a>
-    </li>
+      <i
+        className="fas fa-sign-in-alt"
+      />
+      Sign In
+    </NavLink>
+    <button
+      className="footer__nav--item"
+      exact={true}
+      to="/"
+    >
+      <i
+        className="far fa-times-circle"
+      />
+      Sign Out
+    </button>
   </ul>
 </footer>
 `;

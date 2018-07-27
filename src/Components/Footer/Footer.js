@@ -7,19 +7,19 @@ const Footer = () => {
     <footer className="footer">
       <ul className="footer__nav">
         <NavLink className="footer__nav--item" exact to="/dashboard">
-          <i class="far fa-clone"></i>
+          <i className="far fa-clone"></i>
           Dashboard
         </NavLink>
         <NavLink className="footer__nav--item" exact to="/">
-          <i class="far fa-user-circle"></i>
+          <i className="far fa-user-circle"></i>
           Home
         </NavLink>
         <NavLink className="footer__nav--item" exact to="/sign-in">
-          <i class="fas fa-sign-in-alt"></i>
+          <i className="fas fa-sign-in-alt"></i>
           Sign In
         </NavLink>
         <button className="footer__nav--item" exact to="/">
-          <i class="far fa-times-circle"></i>
+          <i className="far fa-times-circle"></i>
           Sign Out
         </button>
       </ul>

@@ -8,6 +8,7 @@ import { toggleMenu } from '../../Actions/menu';
 import { nav } from '../../helpers/nav';
 
 import menuIcon from '../../images/menu.svg';
+import logo from '../../images/compass-regular.svg';
 
 export class Home extends Component {
   render() {
@@ -21,12 +22,18 @@ export class Home extends Component {
       >
         <section className="home">
           <div className="logo-section">
-            <div
-              className="home__menu--icon"
-              onClick={toggleMenu}
-            >
-              <img className="home__menu--icon" src={menuIcon}/>
+            <div class={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
+              <div class="line-menu half start"></div>
+              <div class="line-menu"></div>
+              <div class="line-menu half end"></div>
             </div>
+            <div className="logo">
+              <img src={logo} alt="Find First Logo"/>
+              <h1>Find First</h1>
+            </div>
+          </div>
+          <div>
+            <h1>Find First</h1>
           </div>
         </section>
       </SlideMenu>
