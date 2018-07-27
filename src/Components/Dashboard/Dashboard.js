@@ -66,7 +66,7 @@ export class Dashboard extends Component {
                 <Loader />
               </div>
               :
-              <Route component={() => <CardContainer jobs={jobs} />} />
+              <CardContainer jobs={jobs} />
             }
           </section>
         </main>

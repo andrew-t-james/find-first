@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
+import { Router, Route, Switch, withRouter } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 import { connect } from 'react-redux';
 
 import Home from '../Components/Home/Home';
@@ -7,9 +8,10 @@ import Dashboard from '../Components/Dashboard/Dashboard';
 import SignIn from '../Components/SignIn/SignIn';
 import JobDetail from '../Components/JobDetail/JobDetail';
 
+export const history = createHistory();
 
 export const AppRouter = ({ jobs }) => (
-  <BrowserRouter>
+  <Router history={history}>
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/dashboard" exact component={Dashboard} />
@@ -23,7 +25,7 @@ export const AppRouter = ({ jobs }) => (
         );
       }} />
     </Switch>
-  </BrowserRouter>
+  </Router>
 );
 
 const mapStateToProps = state => ({
