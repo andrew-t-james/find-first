@@ -7,7 +7,6 @@ export const Header = ({ user }) => {
 
   return (
     <div className="header">
-      <h1>header</h1>
       {user.name &&
          <div className="user-info">
            <h2 className="user-info__heading">{user.name}</h2>
