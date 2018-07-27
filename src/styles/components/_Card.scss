@@ -35,6 +35,7 @@
   transition: all ease-in-out .2s;
   cursor: pointer;
   min-height: 15rem;
+  animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
   &__header {
     display: flex;
@@ -73,4 +74,18 @@
 .card
 .card__company {
   font-weight: 800;
+}
+
+@keyframes slide-top {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

@@ -1,9 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Loader /> should match snapshot 1`] = `
-<BounceLoader
+<ScaleLoader
   color="#1e90ff"
+  height="4rem"
   loading={true}
-  size="8rem"
+  margin="2px"
+  radius="2px"
+  width="4px"
 />
 `;

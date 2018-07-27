@@ -17,11 +17,9 @@ export const AppRouter = ({ jobs }) => (
       <Route path="/dashboard" exact component={Dashboard} />
       <Route path="/sign-in" exact component={SignIn} />
       <Route path="/job/:id" render={({ match }) => {
-        const job = jobs.find(job => job.id === Number(match.params.id));
+        const job = jobs.find(job => job.id === match.params.id);
         return (
-          <div>
-            <JobDetail {...job}/>
-          </div>
+          <JobDetail {...job}/>
         );
       }} />
     </Switch>
