@@ -16,6 +16,6 @@ exports[`<JobsContainer /> should match snapshot 1`] = `
       </h1>
     </section>
   </main>
-  <Footer />
+  <Connect(Footer) />
 </div>
 `;

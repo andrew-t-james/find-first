@@ -79,12 +79,6 @@ exports[`<SignIn /> should match snapshot 1`] = `
           className="fab fa-facebook"
         />
       </button>
-      <button
-        className="sign-out"
-        onClick={[Function]}
-      >
-        Sign Out
-      </button>
     </div>
   </section>
 </e>

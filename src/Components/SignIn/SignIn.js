@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SlideMenu from 'react-slide-menu';
-import { googleSignInAction, googleSignOutAction, githubLoginAction, twitterLoginAction, facebookLoginAction } from '../../Actions/auth';
-import { googleOAuthLogin, githubOAuthLogin, logout, twitterOAuthLogin, facebookOAuthLogin } from '../../firebase/firebase';
-import { googleLogin, googleLogout } from '../../thunks/auth';
+import { googleSignInAction, githubLoginAction, twitterLoginAction, facebookLoginAction } from '../../Actions/auth';
+import { googleOAuthLogin, githubOAuthLogin, twitterOAuthLogin, facebookOAuthLogin } from '../../firebase/firebase';
+import { googleLogin } from '../../thunks/auth';
 
 import { toggleMenu } from '../../Actions/menu';
 import { nav } from '../../helpers/nav';
@@ -14,10 +14,6 @@ import menuIcon from '../../images/menu.svg';
 export class SignIn extends Component {
   handleLogin = (authProvider, loginAction) => {
     this.props.googleLogin(authProvider, loginAction);
-  }
-
-  handleSignOut = (authLogOut, logOutAction) => {
-    this.props.googleLogout(authLogOut, logOutAction);
   }
 
   render() {
@@ -64,12 +60,6 @@ export class SignIn extends Component {
               Facebook
               <i className="fab fa-facebook"></i>
             </button>
-            <button
-              className="sign-out"
-              onClick={() => this.handleSignOut(logout, googleSignOutAction)}
-            >
-              Sign Out
-            </button>
           </div>
         </section>
       </SlideMenu>
@@ -83,7 +73,6 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   googleLogin: (authProvider, loginAction) => dispatch(googleLogin(authProvider, loginAction)),
-  googleLogout: (authLogout, logOutAction) => dispatch(googleLogout(authLogout, logOutAction)),
   toggleMenu: () => dispatch(toggleMenu())
 });
 

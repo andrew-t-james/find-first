@@ -44,8 +44,9 @@ exports[`<Footer /> should match snapshot 1`] = `
       Sign In
     </NavLink>
     <button
-      className="footer__nav--item"
+      className="footer__nav--item sign-out"
       exact={true}
+      onClick={[Function]}
       to="/"
     >
       <i

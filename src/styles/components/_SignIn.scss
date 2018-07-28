@@ -14,9 +14,12 @@
   justify-content: space-between;
   align-items: center;
   width: 20rem;
-  margin-bottom: 2rem;
   border-radius: var(--border-radius);
   font-size: 1.9rem;
+}
+
+.auth-button:not(:last-of-type) {
+  margin-bottom: 2rem;
 }
 
 .google {
@@ -38,6 +41,6 @@
 
 @media screen and (min-width: 1024px) {
   .sign-in {
-    padding: 7rem 6rem;
+    padding: 4rem 4rem;
   }
 }

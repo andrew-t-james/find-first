@@ -1,8 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { googleLogout } from '../../thunks/auth';
+import { logout } from '../../firebase/firebase';
+import { googleSignOutAction } from '../../Actions/auth';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-const Footer = () => {
+export const Footer = ({ googleLogout }) => {
   return (
     <footer className="footer">
       <ul className="footer__nav">
@@ -12,13 +16,16 @@ const Footer = () => {
         </NavLink>
         <NavLink className="footer__nav--item" exact to="/sign-up">
           <i className="far fa-user-circle"></i>
-          Home
+          My Jobs
         </NavLink>
         <NavLink className="footer__nav--item" exact to="/sign-in">
           <i className="fas fa-sign-in-alt"></i>
           Sign In
         </NavLink>
-        <button className="footer__nav--item" exact to="/">
+        <button
+          onClick={() => googleLogout(logout, googleSignOutAction)}
+          className="footer__nav--item sign-out" exact to="/"
+        >
           <i className="far fa-times-circle"></i>
           Sign Out
         </button>
@@ -27,8 +34,13 @@ const Footer = () => {
   );
 };
 
+
+export const mapDispatchToProps = dispatch => ({
+  googleLogout: (authLogout, logOutAction) => dispatch(googleLogout(authLogout, logOutAction))
+});
+
+export default connect(null, mapDispatchToProps)(Footer);
+
 Footer.propTypes = {
 
 };
-
-export default Footer;

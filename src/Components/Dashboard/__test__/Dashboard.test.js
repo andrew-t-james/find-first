@@ -3,6 +3,8 @@ import { shallow } from 'enzyme';
 import { Dashboard, mapDispatchToProps, mapStateToProps } from '../Dashboard';
 import { githubJobsAction } from '../../../Actions/github';
 
+jest.mock('../../../firebase/firebase.js');
+
 describe('<Dashboard />', () => {
   let wrapper;
   const mockGithubJobs = jest.fn();

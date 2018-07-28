@@ -22,10 +22,10 @@ export class Home extends Component {
       >
         <section className="home">
           <div className="logo-section">
-            <div class={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
-              <div class="line-menu half start"></div>
-              <div class="line-menu"></div>
-              <div class="line-menu half end"></div>
+            <div className={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
+              <div className="line-menu half start"></div>
+              <div className="line-menu"></div>
+              <div className="line-menu half end"></div>
             </div>
             <div className="logo">
               <img src={logo} alt="Find First Logo"/>
