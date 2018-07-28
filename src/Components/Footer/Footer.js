@@ -24,7 +24,7 @@ export const Footer = ({ googleLogout }) => {
         </NavLink>
         <button
           onClick={() => googleLogout(logout, googleSignOutAction)}
-          className="footer__nav--item sign-out" exact to="/"
+          className="footer__nav--item sign-out"
         >
           <i className="far fa-times-circle"></i>
           Sign Out

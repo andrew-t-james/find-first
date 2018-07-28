@@ -27,14 +27,14 @@ export class SignIn extends Component {
       >
         <section className="login-section">
           <div className="logo sign-in__logo">
-            <h1 class="logo__forward">F</h1>
-            <h1 class="logo__backward">F</h1>
+            <h1 className="logo__forward">F</h1>
+            <h1 className="logo__backward">F</h1>
           </div>
           <div>
             <div class={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
-              <div class="line-menu half start"></div>
-              <div class="line-menu"></div>
-              <div class="line-menu half end"></div>
+              <div className="line-menu half start"></div>
+              <div className="line-menu"></div>
+              <div className="line-menu half end"></div>
             </div>
             <div className="sign-in">
               <h2 className="sign-in__title">Sing-In</h2>

@@ -28,8 +28,8 @@ export class Home extends Component {
           </div>
           <div className="logo-section">
             <div className="logo">
-              <h1 class="logo__forward">F</h1>
-              <h1 class="logo__backward">F</h1>
+              <h1 className="logo__forward">F</h1>
+              <h1 className="logo__backward">F</h1>
             </div>
             <div className="logo__title">
               <h1>Find<span className="logo__title-thin">First</span></h1>
