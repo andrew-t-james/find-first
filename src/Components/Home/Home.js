@@ -21,19 +21,19 @@ export class Home extends Component {
         reactRouter={true}
       >
         <section className="home">
-          <div className="logo-section">
-            <div className={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
-              <div className="line-menu half start"></div>
-              <div className="line-menu"></div>
-              <div className="line-menu half end"></div>
-            </div>
-            <div className="logo">
-              <img src={logo} alt="Find First Logo"/>
-              <h1>Find First</h1>
-            </div>
+          <div className={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
+            <div className="line-menu half start"></div>
+            <div className="line-menu"></div>
+            <div className="line-menu half end"></div>
           </div>
-          <div>
-            <h1>Find First</h1>
+          <div className="logo-section">
+            <div className="logo">
+              <h1 class="logo__forward">F</h1>
+              <h1 class="logo__backward">F</h1>
+            </div>
+            <div className="logo__title">
+              <h1>Find<span className="logo__title-thin">First</span></h1>
+            </div>
           </div>
         </section>
       </SlideMenu>

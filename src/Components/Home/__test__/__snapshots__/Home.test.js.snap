@@ -27,38 +27,48 @@ exports[`<Home /> should match snapshot 1`] = `
     className="home"
   >
     <div
+      className="home__menu--icon wrapper-menu "
+      onClick={[MockFunction]}
+    >
+      <div
+        className="line-menu half start"
+      />
+      <div
+        className="line-menu"
+      />
+      <div
+        className="line-menu half end"
+      />
+    </div>
+    <div
       className="logo-section"
     >
       <div
-        className="home__menu--icon wrapper-menu "
-        onClick={[MockFunction]}
-      >
-        <div
-          className="line-menu half start"
-        />
-        <div
-          className="line-menu"
-        />
-        <div
-          className="line-menu half end"
-        />
-      </div>
-      <div
         className="logo"
       >
-        <img
-          alt="Find First Logo"
-          src=""
-        />
-        <h1>
-          Find First
+        <h1
+          class="logo__forward"
+        >
+          F
+        </h1>
+        <h1
+          class="logo__backward"
+        >
+          F
         </h1>
       </div>
-    </div>
-    <div>
-      <h1>
-        Find First
-      </h1>
+      <div
+        className="logo__title"
+      >
+        <h1>
+          Find
+          <span
+            className="logo__title-thin"
+          >
+            First
+          </span>
+        </h1>
+      </div>
     </div>
   </section>
 </e>

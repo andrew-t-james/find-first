@@ -29,7 +29,7 @@ exports[`<Footer /> should match snapshot 1`] = `
       <i
         className="far fa-user-circle"
       />
-      Home
+      My Jobs
     </NavLink>
     <NavLink
       activeClassName="active"

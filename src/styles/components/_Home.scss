@@ -19,24 +19,46 @@
   grid-area: logo-section;
   background: var(--primary-dark-background);
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo {
+  border: 6px solid var(--primary-light-background);
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  font-size: 4rem;
+  margin-bottom: 3rem;
+  color: var(--primary-light-background);
 
-  & img {
-    color: var(--primary-font);
+  &__forward,
+  &__backward {
+    font-size: 10rem;
   }
 
-  & h1 {
-    color: var(--primary-light-background);
-    font-weight: 100;
+  &__forward {
+    margin-right: .5rem;
+  }
+
+  &__backward {
+  transform: scale(-1, 1);
+  }
+
+  &__title  {
     text-transform: uppercase;
+    font-size: 4rem;
+    color: var(--primary-background);
+
+    &-thin {
+      font-weight: 100;
+      color: var(--primary-light-background);
+    }
   }
 }
 
@@ -48,39 +70,10 @@
   background: var(--primary-dark-background);
 }
 
-.logo {
-  height: 100vh;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 1024px) {
-  .home {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "logo-section logo-section login-section login-section" "logo-section logo-section login-section login-section" "logo-section logo-section login-section login-section";
-  }
-
-  .logo-section, {
-    grid-area: logo-section;
-  }
-
-  .login-section {
-    grid-area: login-section;
-  }
-
-  .logo-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-}
-
 // MENU bars and Animation
 .wrapper-menu {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -120,4 +113,33 @@
 
 .open .line-menu.end {
   transform: rotate(-90deg) translateX(-3px);
+}
+
+
+@media screen and (min-width: 1024px) {
+  .home {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "logo-section logo-section login-section login-section" "logo-section logo-section login-section login-section" "logo-section logo-section login-section login-section";
+  }
+
+  .logo-section, {
+    grid-area: logo-section;
+  }
+
+  .login-section {
+    grid-area: login-section;
+  }
+
+  .logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .wrapper-menu {
+    width: 40px;
+    height: 40px;
+  }
 }

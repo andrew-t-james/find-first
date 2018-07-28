@@ -42,5 +42,5 @@ export const mapDispatchToProps = dispatch => ({
 export default connect(null, mapDispatchToProps)(Footer);
 
 Footer.propTypes = {
-
+  googleLogout: PropTypes.func
 };
