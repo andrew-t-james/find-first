@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { BounceLoader } from 'halogenium';
+import { ScaleLoader } from 'halogenium';
 
 class Loader extends Component {
   render() {
     return (
-      <BounceLoader color="#1e90ff" size="8rem" />
+      <ScaleLoader color="#1e90ff" height="4rem"  />
     );
   }
 }

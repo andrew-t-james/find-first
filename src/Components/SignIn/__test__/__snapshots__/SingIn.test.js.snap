@@ -27,12 +27,17 @@ exports[`<SignIn /> should match snapshot 1`] = `
     className="login-section"
   >
     <div
-      className="home__menu"
+      class="home__menu--icon wrapper-menu "
       onClick={[MockFunction]}
     >
-      <img
-        className="home__menu--icon"
-        src=""
+      <div
+        class="line-menu half start"
+      />
+      <div
+        class="line-menu"
+      />
+      <div
+        class="line-menu half end"
       />
     </div>
     <div
@@ -73,12 +78,6 @@ exports[`<SignIn /> should match snapshot 1`] = `
         <i
           className="fab fa-facebook"
         />
-      </button>
-      <button
-        className="sign-out"
-        onClick={[Function]}
-      >
-        Sign Out
       </button>
     </div>
   </section>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Card from '../Card/Card';
 import Header from '../Header/Header';
 import { connect } from 'react-redux';

@@ -7,7 +7,7 @@ export const githubJobCleaner = jobs => {
     url: job.url,
     image: job.company_logo,
     company: job.company,
-    id: Math.floor(Math.random() * 100000 + 1)
+    id: job.id
   }));
 };
 

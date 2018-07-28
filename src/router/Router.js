@@ -1,29 +1,31 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
+import { Router, Route, Switch, withRouter } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 import { connect } from 'react-redux';
 
 import Home from '../Components/Home/Home';
 import Dashboard from '../Components/Dashboard/Dashboard';
 import SignIn from '../Components/SignIn/SignIn';
 import JobDetail from '../Components/JobDetail/JobDetail';
+import JobsContainer from '../Components/JobsContainer/JobsContainer';
 
+export const history = createHistory();
 
 export const AppRouter = ({ jobs }) => (
-  <BrowserRouter>
+  <Router history={history}>
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/dashboard" exact component={Dashboard} />
       <Route path="/sign-in" exact component={SignIn} />
+      <Route path="/sign-up" exact component={JobsContainer} />
       <Route path="/job/:id" render={({ match }) => {
-        const job = jobs.find(job => job.id === Number(match.params.id));
+        const job = jobs.find(job => job.id === match.params.id);
         return (
-          <div>
-            <JobDetail {...job}/>
-          </div>
+          <JobDetail {...job}/>
         );
       }} />
     </Switch>
-  </BrowserRouter>
+  </Router>
 );
 
 const mapStateToProps = state => ({

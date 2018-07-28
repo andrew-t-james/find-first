@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SlideMenu from 'react-slide-menu';
-import { googleSignInAction, googleSignOutAction, githubLoginAction, twitterLoginAction, facebookLoginAction } from '../../Actions/auth';
-import { googleOAuthLogin, githubOAuthLogin, logout, twitterOAuthLogin, facebookOAuthLogin } from '../../firebase/firebase';
-import { googleLogin, googleLogout } from '../../thunks/auth';
+import { googleSignInAction, githubLoginAction, twitterLoginAction, facebookLoginAction } from '../../Actions/auth';
+import { googleOAuthLogin, githubOAuthLogin, twitterOAuthLogin, facebookOAuthLogin } from '../../firebase/firebase';
+import { googleLogin } from '../../thunks/auth';
 
 import { toggleMenu } from '../../Actions/menu';
 import { nav } from '../../helpers/nav';
@@ -14,10 +14,6 @@ import menuIcon from '../../images/menu.svg';
 export class SignIn extends Component {
   handleLogin = (authProvider, loginAction) => {
     this.props.googleLogin(authProvider, loginAction);
-  }
-
-  handleSignOut = (authLogOut, logOutAction) => {
-    this.props.googleLogout(authLogOut, logOutAction);
   }
 
   render() {
@@ -30,46 +26,39 @@ export class SignIn extends Component {
         reactRouter={true}
       >
         <section className="login-section">
-          <div
-            className="home__menu"
-            onClick={toggleMenu}
-          >
-            <img className="home__menu--icon" src={menuIcon}/>
+          <div class={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
+            <div class="line-menu half start"></div>
+            <div class="line-menu"></div>
+            <div class="line-menu half end"></div>
           </div>
           <div className="sign-in">
             <button
               className="google auth-button"
               onClick={() => this.handleLogin(googleOAuthLogin, googleSignInAction)}
             >
-          Google
+              Google
               <i className="fab fa-google"></i>
             </button>
             <button
               className="github auth-button"
               onClick={() => this.handleLogin(githubOAuthLogin, githubLoginAction)}
             >
-          GitHub
+              GitHub
               <i className="fab fa-github"></i>
             </button>
             <button
               className="twitter auth-button"
               onClick={() => this.handleLogin(twitterOAuthLogin, twitterLoginAction)}
             >
-          Twitter
+              Twitter
               <i className="fab fa-twitter"></i>
             </button>
             <button
               className="facebook auth-button"
               onClick={() => this.handleLogin(facebookOAuthLogin, facebookLoginAction)}
             >
-          Facebook
+              Facebook
               <i className="fab fa-facebook"></i>
-            </button>
-            <button
-              className="sign-out"
-              onClick={() => this.handleSignOut(logout, googleSignOutAction)}
-            >
-         Sign Out
             </button>
           </div>
         </section>
@@ -84,7 +73,6 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   googleLogin: (authProvider, loginAction) => dispatch(googleLogin(authProvider, loginAction)),
-  googleLogout: (authLogout, logOutAction) => dispatch(googleLogout(authLogout, logOutAction)),
   toggleMenu: () => dispatch(toggleMenu())
 });
 

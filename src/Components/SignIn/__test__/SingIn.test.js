@@ -10,13 +10,11 @@ describe('<SignIn />', () => {
   let wrapper;
   const mockGoogleLogin = jest.fn();
   const mockGithubLogin = jest.fn();
-  const mockGoogleSignOut = jest.fn();
   const mockToggleMenu = jest.fn();
 
   beforeEach(() => wrapper = shallow(
     <SignIn
       googleLogin={mockGoogleLogin}
-      googleLogout={mockGoogleSignOut}
       toggleMenu={mockToggleMenu}
     />
   ));
@@ -42,11 +40,6 @@ describe('<SignIn />', () => {
     wrapper.find('.facebook').simulate('click');
 
     expect(mockGoogleLogin).toHaveBeenCalled();
-  });
-  test('should call handleGoogleSignOut onClick', () => {
-    wrapper.find('.sign-out').simulate('click');
-
-    expect(mockGoogleSignOut).toHaveBeenCalled();
   });
 
   test('should match snapshot', () => {
@@ -81,15 +74,6 @@ describe('<SignIn />', () => {
       const actionToDispatch = googleSignInAction(mockUser);
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.googleLogin();
-
-      expect(mockDispatch).toHaveBeenCalled();
-    });
-
-    test('should call dispatch googleLogout is called', () => {
-      const mockDispatch = jest.fn();
-      const actionToDispatch = googleSignOutAction();
-      const mappedProps = mapDispatchToProps(mockDispatch);
-      mappedProps.googleLogout();
 
       expect(mockDispatch).toHaveBeenCalled();
     });
