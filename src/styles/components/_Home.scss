@@ -66,8 +66,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
-  background: var(--primary-dark-background);
+background: var(--primary-dark-background);
 }
 
 // MENU bars and Animation
@@ -126,18 +127,16 @@
 
   .logo-section, {
     grid-area: logo-section;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
   .login-section {
     grid-area: login-section;
   }
 
-  .logo-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
   .wrapper-menu {
     width: 40px;
     height: 40px;

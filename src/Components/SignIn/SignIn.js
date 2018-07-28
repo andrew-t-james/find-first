@@ -26,40 +26,47 @@ export class SignIn extends Component {
         reactRouter={true}
       >
         <section className="login-section">
-          <div class={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
-            <div class="line-menu half start"></div>
-            <div class="line-menu"></div>
-            <div class="line-menu half end"></div>
+          <div className="logo sign-in__logo">
+            <h1 class="logo__forward">F</h1>
+            <h1 class="logo__backward">F</h1>
           </div>
-          <div className="sign-in">
-            <button
-              className="google auth-button"
-              onClick={() => this.handleLogin(googleOAuthLogin, googleSignInAction)}
-            >
+          <div>
+            <div class={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
+              <div class="line-menu half start"></div>
+              <div class="line-menu"></div>
+              <div class="line-menu half end"></div>
+            </div>
+            <div className="sign-in">
+              <h2 className="sign-in__title">Sing-In</h2>
+              <button
+                className="google auth-button"
+                onClick={() => this.handleLogin(googleOAuthLogin, googleSignInAction)}
+              >
               Google
-              <i className="fab fa-google"></i>
-            </button>
-            <button
-              className="github auth-button"
-              onClick={() => this.handleLogin(githubOAuthLogin, githubLoginAction)}
-            >
+                <i className="fab fa-google"></i>
+              </button>
+              <button
+                className="github auth-button"
+                onClick={() => this.handleLogin(githubOAuthLogin, githubLoginAction)}
+              >
               GitHub
-              <i className="fab fa-github"></i>
-            </button>
-            <button
-              className="twitter auth-button"
-              onClick={() => this.handleLogin(twitterOAuthLogin, twitterLoginAction)}
-            >
+                <i className="fab fa-github"></i>
+              </button>
+              <button
+                className="twitter auth-button"
+                onClick={() => this.handleLogin(twitterOAuthLogin, twitterLoginAction)}
+              >
               Twitter
-              <i className="fab fa-twitter"></i>
-            </button>
-            <button
-              className="facebook auth-button"
-              onClick={() => this.handleLogin(facebookOAuthLogin, facebookLoginAction)}
-            >
+                <i className="fab fa-twitter"></i>
+              </button>
+              <button
+                className="facebook auth-button"
+                onClick={() => this.handleLogin(facebookOAuthLogin, facebookLoginAction)}
+              >
               Facebook
-              <i className="fab fa-facebook"></i>
-            </button>
+                <i className="fab fa-facebook"></i>
+              </button>
+            </div>
           </div>
         </section>
       </SlideMenu>
