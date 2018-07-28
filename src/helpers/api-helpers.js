@@ -10,7 +10,6 @@ export const githubJobCleaner = jobs => {
     id: job.id
   }));
 };
-// Math.floor(Math.random() * 100000 + 1)
 
 export const githubApiRequest = async () => {
   const url = 'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?search=code&page=1';

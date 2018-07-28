@@ -10,7 +10,7 @@ const Footer = () => {
           <i className="far fa-clone"></i>
           Dashboard
         </NavLink>
-        <NavLink className="footer__nav--item" exact to="/">
+        <NavLink className="footer__nav--item" exact to="/sign-up">
           <i className="far fa-user-circle"></i>
           Home
         </NavLink>

@@ -7,6 +7,7 @@ import Home from '../Components/Home/Home';
 import Dashboard from '../Components/Dashboard/Dashboard';
 import SignIn from '../Components/SignIn/SignIn';
 import JobDetail from '../Components/JobDetail/JobDetail';
+import JobsContainer from '../Components/JobsContainer/JobsContainer';
 
 export const history = createHistory();
 
@@ -16,6 +17,7 @@ export const AppRouter = ({ jobs }) => (
       <Route path="/" exact component={Home} />
       <Route path="/dashboard" exact component={Dashboard} />
       <Route path="/sign-in" exact component={SignIn} />
+      <Route path="/sign-up" exact component={JobsContainer} />
       <Route path="/job/:id" render={({ match }) => {
         const job = jobs.find(job => job.id === match.params.id);
         return (

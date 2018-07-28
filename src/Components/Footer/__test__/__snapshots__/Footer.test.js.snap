@@ -24,7 +24,7 @@ exports[`<Footer /> should match snapshot 1`] = `
       aria-current="page"
       className="footer__nav--item"
       exact={true}
-      to="/"
+      to="/sign-up"
     >
       <i
         className="far fa-user-circle"
