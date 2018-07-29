@@ -1,9 +1,17 @@
 import React from 'react';
 import { Header } from '../Header/Header';
-import { withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { addJobToFirebase } from '../../thunks/firebase';
 
-export const JobDetail = ({ title, description, url, image }) => {
+export const JobDetail = ({ title, description, url, image, saveJob }) => {
+  const newJob = {
+    title,
+    description,
+    url,
+    image
+  };
+
   return (
     <section className="job-detail">
       <header className="job-detail__header">
@@ -16,11 +24,21 @@ export const JobDetail = ({ title, description, url, image }) => {
           <a href={url} target="_blank" rel="noopener noreferrer" >Apply Here &rarr;</a>
         </div>
         <h1 className="job-detail__tile">{title}</h1>
+        <div className="job-detail__save-job">
+          <button onClick={() => saveJob(newJob)}
+            className="job-detail__save-job--button"
+          >
+            Mark Applied
+          </button>
+        </div>
         <p className="job-detail__copy" dangerouslySetInnerHTML={{ __html: description }}/>
       </section>
     </section>
   );
 };
 
+export const mapDispatchToProps = dispatch => ({
+  saveJob: newJob => dispatch(addJobToFirebase(newJob))
+});
 
-export default withRouter(JobDetail);
+export default connect(null, mapDispatchToProps)(JobDetail);

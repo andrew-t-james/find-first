@@ -20,3 +20,10 @@ export const initializeApp = jest.fn()
 export const logout = jest.fn();
 export const googleOAuthLogin = () => new Promise(resolve => resolve(mockUser));
 export const githubOAuthLogin = () => new Promise(resolve => resolve(mockUser));
+const database = {
+  ref: () => ({
+    push: jest.fn()
+  })
+};
+
+export {database as default};

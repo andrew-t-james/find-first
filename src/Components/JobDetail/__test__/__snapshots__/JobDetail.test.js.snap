@@ -39,6 +39,16 @@ exports[`<JobDetail /> should match snapshot 1`] = `
     >
       Title
     </h1>
+    <div
+      className="job-detail__save-job"
+    >
+      <button
+        className="job-detail__save-job--button"
+        onClick={[Function]}
+      >
+        Mark Applied
+      </button>
+    </div>
     <p
       className="job-detail__copy"
       dangerouslySetInnerHTML={
