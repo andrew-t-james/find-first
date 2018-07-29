@@ -1,6 +1,7 @@
 import { isLoadingAction } from '../../Actions/loader';
 import { addJobToFirebase } from '../firebase';
 import database from '../../firebase/firebase';
+import { saveJobAction } from '../../Actions/saved-jobs';
 
 
 jest.mock('../../firebase/firebase.js');
@@ -30,4 +31,17 @@ describe('addJobToFirebase', () => {
     await thunk(mockDispatch);
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
+
+  test('should call dispatch with saveJobAction', async () => {
+    const thunk = addJobToFirebase(mockJob);
+    const mockLoadingAction = isLoadingAction(true);
+
+    const actionToDispatch = saveJobAction({
+      id: 'kdjfl2141893',
+      ...mockJob
+    });
+    await thunk(mockDispatch);
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+
 });

@@ -10,7 +10,7 @@ const mockSavedJob = {
   title: 'title',
   url: 'url',
   image: 'url',
-  id: 1
+  key: 'kdjfl2141893'
 };
 
 export const initializeApp = jest.fn()
