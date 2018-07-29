@@ -46,5 +46,7 @@
     color: var(--primary-background);
     background-color: var(--primary-dark-background);
     border-radius: var(--border-radius);
+
+    background-image: linear-gradient(to right bottom, var(--primary-dark-background) 0%, #7EB6E2 100%);
   }
 }

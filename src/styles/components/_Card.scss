@@ -43,6 +43,8 @@
     justify-content: space-between;
     margin-bottom: 1.5rem;
     align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
   }
 
   &__title {
@@ -59,6 +61,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     img {
       height: 3rem;
       max-width: 9rem;
@@ -70,7 +73,6 @@
     box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
   }
 }
-
 
 .card
 .card__company {

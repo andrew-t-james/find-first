@@ -18,7 +18,6 @@ export class SignIn extends Component {
 
   render() {
     const { slideMenuActive, toggleMenu } = this.props;
-
     return (
       <SlideMenu
         active={slideMenuActive}
@@ -31,7 +30,7 @@ export class SignIn extends Component {
             <h1 className="logo__backward">F</h1>
           </div>
           <div>
-            <div class={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
+            <div className={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
               <div className="line-menu half start"></div>
               <div className="line-menu"></div>
               <div className="line-menu half end"></div>
@@ -42,28 +41,28 @@ export class SignIn extends Component {
                 className="google auth-button"
                 onClick={() => this.handleLogin(googleOAuthLogin, googleSignInAction)}
               >
-              Google
+                Google
                 <i className="fab fa-google"></i>
               </button>
               <button
                 className="github auth-button"
                 onClick={() => this.handleLogin(githubOAuthLogin, githubLoginAction)}
               >
-              GitHub
+                GitHub
                 <i className="fab fa-github"></i>
               </button>
               <button
                 className="twitter auth-button"
                 onClick={() => this.handleLogin(twitterOAuthLogin, twitterLoginAction)}
               >
-              Twitter
+                Twitter
                 <i className="fab fa-twitter"></i>
               </button>
               <button
                 className="facebook auth-button"
                 onClick={() => this.handleLogin(facebookOAuthLogin, facebookLoginAction)}
               >
-              Facebook
+                Facebook
                 <i className="fab fa-facebook"></i>
               </button>
             </div>

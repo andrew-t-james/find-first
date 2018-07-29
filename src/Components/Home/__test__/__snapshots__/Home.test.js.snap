@@ -47,12 +47,12 @@ exports[`<Home /> should match snapshot 1`] = `
         className="logo"
       >
         <h1
-          class="logo__forward"
+          className="logo__forward"
         >
           F
         </h1>
         <h1
-          class="logo__backward"
+          className="logo__backward"
         >
           F
         </h1>

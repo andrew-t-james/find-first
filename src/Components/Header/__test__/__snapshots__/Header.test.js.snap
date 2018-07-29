@@ -1,9 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Header /> should match snapshot 1`] = `
-<div
+<section
   className="header"
 >
+  <div
+    className="header-toggle wrapper-menu "
+  >
+    <div
+      className="line-menu half start"
+    />
+    <div
+      className="line-menu"
+    />
+    <div
+      className="line-menu half end"
+    />
+  </div>
+  <div
+    className="header__logo"
+  >
+    <h1
+      className="logo__forward"
+    >
+      F
+    </h1>
+    <h1
+      className="logo__backward"
+    >
+      F
+    </h1>
+  </div>
   <div
     className="user-info"
   >
@@ -18,5 +45,5 @@ exports[`<Header /> should match snapshot 1`] = `
       src="some-url-here"
     />
   </div>
-</div>
+</section>
 `;

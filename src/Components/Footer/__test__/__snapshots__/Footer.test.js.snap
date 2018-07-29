@@ -45,9 +45,7 @@ exports[`<Footer /> should match snapshot 1`] = `
     </NavLink>
     <button
       className="footer__nav--item sign-out"
-      exact={true}
       onClick={[Function]}
-      to="/"
     >
       <i
         className="far fa-times-circle"

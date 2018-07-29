@@ -5,6 +5,8 @@
   background: var(--primary-background);
   border-radius: 3px;
   padding: 3rem 4rem;
+  z-index: 100;
+  position: relative;
 
   &__title {
     margin-bottom: 2rem;
@@ -25,9 +27,9 @@
 
 .sign-in__logo {
   margin-bottom: 6rem;
+  position: relative;
+  z-index: 2;
 }
-
-
 
 .auth-button:not(:last-of-type) {
   margin-bottom: 2rem;
@@ -48,6 +50,16 @@
 
 .github {
   background: #34495e;
+}
+
+.background-video--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.7);
+  z-index: 0;
 }
 
 @media screen and (min-width: 1024px) {

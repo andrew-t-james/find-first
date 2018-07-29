@@ -27,58 +27,79 @@ exports[`<SignIn /> should match snapshot 1`] = `
     className="login-section"
   >
     <div
-      class="home__menu--icon wrapper-menu "
-      onClick={[MockFunction]}
+      className="logo sign-in__logo"
     >
-      <div
-        class="line-menu half start"
-      />
-      <div
-        class="line-menu"
-      />
-      <div
-        class="line-menu half end"
-      />
+      <h1
+        className="logo__forward"
+      >
+        F
+      </h1>
+      <h1
+        className="logo__backward"
+      >
+        F
+      </h1>
     </div>
-    <div
-      className="sign-in"
-    >
-      <button
-        className="google auth-button"
-        onClick={[Function]}
+    <div>
+      <div
+        className="home__menu--icon wrapper-menu "
+        onClick={[MockFunction]}
       >
-        Google
-        <i
-          className="fab fa-google"
+        <div
+          className="line-menu half start"
         />
-      </button>
-      <button
-        className="github auth-button"
-        onClick={[Function]}
+        <div
+          className="line-menu"
+        />
+        <div
+          className="line-menu half end"
+        />
+      </div>
+      <div
+        className="sign-in"
       >
-        GitHub
-        <i
-          className="fab fa-github"
-        />
-      </button>
-      <button
-        className="twitter auth-button"
-        onClick={[Function]}
-      >
-        Twitter
-        <i
-          className="fab fa-twitter"
-        />
-      </button>
-      <button
-        className="facebook auth-button"
-        onClick={[Function]}
-      >
-        Facebook
-        <i
-          className="fab fa-facebook"
-        />
-      </button>
+        <h2
+          className="sign-in__title"
+        >
+          Sing-In
+        </h2>
+        <button
+          className="google auth-button"
+          onClick={[Function]}
+        >
+          Google
+          <i
+            className="fab fa-google"
+          />
+        </button>
+        <button
+          className="github auth-button"
+          onClick={[Function]}
+        >
+          GitHub
+          <i
+            className="fab fa-github"
+          />
+        </button>
+        <button
+          className="twitter auth-button"
+          onClick={[Function]}
+        >
+          Twitter
+          <i
+            className="fab fa-twitter"
+          />
+        </button>
+        <button
+          className="facebook auth-button"
+          onClick={[Function]}
+        >
+          Facebook
+          <i
+            className="fab fa-facebook"
+          />
+        </button>
+      </div>
     </div>
   </section>
 </e>
