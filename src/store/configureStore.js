@@ -4,6 +4,7 @@ import { authReducer } from '../Reducers/auth';
 import { menuReducer } from '../Reducers/menu';
 import { loaderReducer } from '../Reducers/loader';
 import { jobListingReducer } from '../Reducers/jobs';
+import { savedJobsReducer } from '../Reducers/saved-jobs';
 import thunk from 'redux-thunk';
 
 export default () => {
@@ -12,7 +13,8 @@ export default () => {
       user: authReducer,
       slideMenuActive: menuReducer,
       githubJobs: jobListingReducer,
-      isLoading: loaderReducer
+      isLoading: loaderReducer,
+      savedJobs: savedJobsReducer
     }),
     composeWithDevTools(applyMiddleware(thunk))
   );

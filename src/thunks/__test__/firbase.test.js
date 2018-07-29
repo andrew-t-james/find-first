@@ -1,6 +1,7 @@
 import { isLoadingAction } from '../../Actions/loader';
-import { database } from '../../firebase/firebase';
 import { addJobToFirebase } from '../firebase';
+import database from '../../firebase/firebase';
+
 
 jest.mock('../../firebase/firebase.js');
 
