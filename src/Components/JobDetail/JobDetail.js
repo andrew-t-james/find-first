@@ -19,17 +19,14 @@ export class JobDetail extends Component {
       saving: true
     });
 
-    const alreadyAppliedToJob = savedJobs.find(job => job.id === newJobToSave.id);
 
-    if (!alreadyAppliedToJob) {
-      saveJobToFirebase(newJobToSave);
-      setTimeout(() => {
-        this.setState({
-          saving: false,
-          savedToDB: true
-        });
-      }, 1300);
-    }
+    saveJobToFirebase(newJobToSave);
+    setTimeout(() => {
+      this.setState({
+        saving: false,
+        savedToDB: true
+      });
+    }, 1300);
   };
 
   render() {

@@ -4,6 +4,7 @@ import { JobDetail, mapDispatchToProps, mapStateToProps } from '../JobDetail';
 import { addJobToFirebase } from '../../../thunks/firebase';
 
 jest.mock('../../../firebase/firebase.js');
+jest.useFakeTimers();
 
 describe('<JobDetail />', () => {
   let wrapper;
@@ -42,14 +43,23 @@ describe('<JobDetail />', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
-  test('should not call saveJobToFirebase', () => {
+  test('should updateState', () => {
+    const expected = {
+      saving: false,
+      savedToDB: true
+    };
     const mockJobToSave = {
       id: 2,
       title: 'title'
     };
     wrapper.instance().saveNewJob(mockJobToSave);
-    wrapper.instance().saveNewJob(mockJobToSave);
-    expect(mockSaveJob).toHaveBeenCalledTimes(1);
+    jest.runAllTimers();
+    expect(setTimeout).toHaveBeenCalledTimes(2);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 1300);
+    setTimeout(()=>{
+      expect(wrapper.state('saving')).toBe(false);
+      expect(wrapper.state('savedToDB')).toBe(true);
+    }, 1500);
   });
 
 
