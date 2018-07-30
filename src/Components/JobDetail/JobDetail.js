@@ -44,7 +44,7 @@ export class JobDetail extends Component {
   };
 
   render() {
-    const { title, description, company, url, image, id, saveJob, savedJobs, isLoading } = this.props;
+    const { title, type, description, company, url, image, location, id, isLoading } = this.props;
     const { saving, savedToDB, applied  } = this.state;
     const newJob = {
       title,
@@ -54,7 +54,8 @@ export class JobDetail extends Component {
       image,
       apiID: id,
       id: uuid(),
-      applied: true
+      location,
+      type
     };
 
     return (
