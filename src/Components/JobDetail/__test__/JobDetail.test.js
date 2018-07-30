@@ -43,7 +43,7 @@ describe('<JobDetail />', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
-  test('should updateState', () => {
+  test('should updateState when saveNewJob is invoked', () => {
     const expected = {
       saving: false,
       savedToDB: true
@@ -62,6 +62,10 @@ describe('<JobDetail />', () => {
     }, 1500);
   });
 
+  test('should update state on mount', () => {
+    wrapper.instance().componentDidMount();
+    expect(wrapper.state('applied')).toBe(true);
+  });
 
   describe('mapStateToProps', () => {
     test('should map savedJobs to props', () => {

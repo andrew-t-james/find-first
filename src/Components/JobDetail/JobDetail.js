@@ -17,9 +17,11 @@ export class JobDetail extends Component {
 
   componentDidMount = () => {
     const alreadyAppliedToJob = this.props.savedJobs.find(job => job.apiID === this.props.id);
-    this.setState({
-      applied: alreadyAppliedToJob
-    });
+    if (alreadyAppliedToJob){
+      this.setState({
+        applied: true
+      });
+    }
   }
 
   saveNewJob = async newJobToSave => {

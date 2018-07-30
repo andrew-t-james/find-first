@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Dashboard, mapDispatchToProps, mapStateToProps } from '../Dashboard';
 import { githubJobsAction } from '../../../Actions/github';
+import { getSavedJobsFromFirebase } from '../../../thunks/firebase';
 
 jest.mock('../../../firebase/firebase.js');
 
@@ -109,6 +110,15 @@ describe('<Dashboard />', () => {
       const actionToDispatch = githubJobsAction();
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.githubJobs();
+      expect(mockDispatch).toHaveBeenCalled();
+    });
+
+    test('should call dispatch when getSavedJobsFromFirebase is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = getSavedJobsFromFirebase();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.getSavedJobs();
+
       expect(mockDispatch).toHaveBeenCalled();
     });
   });
