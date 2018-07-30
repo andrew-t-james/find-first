@@ -18,7 +18,7 @@ module.exports =  env => {
   return {
     entry: './src/index.js',
     output: {
-      path: path.join(__dirname, 'public'),
+      publicPath: '/',
       filename: '[name].[hash].js'
     },
     module: {
