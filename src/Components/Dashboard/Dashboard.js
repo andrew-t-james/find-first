@@ -22,8 +22,7 @@ export class Dashboard extends Component {
     const { jobs } = this.props;
 
     if (!jobs.length) {
-      const githubJobListings = await githubJobsThunk();
-      await this.props.githubJobs(githubJobListings);
+      await this.props.githubJobs();
       this.setState({ jobs: this.props.jobs });
     }
   }

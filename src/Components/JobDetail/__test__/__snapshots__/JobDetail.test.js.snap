@@ -7,9 +7,20 @@ exports[`<JobDetail /> should match snapshot 1`] = `
   <header
     className="job-detail__header"
   >
-    <h1>
-      header logo goes here
-    </h1>
+    <div
+      className="header__logo"
+    >
+      <h1
+        className="logo__forward"
+      >
+        F
+      </h1>
+      <h1
+        className="logo__backward"
+      >
+        F
+      </h1>
+    </div>
   </header>
   <section
     className="job-detail-container"

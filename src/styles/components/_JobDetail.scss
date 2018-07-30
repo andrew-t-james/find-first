@@ -6,6 +6,11 @@
 
   &__header {
     height: 15rem;
+
+    & h1 {
+      color: var(--primary-background);
+      font-size: 2rem;
+    }
   }
 
   &__image {

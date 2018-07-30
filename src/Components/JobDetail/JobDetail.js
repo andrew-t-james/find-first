@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 import { Header } from '../Header/Header';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -30,20 +31,24 @@ export class JobDetail extends Component {
   };
 
   render() {
-    const { title, description, url, image, id, saveJob, savedJobs, isLoading } = this.props;
+    const { title, description, company, url, image, id, saveJob, savedJobs, isLoading } = this.props;
     const { saving, savedToDB } = this.state;
     const newJob = {
       title,
       description,
+      company,
       url,
       image,
-      id
+      id: uuid()
     };
 
     return (
       <section className="job-detail">
         <header className="job-detail__header">
-          <h1>header logo goes here</h1>
+          <div className="header__logo">
+            <h1 className="logo__forward">F</h1>
+            <h1 className="logo__backward">F</h1>
+          </div>
         </header>
         <section className="job-detail-container">
           <div className="job-detail--buttons">
