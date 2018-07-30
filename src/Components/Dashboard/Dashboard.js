@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 import Loader from '../Loader/Loader';
 import PropTypes from 'prop-types';
 import { githubJobsThunk } from '../../thunks/jobListings';
+import { getSavedJobsFromFirebase } from '../../thunks/firebase';
 
 export class Dashboard extends Component {
   constructor(props) {
@@ -19,11 +20,11 @@ export class Dashboard extends Component {
   }
 
   componentDidMount = async () => {
-    const { jobs } = this.props;
+    const { jobs, getSavedJobs } = this.props;
+    await getSavedJobs();
 
     if (!jobs.length) {
-      const githubJobListings = await githubJobsThunk();
-      await this.props.githubJobs(githubJobListings);
+      await this.props.githubJobs();
       this.setState({ jobs: this.props.jobs });
     }
   }
@@ -82,7 +83,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  githubJobs: () => dispatch(githubJobsThunk())
+  githubJobs: () => dispatch(githubJobsThunk()),
+  getSavedJobs: () => dispatch(getSavedJobsFromFirebase())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

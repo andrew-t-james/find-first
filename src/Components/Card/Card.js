@@ -10,7 +10,10 @@ const Card = ({ title, image, location, company, type }) => {
       </header>
       <h3 className="card__title">{title}</h3>
       <section className="card__image--section">
-        <img src={image} alt={company}/>
+        {image ?
+          <img src={image} alt={title} className="job-detail__image"/> :
+          <div></div>
+        }
         <p className="card__location">{location}</p>
       </section>
     </div>

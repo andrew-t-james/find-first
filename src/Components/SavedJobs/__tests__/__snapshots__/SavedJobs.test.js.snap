@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SavedJobs /> should match snapshot 1`] = `
+<section
+  className="cards-section saved-card-section"
+>
+  <Link
+    key="1"
+    replace={false}
+    to="/saved-jobs/1"
+  >
+    <Card
+      id={1}
+      key="1"
+      title="job-1"
+    />
+  </Link>
+  <Link
+    key="2"
+    replace={false}
+    to="/saved-jobs/2"
+  >
+    <Card
+      id={2}
+      key="2"
+      title="job-2"
+    />
+  </Link>
+</section>
+`;

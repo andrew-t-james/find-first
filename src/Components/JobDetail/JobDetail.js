@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 import { Header } from '../Header/Header';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -9,18 +10,31 @@ export class JobDetail extends Component {
     super();
     this.state = {
       saving: false,
-      savedToDB: false
+      savedToDB: false,
+      applied: false
     };
   }
 
-  saveNewJob = newJobToSave => {
-    const { saveJobToFirebase, savedJobs } = this.props;
+  componentDidMount = () => {
+    const alreadyAppliedToJob = this.props.savedJobs.find(job => job.apiID === this.props.id);
+    if (alreadyAppliedToJob){
+      this.setState({
+        applied: true
+      });
+    }
+  }
+
+  saveNewJob = async newJobToSave => {
+    const { saveJobToFirebase, getSavedJobs } = this.props;
+
     this.setState({
       saving: true
     });
 
+    if (!this.state.applied) {
+      await saveJobToFirebase(newJobToSave);
+    }
 
-    saveJobToFirebase(newJobToSave);
     setTimeout(() => {
       this.setState({
         saving: false,
@@ -30,34 +44,44 @@ export class JobDetail extends Component {
   };
 
   render() {
-    const { title, description, url, image, id, saveJob, savedJobs, isLoading } = this.props;
-    const { saving, savedToDB } = this.state;
+    const { title, type, description, company, url, image, location, id, isLoading } = this.props;
+    const { saving, savedToDB, applied  } = this.state;
     const newJob = {
       title,
       description,
+      company,
       url,
       image,
-      id
+      apiID: id,
+      id: uuid(),
+      location,
+      type
     };
 
     return (
       <section className="job-detail">
         <header className="job-detail__header">
-          <h1>header logo goes here</h1>
+          <div className="header__logo">
+            <h1 className="logo__forward">F</h1>
+            <h1 className="logo__backward">F</h1>
+          </div>
         </header>
         <section className="job-detail-container">
           <div className="job-detail--buttons">
             <Link to="/dashboard">&larr; Back to Job Listings</Link>
-            <img src={image} alt={title} className="job-detail__image"/>
+            {image ?
+              <img src={image} alt={title} className="job-detail__image"/> :
+              <div></div>
+            }
             <a href={url} target="_blank" rel="noopener noreferrer" >Apply Here &rarr;</a>
           </div>
           <h1 className="job-detail__tile">{title}</h1>
           <div className="job-detail__save-job">
             <button onClick={() => this.saveNewJob(newJob)}
-              className={`job-detail__save-job--button ${saving ? 'loading' : ''} ${savedToDB ? 'success': ''}`}
-              disabled={savedToDB ? true : false}
+              className={`job-detail__save-job--button ${saving ? 'loading' : ''} ${savedToDB || applied ? 'success': ''}`}
+              disabled={savedToDB || applied ? true : false}
             >
-              {!savedToDB ?  'Mark Applied' : 'Saved'}
+              {!savedToDB && !applied ?  'Mark Applied' : 'Saved'}
             </button>
           </div>
           <p className="job-detail__copy" dangerouslySetInnerHTML={{ __html: description }}/>

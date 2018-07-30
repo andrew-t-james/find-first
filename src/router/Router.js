@@ -8,20 +8,27 @@ import Dashboard from '../Components/Dashboard/Dashboard';
 import SignIn from '../Components/SignIn/SignIn';
 import JobDetail from '../Components/JobDetail/JobDetail';
 import JobsContainer from '../Components/JobsContainer/JobsContainer';
+import { SavedJobDetail } from '../Components/SavedJobCard/SavedJobDetail';
 
 export const history = createHistory();
 
-export const AppRouter = ({ jobs }) => (
+export const AppRouter = ({ jobs, savedJobs }) => (
   <Router history={history}>
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/dashboard" exact component={Dashboard} />
       <Route path="/sign-in" exact component={SignIn} />
-      <Route path="/sign-up" exact component={JobsContainer} />
+      <Route path="/saved-jobs" exact component={JobsContainer} />
       <Route path="/job/:id" render={({ match }) => {
         const job = jobs.find(job => job.id === match.params.id);
         return (
           <JobDetail {...job}/>
+        );
+      }} />
+      <Route path="/saved-jobs/:id" render={({ match }) => {
+        const job = savedJobs.find(job => job.id === match.params.id);
+        return (
+          <SavedJobDetail {...job}/>
         );
       }} />
     </Switch>
@@ -29,7 +36,8 @@ export const AppRouter = ({ jobs }) => (
 );
 
 const mapStateToProps = state => ({
-  jobs: state.githubJobs
+  jobs: state.githubJobs,
+  savedJobs: state.savedJobs
 });
 
 export default connect(mapStateToProps)(AppRouter);

@@ -14,7 +14,7 @@ export const Footer = ({ googleLogout }) => {
           <i className="far fa-clone"></i>
           Dashboard
         </NavLink>
-        <NavLink className="footer__nav--item" exact to="/sign-up">
+        <NavLink className="footer__nav--item" exact to="/saved-jobs">
           <i className="far fa-user-circle"></i>
           My Jobs
         </NavLink>

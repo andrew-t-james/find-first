@@ -4,15 +4,15 @@
 
 @media screen and (min-width: 1296px) {
   .footer {
-    margin-top: calc(100vh - 66rem);
+    margin-top: calc(100vh - 70rem);
     display: block;
 
     &__nav {
       align-items: center;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      flex-direction: column;
       list-style-type: none;
-      flex-wrap: wrap;
       padding: 2rem;
 
       &--item {
@@ -23,11 +23,9 @@
         cursor: pointer;
         padding: 2rem 0;
         text-align: center;
-        width: 100%;
-        width: 13rem;
-        height: 9rem;
+        width: 11rem;
+        height: 7rem;
         border-radius: var(--border-raidus);
-        margin-bottom: 3rem;
         color: var(--primary-font);
 
         & a {
@@ -40,13 +38,32 @@
       }
     }
   }
+}
 
-  .active {
-    font-weight: 800;
-    color: var(--primary-background);
-    background-color: var(--primary-dark-background);
-    border-radius: var(--border-radius);
 
-    background-image: linear-gradient(to right bottom, var(--primary-dark-background) 0%, #7EB6E2 100%);
+@media screen and (min-width: 1500px) {
+  .footer {
+    margin-top: calc(100vh - 70rem);
+    display: block;
+
+    &__nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 2rem;
+
+      &--item {
+        width: 13rem;
+        height: 9rem;
+        margin-bottom: 3rem;
+      }
+    }
   }
+}
+
+.active {
+  font-weight: 800;
+  color: var(--primary-background);
+  background-color: var(--primary-dark-background);
+  border-radius: var(--border-radius);
+  background-image: linear-gradient(to right bottom, var(--primary-dark-background) 0%, #7EB6E2 100%);
 }
