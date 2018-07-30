@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export const CardContainer = ({ jobs }) => {
+export const SavedJobs = ({ jobs }) => {
   const renderJobs = jobs.map(job =>
     <Link to={`/saved-jobs/${job.id}`} key={job.id} >
       <Card {...job} key={job.id}/>
@@ -18,8 +18,8 @@ export const CardContainer = ({ jobs }) => {
   );
 };
 
-export default CardContainer;
+export default SavedJobs;
 
-CardContainer.propTypes = {
+SavedJobs.propTypes = {
   jobs: PropTypes.arrayOf(PropTypes.object)
 };

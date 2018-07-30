@@ -47,13 +47,13 @@ export class JobsContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   savedJobs: state.savedJobs,
   isLoading: state.isLoading
 });
 
-const mapsDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getSavedJobs: () => dispatch(getSavedJobsFromFirebase())
 });
 
-export default connect(mapStateToProps, mapsDispatchToProps)(JobsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(JobsContainer);

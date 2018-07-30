@@ -34,9 +34,7 @@ exports[`<JobDetail /> should match snapshot 1`] = `
       >
         ← Back to Job Listings
       </Link>
-      <img
-        className="job-detail__image"
-      />
+      <div />
       <a
         rel="noopener noreferrer"
         target="_blank"

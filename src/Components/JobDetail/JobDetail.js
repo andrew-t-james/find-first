@@ -20,8 +20,8 @@ export class JobDetail extends Component {
       saving: true
     });
 
-
     saveJobToFirebase(newJobToSave);
+
     setTimeout(() => {
       this.setState({
         saving: false,
@@ -39,6 +39,7 @@ export class JobDetail extends Component {
       company,
       url,
       image,
+      apiID: id,
       id: uuid()
     };
 
@@ -53,7 +54,10 @@ export class JobDetail extends Component {
         <section className="job-detail-container">
           <div className="job-detail--buttons">
             <Link to="/dashboard">&larr; Back to Job Listings</Link>
-            <img src={image} alt={title} className="job-detail__image"/>
+            {image ?
+              <img src={image} alt={title} className="job-detail__image"/> :
+              <div></div>
+            }
             <a href={url} target="_blank" rel="noopener noreferrer" >Apply Here &rarr;</a>
           </div>
           <h1 className="job-detail__tile">{title}</h1>

@@ -14,7 +14,7 @@ exports[`<JobsContainer /> should match snapshot 1`] = `
       <h1>
         Jobs Container
       </h1>
-      <CardContainer
+      <SavedJobs
         jobs={Array []}
       />
     </section>

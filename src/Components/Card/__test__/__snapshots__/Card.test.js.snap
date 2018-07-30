@@ -20,7 +20,7 @@ exports[`<Card /> should match snapshot 1`] = `
   <section
     className="card__image--section"
   >
-    <img />
+    <div />
     <p
       className="card__location"
     />
