@@ -11,7 +11,7 @@ describe('saveJobAction', () => {
   test('should have a type SAVE_JOB', () => {
     const expected = {
       type: 'SAVE_JOB',
-      job: mockJob
+      jobs: mockJob
     };
 
     const result = saveJobAction(mockJob);

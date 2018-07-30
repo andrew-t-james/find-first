@@ -1,4 +1,4 @@
-export const saveJobAction = job => ({
+export const saveJobAction = jobs => ({
   type: 'SAVE_JOB',
-  job
+  jobs
 });

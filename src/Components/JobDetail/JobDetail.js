@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Header } from '../Header/Header';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addJobToFirebase } from '../../thunks/firebase';
+import { addJobToFirebase, getSavedJobsFromFirebase } from '../../thunks/firebase';
 
 export class JobDetail extends Component {
   constructor() {

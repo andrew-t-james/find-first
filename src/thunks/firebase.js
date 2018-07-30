@@ -7,9 +7,22 @@ export const addJobToFirebase = newJob => {
     dispatch(isLoadingAction(true));
 
     await database.ref('saved-jobs').push(newJob);
-    dispatch(saveJobAction({
-      ...newJob
-    }));
+
+    dispatch(isLoadingAction(false));
+  };
+};
+
+export const getSavedJobsFromFirebase = () => {
+  return async dispatch => {
+    dispatch(isLoadingAction(true));
+
+    await database.ref('saved-jobs').once('value').then(snapshot => {
+      const savedJobs = [];
+      snapshot.forEach(childSnapShot => {
+        savedJobs.push(childSnapShot.val());
+      });
+      dispatch(saveJobAction(savedJobs));
+    });
 
     dispatch(isLoadingAction(false));
   };

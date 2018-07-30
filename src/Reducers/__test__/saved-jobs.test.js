@@ -10,7 +10,7 @@ describe('savedJobsReducer', () => {
   };
 
   test('should return state with job added', () => {
-    const expected = [mockJobToSave];
+    const expected = [...mockJobToSave];
     const result = savedJobsReducer([], saveJobAction(mockJobToSave));
     expect(result).toEqual(expected);
   });
