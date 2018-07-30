@@ -24,7 +24,6 @@ exports[`<JobDetail /> should match snapshot 1`] = `
         ← Back to Job Listings
       </Link>
       <img
-        alt="Title"
         className="job-detail__image"
       />
       <a
@@ -36,14 +35,13 @@ exports[`<JobDetail /> should match snapshot 1`] = `
     </div>
     <h1
       className="job-detail__tile"
-    >
-      Title
-    </h1>
+    />
     <div
       className="job-detail__save-job"
     >
       <button
-        className="job-detail__save-job--button"
+        className="job-detail__save-job--button  "
+        disabled={false}
         onClick={[Function]}
       >
         Mark Applied
@@ -53,7 +51,7 @@ exports[`<JobDetail /> should match snapshot 1`] = `
       className="job-detail__copy"
       dangerouslySetInnerHTML={
         Object {
-          "__html": "description",
+          "__html": undefined,
         }
       }
     />

@@ -37,7 +37,6 @@ describe('addJobToFirebase', () => {
     const mockLoadingAction = isLoadingAction(true);
 
     const actionToDispatch = saveJobAction({
-      id: 'kdjfl2141893',
       ...mockJob
     });
     await thunk(mockDispatch);

@@ -9,8 +9,7 @@ const mockUser = {
 const mockSavedJob = {
   title: 'title',
   url: 'url',
-  image: 'url',
-  key: 'kdjfl2141893'
+  image: 'url'
 };
 
 export const initializeApp = jest.fn()
