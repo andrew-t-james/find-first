@@ -8,11 +8,13 @@ jest.mock('../../../firebase/firebase.js');
 describe('<Dashboard />', () => {
   let wrapper;
   const mockGithubJobs = jest.fn();
+  const mockGetSavedJobs = jest.fn();
   const mockJobs = [];
 
   beforeEach(() => wrapper = shallow(
     <Dashboard
       jobs={mockJobs}
+      getSavedJobs={mockGetSavedJobs}
       githubJobs={mockGithubJobs}
     />
   ));

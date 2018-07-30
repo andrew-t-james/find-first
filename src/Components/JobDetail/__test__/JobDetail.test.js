@@ -54,7 +54,7 @@ describe('<JobDetail />', () => {
     };
     wrapper.instance().saveNewJob(mockJobToSave);
     jest.runAllTimers();
-    expect(setTimeout).toHaveBeenCalledTimes(2);
+    expect(setTimeout).toHaveBeenCalledTimes(1);
     expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 1300);
     setTimeout(()=>{
       expect(wrapper.state('saving')).toBe(false);

@@ -10,17 +10,28 @@ export class JobDetail extends Component {
     super();
     this.state = {
       saving: false,
-      savedToDB: false
+      savedToDB: false,
+      applied: false
     };
   }
 
-  saveNewJob = newJobToSave => {
-    const { saveJobToFirebase, savedJobs } = this.props;
+  componentDidMount = () => {
+    const alreadyAppliedToJob = this.props.savedJobs.find(job => job.apiID === this.props.id);
+    this.setState({
+      applied: alreadyAppliedToJob
+    });
+  }
+
+  saveNewJob = async newJobToSave => {
+    const { saveJobToFirebase, getSavedJobs } = this.props;
+
     this.setState({
       saving: true
     });
 
-    saveJobToFirebase(newJobToSave);
+    if (!this.state.applied) {
+      await saveJobToFirebase(newJobToSave);
+    }
 
     setTimeout(() => {
       this.setState({
@@ -32,7 +43,7 @@ export class JobDetail extends Component {
 
   render() {
     const { title, description, company, url, image, id, saveJob, savedJobs, isLoading } = this.props;
-    const { saving, savedToDB } = this.state;
+    const { saving, savedToDB, applied  } = this.state;
     const newJob = {
       title,
       description,
@@ -40,7 +51,8 @@ export class JobDetail extends Component {
       url,
       image,
       apiID: id,
-      id: uuid()
+      id: uuid(),
+      applied: true
     };
 
     return (
@@ -63,10 +75,10 @@ export class JobDetail extends Component {
           <h1 className="job-detail__tile">{title}</h1>
           <div className="job-detail__save-job">
             <button onClick={() => this.saveNewJob(newJob)}
-              className={`job-detail__save-job--button ${saving ? 'loading' : ''} ${savedToDB ? 'success': ''}`}
-              disabled={savedToDB ? true : false}
+              className={`job-detail__save-job--button ${saving ? 'loading' : ''} ${savedToDB || applied ? 'success': ''}`}
+              disabled={savedToDB || applied ? true : false}
             >
-              {!savedToDB ?  'Mark Applied' : 'Saved'}
+              {!savedToDB && !applied ?  'Mark Applied' : 'Saved'}
             </button>
           </div>
           <p className="job-detail__copy" dangerouslySetInnerHTML={{ __html: description }}/>
