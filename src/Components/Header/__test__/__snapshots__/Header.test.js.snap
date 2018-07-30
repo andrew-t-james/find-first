@@ -5,7 +5,8 @@ exports[`<Header /> should match snapshot 1`] = `
   className="header"
 >
   <div
-    className="header-toggle wrapper-menu"
+    className="home__menu--icon hide-menu
+        wrapper-menu "
   >
     <div
       className="line-menu half start"

@@ -1,10 +1,12 @@
 .footer {
   display: none;
+  margin-top: 21rem;
+  height: 100vh;
+  background: var(--primary-light-background);
 }
 
 @media screen and (min-width: 1296px) {
   .footer {
-    margin-top: calc(100vh - 70rem);
     display: block;
 
     &__nav {
@@ -43,7 +45,6 @@
 
 @media screen and (min-width: 1500px) {
   .footer {
-    margin-top: calc(100vh - 70rem);
     display: block;
 
     &__nav {

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import Card from '../Card/Card';
-import Header from '../Header/Header';
-import { connect } from 'react-redux';
-import CardContainer from '../CardContainer/CardContainer';
-import Footer from '../Footer/Footer';
-import Loader from '../Loader/Loader';
 import PropTypes from 'prop-types';
+import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import SlideMenu from 'react-slide-menu';
 import { githubJobsThunk } from '../../thunks/jobListings';
 import { getSavedJobsFromFirebase } from '../../thunks/firebase';
+import { nav } from '../../helpers/nav';
+
+import Header from '../Header/Header';
+import Loader from '../Loader/Loader';
+import Footer from '../Footer/Footer';
+import CardContainer from '../CardContainer/CardContainer';
+import Card from '../Card/Card';
+
 
 export class Dashboard extends Component {
   constructor(props) {
@@ -43,43 +47,50 @@ export class Dashboard extends Component {
   }
 
   render() {
-    const { isLoading } = this.props;
+    const { isLoading, slideMenuActive } = this.props;
     const { query, jobs } = this.state;
 
     return (
-      <div className="grid-container">
-        <Header />
-        <main className="content">
-          <section className="cards-container">
-            <div className="search">
-              <input
-                type="text"
-                value={query}
-                name="query"
-                onChange={this.handleUpdate}
-                className="search__input"
-                placeholder="Search Jobs"
-              />
-            </div>
-            {isLoading
-              ?
-              <div className="loader-container">
-                <Loader />
+      <SlideMenu
+        active={slideMenuActive}
+        nav={nav}
+        reactRouter={true}
+      >
+        <div className="grid-container">
+          <Header />
+          <main className="content">
+            <section className="cards-container">
+              <div className="search">
+                <input
+                  type="text"
+                  value={query}
+                  name="query"
+                  onChange={this.handleUpdate}
+                  className="search__input"
+                  placeholder="Search Jobs"
+                />
               </div>
-              :
-              <CardContainer jobs={jobs} />
-            }
-          </section>
-        </main>
-        <Footer />
-      </div>
+              {isLoading
+                ?
+                <div className="loader-container">
+                  <Loader />
+                </div>
+                :
+                <CardContainer jobs={jobs} />
+              }
+            </section>
+          </main>
+          <Footer />
+        </div>
+      </SlideMenu>
     );
   }
 }
 
 export const mapStateToProps = state => ({
   jobs: state.githubJobs,
-  isLoading: state.isLoading
+  isLoading: state.isLoading,
+  slideMenuActive: state.slideMenuActive
 });
 
 export const mapDispatchToProps = dispatch => ({

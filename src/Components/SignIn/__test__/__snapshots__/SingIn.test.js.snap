@@ -19,6 +19,11 @@ exports[`<SignIn /> should match snapshot 1`] = `
         "label": "Dashboard",
         "path": "/dashboard",
       },
+      Object {
+        "id": "saved-jobs",
+        "label": "Saved Jobs",
+        "path": "/saved-jobs",
+      },
     ]
   }
   reactRouter={true}

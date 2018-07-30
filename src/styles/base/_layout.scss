@@ -51,4 +51,9 @@
   .footer {
     grid-area: footer;
   }
+
+  .slide-menu {
+    display: none;
+    z-index: -2;
+  }
 }

@@ -1,24 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<JobsContainer /> should match snapshot 1`] = `
-<div
-  className="grid-container"
+<e
+  nav={
+    Array [
+      Object {
+        "id": "home",
+        "label": "Home",
+        "path": "/",
+      },
+      Object {
+        "id": "sign-in",
+        "label": "Sign-In",
+        "path": "/sign-in",
+      },
+      Object {
+        "id": "dashboard",
+        "label": "Dashboard",
+        "path": "/dashboard",
+      },
+      Object {
+        "id": "saved-jobs",
+        "label": "Saved Jobs",
+        "path": "/saved-jobs",
+      },
+    ]
+  }
+  navClassName="slide-menu"
+  reactRouter={true}
 >
-  <Connect(Header) />
-  <main
-    className="content"
+  <div
+    className="grid-container"
   >
-    <section
-      className="cards-container"
+    <Connect(Header) />
+    <main
+      className="content"
     >
-      <h1>
-        Jobs Container
-      </h1>
-      <SavedJobs
-        jobs={Array []}
-      />
-    </section>
-  </main>
-  <Connect(Footer) />
-</div>
+      <section
+        className="cards-container"
+      >
+        <h1>
+          Jobs Container
+        </h1>
+        <SavedJobs
+          jobs={Array []}
+        />
+      </section>
+    </main>
+    <Connect(Footer) />
+  </div>
+</e>
 `;
