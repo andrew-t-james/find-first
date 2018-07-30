@@ -11,7 +11,6 @@ const config = {
 
 firebase.initializeApp(config);
 
-export const database = firebase.database();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
 export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
@@ -23,7 +22,9 @@ export const twitterOAuthLogin = () => firebase.auth().signInWithPopup(twitterAu
 export const facebookOAuthLogin = () => firebase.auth().signInWithPopup(facebookAuthProvider);
 export const logout = () => firebase.auth().signOut();
 
-export { firebase };
+const database = firebase.database();
+
+export { firebase, database as default };
 
 
 // * how to push into firebase

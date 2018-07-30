@@ -57,7 +57,7 @@
   color: lighten(#62748B, 20%);
   }
 
-  &__footer {
+  &__image--section {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,6 +65,19 @@
     img {
       height: 3rem;
       max-width: 9rem;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    z-index: 100;
+
+    &--button {
+      border: 1px solid red;
+      padding: 0.5rem 2rem;
     }
   }
 
