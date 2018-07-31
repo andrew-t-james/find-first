@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { Dashboard, mapDispatchToProps, mapStateToProps } from '../Dashboard';
 import { githubJobsAction } from '../../../Actions/github';
 import { getSavedJobsFromFirebase } from '../../../thunks/firebase';
+import { toggleMenu } from '../../../Actions/menu';
 
 jest.mock('../../../firebase/firebase.js');
 
@@ -118,6 +119,15 @@ describe('<Dashboard />', () => {
       const actionToDispatch = getSavedJobsFromFirebase();
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.getSavedJobs();
+
+      expect(mockDispatch).toHaveBeenCalled();
+    });
+
+    test('should call dispatch when toggleMenu is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = toggleMenu();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.toggleMenu();
 
       expect(mockDispatch).toHaveBeenCalled();
     });

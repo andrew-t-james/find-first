@@ -7,6 +7,7 @@ exports[`<Header /> should match snapshot 1`] = `
   <div
     className="home__menu--icon hide-menu
         wrapper-menu "
+    onClick={true}
   >
     <div
       className="line-menu half start"

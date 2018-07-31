@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Header, mapStateToProps } from '../Header';
+import { Header, mapStateToProps, mapDispatchToProps } from '../Header';
+import { toggleMenu } from '../../../Actions/menu';
 
 describe('<Header />', () => {
   let wrapper;
@@ -9,7 +10,9 @@ describe('<Header />', () => {
     image: 'some-url-here'
   };
 
-  beforeEach(() => wrapper = shallow(<Header user={mockUser}/>));
+  const mockSliderAction = true;
+
+  beforeEach(() => wrapper = shallow(<Header toggleMenu={mockSliderAction} user={mockUser}/>));
 
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
@@ -24,6 +27,17 @@ describe('<Header />', () => {
     };
     const result = mapStateToProps(mockState);
     expect(result).toEqual(expected);
+  });
+
+  describe('mapDispatchToProps', () => {
+    test('should call dispatch when toggleMenu is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = toggleMenu();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.toggleMenu();
+
+      expect(mockDispatch).toHaveBeenCalled();
+    });
   });
 
 });
