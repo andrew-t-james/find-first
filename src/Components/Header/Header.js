@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SlideMenu from 'react-slide-menu';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { toggleMenu } from '../../Actions/menu';
 
 import logo from '../../images/compass-regular.svg';
