@@ -70,3 +70,11 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(JobsContainer);
+
+JobsContainer.propTypes = {
+  savedJobs: PropTypes.arrayOf(PropTypes.object),
+  isLoading: PropTypes.bool,
+  slideMenuActive: PropTypes.bool,
+  getSavedJobs: PropTypes.func,
+  toggleMenu: PropTypes.func
+};

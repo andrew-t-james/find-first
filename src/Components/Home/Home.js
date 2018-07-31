@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import SignIn from '../SignIn/SignIn';
 import PropTypes from 'prop-types';
 import SlideMenu from 'react-slide-menu';
 import { toggleMenu } from '../../Actions/menu';
 import { nav } from '../../helpers/nav';
 
+import SignIn from '../SignIn/SignIn';
+
 import menuIcon from '../../images/menu.svg';
 import logo from '../../images/compass-regular.svg';
-
 
 export const Home = props => {
   const { slideMenuActive, toggleMenu } = props;

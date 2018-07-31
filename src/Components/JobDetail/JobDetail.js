@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
-import { Header } from '../Header/Header';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addJobToFirebase, getSavedJobsFromFirebase } from '../../thunks/firebase';
+
+import { Header } from '../Header/Header';
 
 export class JobDetail extends Component {
   constructor() {
@@ -105,3 +107,9 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(JobDetail);
+
+JobDetail.propTypes = {
+  savedJobs: PropTypes.arrayOf(PropTypes.object),
+  isLoading: PropTypes.bool,
+  saveJobToFirebase: PropTypes.func
+};

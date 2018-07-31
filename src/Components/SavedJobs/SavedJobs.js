@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from '../Card/Card';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
+import Card from '../Card/Card';
 
 export const SavedJobs = ({ jobs }) => {
   const renderJobs = jobs.map(job =>

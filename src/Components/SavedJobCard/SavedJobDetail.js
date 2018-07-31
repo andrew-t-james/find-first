@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Header } from '../Header/Header';
 import { Link } from 'react-router-dom';
 
@@ -30,3 +31,11 @@ export const SavedJobDetail = props => {
 };
 
 export default SavedJobDetail;
+
+SavedJobDetail.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  url: PropTypes.string,
+  id: PropTypes.string
+};
