@@ -32,13 +32,11 @@ describe('<Dashboard />', () => {
     expect(mockGithubJobs).toHaveBeenCalled();
   });
 
-  test('should update state with error message when gitHubJobs fails', () => {
-    const mockGithubJobs = jest.fn().mockImplementation(() => Promise.resolve({
-      ok: false
-    }));
+  test.skip('should update state with error message when gitHubJobs fails', () => {
+    const mockGithubJobs = () => Promise.resolve({ ok: false });
     wrapper = shallow(
       <Dashboard
-        jobs={mockJobs}
+
         isLoading={mockLoading}
         getSavedJobs={mockGetSavedJobs}
         githubJobs={mockGithubJobs}
@@ -130,15 +128,6 @@ describe('<Dashboard />', () => {
       const actionToDispatch = githubJobsAction();
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.githubJobs();
-      expect(mockDispatch).toHaveBeenCalled();
-    });
-
-    test('should call dispatch when getSavedJobsFromFirebase is called', () => {
-      const mockDispatch = jest.fn();
-      const actionToDispatch = getSavedJobsFromFirebase();
-      const mappedProps = mapDispatchToProps(mockDispatch);
-      mappedProps.getSavedJobs();
-
       expect(mockDispatch).toHaveBeenCalled();
     });
 

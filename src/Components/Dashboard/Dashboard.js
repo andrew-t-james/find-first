@@ -102,7 +102,6 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   githubJobs: () => dispatch(githubJobsThunk()),
-  getSavedJobs: () => dispatch(getSavedJobsFromFirebase()),
   toggleMenu: () => dispatch(toggleMenu())
 });
 
@@ -113,6 +112,5 @@ Dashboard.propTypes = {
   isLoading: PropTypes.bool,
   slideMenuActive: PropTypes.bool,
   githubJobs: PropTypes.func,
-  getSavedJobs: PropTypes.func,
   toggleMenu: PropTypes.func
 };
