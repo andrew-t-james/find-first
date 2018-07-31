@@ -30,3 +30,11 @@ export const SavedJobDetail = props => {
 };
 
 export default SavedJobDetail;
+
+SavedJobDetail.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  url: PropTypes.string,
+  id: PropTypes.string
+};
