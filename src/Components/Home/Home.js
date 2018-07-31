@@ -9,6 +9,7 @@ import { nav } from '../../helpers/nav';
 import menuIcon from '../../images/menu.svg';
 import logo from '../../images/compass-regular.svg';
 
+
 export class Home extends Component {
   render() {
     const { slideMenuActive, toggleMenu } = this.props;
@@ -18,6 +19,7 @@ export class Home extends Component {
         active={slideMenuActive}
         nav={nav}
         reactRouter={true}
+        closeMenu={() => toggleMenu()}
       >
         <section className="home">
           <div className={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>

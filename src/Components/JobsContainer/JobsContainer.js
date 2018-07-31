@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SlideMenu from 'react-slide-menu';
+import { getSavedJobsFromFirebase } from '../../thunks/firebase';
+import { nav } from '../../helpers/nav';
+import { toggleMenu } from '../../Actions/menu';
 
 import Header from '../Header/Header';
 import SavedJobs from '../SavedJobs/SavedJobs';
 import Loader from '../../Components/Loader/Loader';
 import Footer from '../Footer/Footer';
-import { getSavedJobsFromFirebase } from '../../thunks/firebase';
-import { nav } from '../../helpers/nav';
 
 export class JobsContainer extends Component {
   constructor() {
@@ -24,7 +25,7 @@ export class JobsContainer extends Component {
   }
 
   render() {
-    const { isLoading, slideMenuActive } = this.props;
+    const { isLoading, slideMenuActive, toggleMenu } = this.props;
     const { savedJobs } = this.state;
 
     return (
@@ -33,6 +34,7 @@ export class JobsContainer extends Component {
         nav={nav}
         reactRouter={true}
         navClassName={"slide-menu"}
+        closeMenu={() => toggleMenu()}
       >
         <div className="grid-container">
           <Header />
@@ -63,7 +65,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  getSavedJobs: () => dispatch(getSavedJobsFromFirebase())
+  getSavedJobs: () => dispatch(getSavedJobsFromFirebase()),
+  toggleMenu: () => dispatch(toggleMenu())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(JobsContainer);

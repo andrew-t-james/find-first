@@ -6,6 +6,7 @@ import SlideMenu from 'react-slide-menu';
 import { githubJobsThunk } from '../../thunks/jobListings';
 import { getSavedJobsFromFirebase } from '../../thunks/firebase';
 import { nav } from '../../helpers/nav';
+import { toggleMenu } from '../../Actions/menu';
 
 import Header from '../Header/Header';
 import Loader from '../Loader/Loader';
@@ -47,7 +48,7 @@ export class Dashboard extends Component {
   }
 
   render() {
-    const { isLoading, slideMenuActive } = this.props;
+    const { isLoading, slideMenuActive, toggleMenu } = this.props;
     const { query, jobs } = this.state;
 
     return (
@@ -55,6 +56,7 @@ export class Dashboard extends Component {
         active={slideMenuActive}
         nav={nav}
         reactRouter={true}
+        closeMenu={() => toggleMenu()}
       >
         <div className="grid-container">
           <Header />
@@ -95,7 +97,8 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   githubJobs: () => dispatch(githubJobsThunk()),
-  getSavedJobs: () => dispatch(getSavedJobsFromFirebase())
+  getSavedJobs: () => dispatch(getSavedJobsFromFirebase()),
+  toggleMenu: () => dispatch(toggleMenu())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

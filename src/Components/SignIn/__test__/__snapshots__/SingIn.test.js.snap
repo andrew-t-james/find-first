@@ -2,6 +2,7 @@
 
 exports[`<SignIn /> should match snapshot 1`] = `
 <e
+  closeMenu={[Function]}
   nav={
     Array [
       Object {

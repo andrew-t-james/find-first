@@ -23,6 +23,7 @@ export class SignIn extends Component {
         active={slideMenuActive}
         nav={nav}
         reactRouter={true}
+        closeMenu={() => toggleMenu()}
       >
         <section className="login-section">
           <div className="logo sign-in__logo">
