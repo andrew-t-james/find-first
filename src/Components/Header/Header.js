@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { toggleMenu } from '../../Actions/menu';
 
 import logo from '../../images/compass-regular.svg';
+import noUserAvailable from '../../images/user.svg';
 
 export const Header = ({ user, toggleMenu, slideMenuActive }) => {
 
@@ -27,7 +28,7 @@ export const Header = ({ user, toggleMenu, slideMenuActive }) => {
       {user.name ?
         <div className="user-info">
           <h2 className="user-info__heading">{user.name}</h2>
-          <img className="user-info__image" src={user.image} alt={user.name}/>
+          <img className="user-info__image" src={user.image ? user.image : noUserAvailable} alt={user.name}/>
         </div>
         : null
       }
