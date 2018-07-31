@@ -2,6 +2,7 @@
 
 exports[`<Home /> should match snapshot 1`] = `
 <e
+  active={true}
   closeMenu={[Function]}
   nav={
     Array [
@@ -33,7 +34,7 @@ exports[`<Home /> should match snapshot 1`] = `
     className="home"
   >
     <div
-      className="home__menu--icon wrapper-menu "
+      className="home__menu--icon wrapper-menu open"
       onClick={[MockFunction]}
     >
       <div
