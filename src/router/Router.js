@@ -9,16 +9,17 @@ import SignIn from '../Components/SignIn/SignIn';
 import JobDetail from '../Components/JobDetail/JobDetail';
 import JobsContainer from '../Components/JobsContainer/JobsContainer';
 import { SavedJobDetail } from '../Components/SavedJobCard/SavedJobDetail';
+import { PrivateRoute } from './PrivateRoute';
 
 export const history = createHistory();
 
-export const AppRouter = ({ jobs, savedJobs }) => (
+export const AppRouter = ({ jobs, savedJobs, isAuthenticated }) => (
   <Router history={history}>
     <Switch>
       <Route path="/" exact component={Home} />
-      <Route path="/dashboard" exact component={Dashboard} />
       <Route path="/sign-in" exact component={SignIn} />
-      <Route path="/saved-jobs" exact  component={JobsContainer} />
+      <PrivateRoute isAuthenticated={isAuthenticated} path="/dashboard" exact component={Dashboard} />
+      <PrivateRoute isAuthenticated={isAuthenticated} path="/saved-jobs" exact  component={JobsContainer} />
       <Route path="/job/:id" exact render={({ match }) => {
         const job = jobs.find(job => job.id === match.params.id);
         return (
@@ -38,7 +39,8 @@ export const AppRouter = ({ jobs, savedJobs }) => (
 
 const mapStateToProps = state => ({
   jobs: state.githubJobs,
-  savedJobs: state.savedJobs
+  savedJobs: state.savedJobs,
+  isAuthenticated: state.user.id
 });
 
 export default connect(mapStateToProps)(AppRouter);
