@@ -49,7 +49,9 @@ exports[`<JobDetail /> should match snapshot 1`] = `
       className="job-detail__save-job"
     >
       <button
-        className="job-detail__save-job--button  "
+        className="job-detail__save-job--button
+              
+              "
         disabled={false}
         onClick={[Function]}
       >

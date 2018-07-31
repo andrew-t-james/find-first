@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import SignIn from '../SignIn/SignIn';
 import PropTypes from 'prop-types';
@@ -10,36 +9,36 @@ import { nav } from '../../helpers/nav';
 import menuIcon from '../../images/menu.svg';
 import logo from '../../images/compass-regular.svg';
 
-export class Home extends Component {
-  render() {
-    const { slideMenuActive, toggleMenu } = this.props;
 
-    return (
-      <SlideMenu
-        active={slideMenuActive}
-        nav={nav}
-        reactRouter={true}
-      >
-        <section className="home">
-          <div className={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
-            <div className="line-menu half start"></div>
-            <div className="line-menu"></div>
-            <div className="line-menu half end"></div>
+export const Home = props => {
+  const { slideMenuActive, toggleMenu } = props;
+
+  return (
+    <SlideMenu
+      active={slideMenuActive}
+      nav={nav}
+      reactRouter={true}
+      closeMenu={() => toggleMenu()}
+    >
+      <section className="home">
+        <div className={`home__menu--icon wrapper-menu ${slideMenuActive ? 'open' : ''}`} onClick={toggleMenu}>
+          <div className="line-menu half start"></div>
+          <div className="line-menu"></div>
+          <div className="line-menu half end"></div>
+        </div>
+        <div className="logo-section">
+          <div className="logo">
+            <h1 className="logo__forward">F</h1>
+            <h1 className="logo__backward">F</h1>
           </div>
-          <div className="logo-section">
-            <div className="logo">
-              <h1 className="logo__forward">F</h1>
-              <h1 className="logo__backward">F</h1>
-            </div>
-            <div className="logo__title">
-              <h1>Find<span className="logo__title-thin">First</span></h1>
-            </div>
+          <div className="logo__title">
+            <h1>Find<span className="logo__title-thin">First</span></h1>
           </div>
-        </section>
-      </SlideMenu>
-    );
-  }
-}
+        </div>
+      </section>
+    </SlideMenu>
+  );
+};
 
 export const mapStateToProps = state => ({
   slideMenuActive: state.slideMenuActive

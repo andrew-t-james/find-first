@@ -1,33 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Dashboard /> should match snapshot 1`] = `
-<div
-  className="grid-container"
+<e
+  closeMenu={[Function]}
+  nav={
+    Array [
+      Object {
+        "id": "home",
+        "label": "Home",
+        "path": "/",
+      },
+      Object {
+        "id": "sign-in",
+        "label": "Sign-In",
+        "path": "/sign-in",
+      },
+      Object {
+        "id": "dashboard",
+        "label": "Dashboard",
+        "path": "/dashboard",
+      },
+      Object {
+        "id": "saved-jobs",
+        "label": "Saved Jobs",
+        "path": "/saved-jobs",
+      },
+    ]
+  }
+  reactRouter={true}
 >
-  <Connect(Header) />
-  <main
-    className="content"
+  <div
+    className="grid-container"
   >
-    <section
-      className="cards-container"
+    <Connect(Header) />
+    <main
+      className="content"
     >
-      <div
-        className="search"
+      <section
+        className="cards-container"
       >
-        <input
-          className="search__input"
-          name="query"
-          onChange={[Function]}
-          placeholder="Search Jobs"
-          type="text"
-          value=""
+        <div
+          className="search"
+        >
+          <input
+            className="search__input"
+            name="query"
+            onChange={[Function]}
+            placeholder="Search Jobs"
+            type="text"
+            value=""
+          />
+        </div>
+        <CardContainer
+          jobs={Array []}
         />
-      </div>
-      <CardContainer
-        jobs={Array []}
-      />
-    </section>
-  </main>
-  <Connect(Footer) />
-</div>
+      </section>
+    </main>
+    <Connect(Footer) />
+  </div>
+</e>
 `;

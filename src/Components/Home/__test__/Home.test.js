@@ -9,12 +9,26 @@ jest.mock('../../../helpers/api-helpers.js');
 describe('<Home />', () => {
   let wrapper;
   const mockGithubJobsRequest = jest.fn();
+  const mockSlideAction = true;
+  const mockToggleMenu = jest.fn();
+
   beforeEach(() => wrapper = shallow(
     <Home
-      toggleMenu={jest.fn()}
+      toggleMenu={mockToggleMenu}
+      slideMenuActive={mockSlideAction}
       githubJobs={mockGithubJobsRequest}
     />
   ));
+
+
+  test.skip('should set slideMenuActive to false', () => {
+    console.log(wrapper.debug());
+    // wrapper.find('e').simulate('click');
+    wrapper.find('.home__menu--icon').simulate('click');
+    console.log(wrapper.debug());
+    // expect(mockSlideAction).toBe(false);
+    expect(mockToggleMenu).toHaveBeenCalled();
+  });
 
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();

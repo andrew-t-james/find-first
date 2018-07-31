@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
+import SlideMenu from 'react-slide-menu';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { toggleMenu } from '../../Actions/menu';
 
 import logo from '../../images/compass-regular.svg';
 
-export const Header = ({ user }) => {
+export const Header = ({ user, toggleMenu, slideMenuActive }) => {
 
   return (
     <section className="header">
-      <div className={`header-toggle wrapper-menu`} >
+      <div
+        className={
+          `home__menu--icon hide-menu
+        wrapper-menu ${slideMenuActive ? 'open' : ''}`}
+        onClick={toggleMenu}
+      >
         <div className="line-menu half start"></div>
         <div className="line-menu"></div>
         <div className="line-menu half end"></div>
@@ -26,12 +32,16 @@ export const Header = ({ user }) => {
         : null
       }
     </section>
-
   );
 };
 
 export const mapStateToProps = state => ({
-  user: state.user
+  user: state.user,
+  slideMenuActive: state.slideMenuActive
 });
 
-export default connect(mapStateToProps)(Header);
+export const mapDispatchToProps = dispatch => ({
+  toggleMenu: () => dispatch(toggleMenu())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

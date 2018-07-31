@@ -78,7 +78,11 @@ export class JobDetail extends Component {
           <h1 className="job-detail__tile">{title}</h1>
           <div className="job-detail__save-job">
             <button onClick={() => this.saveNewJob(newJob)}
-              className={`job-detail__save-job--button ${saving ? 'loading' : ''} ${savedToDB || applied ? 'success': ''}`}
+              className={
+                `job-detail__save-job--button
+              ${saving ? 'loading' : ''}
+              ${savedToDB || applied ? 'success': ''}`
+              }
               disabled={savedToDB || applied ? true : false}
             >
               {!savedToDB && !applied ?  'Mark Applied' : 'Saved'}

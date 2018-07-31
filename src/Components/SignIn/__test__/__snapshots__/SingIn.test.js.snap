@@ -2,6 +2,7 @@
 
 exports[`<SignIn /> should match snapshot 1`] = `
 <e
+  closeMenu={[Function]}
   nav={
     Array [
       Object {
@@ -18,6 +19,11 @@ exports[`<SignIn /> should match snapshot 1`] = `
         "id": "dashboard",
         "label": "Dashboard",
         "path": "/dashboard",
+      },
+      Object {
+        "id": "saved-jobs",
+        "label": "Saved Jobs",
+        "path": "/saved-jobs",
       },
     ]
   }

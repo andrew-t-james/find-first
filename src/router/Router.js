@@ -18,15 +18,16 @@ export const AppRouter = ({ jobs, savedJobs }) => (
       <Route path="/" exact component={Home} />
       <Route path="/dashboard" exact component={Dashboard} />
       <Route path="/sign-in" exact component={SignIn} />
-      <Route path="/saved-jobs" exact component={JobsContainer} />
-      <Route path="/job/:id" render={({ match }) => {
+      <Route path="/saved-jobs" exact  component={JobsContainer} />
+      <Route path="/job/:id" exact render={({ match }) => {
         const job = jobs.find(job => job.id === match.params.id);
         return (
           <JobDetail {...job}/>
         );
       }} />
-      <Route path="/saved-jobs/:id" render={({ match }) => {
+      <Route path="/saved-jobs/:id" exact render={({ match }) => {
         const job = savedJobs.find(job => job.id === match.params.id);
+        console.log(job);
         return (
           <SavedJobDetail {...job}/>
         );

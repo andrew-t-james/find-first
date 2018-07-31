@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 0 2rem;
 
@@ -44,23 +44,17 @@
     }
   }
 
-  .user-info {
-    position: absolute;
-    top: 13rem;
-    flex-direction: column;
-    width: 18%;
-    display: inline;
-
-    &__heading {
-      font-weight: 100;
-      font-size: 2.9rem;
-      color: var(--primary-background);
-      margin: 2rem 0;
-      display: block;
-    }
+  .hide-menu {
+    display: none;
   }
 
   .user-info {
+    position: absolute;
+    top: 13rem;
+    left: 2rem;
+    flex-direction: column;
+    width: 18%;
+    display: inline;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,6 +63,14 @@
       height: 5rem;
       border-radius: 50%;
       border: 1px solid var(--primary-light-background);
+    }
+
+    &__heading {
+      font-weight: 100;
+      font-size: 2.9rem;
+      color: var(--primary-background);
+      margin: 2rem 0;
+      display: block;
     }
   }
 }
