@@ -104,5 +104,10 @@ export const mapDispatchToProps = dispatch => ({
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
 
 Dashboard.propTypes = {
-
+  jobs: PropTypes.arrayOf(PropTypes.object),
+  isLoading: PropTypes.bool,
+  slideMenuActive: PropTypes.bool,
+  githubJobs: PropTypes.func,
+  getSavedJobs: PropTypes.func,
+  toggleMenu: PropTypes.func
 };

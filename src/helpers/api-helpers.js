@@ -22,6 +22,5 @@ export const githubApiRequest = async () => {
 
   const results = await response.json();
   const githubJobListings = await githubJobCleaner(results);
-  console.log(githubJobListings);
   return githubJobListings;
 };
