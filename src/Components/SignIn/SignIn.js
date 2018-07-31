@@ -87,7 +87,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
 
 SignIn.propTypes = {
   googleLogin: PropTypes.func,
-  googleLogout: PropTypes.func,
   toggleMenu: PropTypes.func,
   slideMenuActive: PropTypes.bool
 };
