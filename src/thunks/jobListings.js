@@ -5,8 +5,12 @@ import { isLoadingAction } from '../Actions/loader';
 export const githubJobsThunk = () => {
   return async dispatch => {
     dispatch(isLoadingAction(true));
-    const githubJobsList = await githubApiRequest();
-    dispatch(isLoadingAction(false));
-    dispatch(githubJobsAction(githubJobsList));
+    try {
+      const githubJobsList = await githubApiRequest();
+      dispatch(isLoadingAction(false));
+      dispatch(githubJobsAction(githubJobsList));
+    } catch (error) {
+      throw Error(error.message);
+    }
   };
 };

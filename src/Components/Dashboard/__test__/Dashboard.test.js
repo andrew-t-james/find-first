@@ -12,10 +12,12 @@ describe('<Dashboard />', () => {
   const mockGithubJobs = jest.fn();
   const mockGetSavedJobs = jest.fn();
   const mockJobs = [];
+  const mockLoading = false;
 
   beforeEach(() => wrapper = shallow(
     <Dashboard
       jobs={mockJobs}
+      isLoading={mockLoading}
       getSavedJobs={mockGetSavedJobs}
       githubJobs={mockGithubJobs}
     />
@@ -29,6 +31,23 @@ describe('<Dashboard />', () => {
     await wrapper.instance().componentDidMount();
     expect(mockGithubJobs).toHaveBeenCalled();
   });
+
+  test('should update state with error message when gitHubJobs fails', () => {
+    const mockGithubJobs = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: false
+    }));
+    wrapper = shallow(
+      <Dashboard
+        jobs={mockJobs}
+        isLoading={mockLoading}
+        getSavedJobs={mockGetSavedJobs}
+        githubJobs={mockGithubJobs}
+      />
+    );
+
+    expect(wrapper.state('hasError')).toBe(true);
+  });
+
 
   describe('handleUpdate', () => {
     test('should update state onChange', () => {

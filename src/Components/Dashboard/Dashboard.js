@@ -20,17 +20,22 @@ export class Dashboard extends Component {
     super(props);
     this.state = {
       query: '',
-      jobs: this.props.jobs
+      jobs: this.props.jobs,
+      hasError: false,
+      error: null
     };
   }
 
   componentDidMount = async () => {
-    const { jobs, getSavedJobs } = this.props;
-    await getSavedJobs();
+    const { jobs } = this.props;
 
     if (!jobs.length) {
-      await this.props.githubJobs();
-      this.setState({ jobs: this.props.jobs });
+      try {
+        await this.props.githubJobs();
+        this.setState({ jobs: this.props.jobs });
+      } catch (error) {
+        this.setState({ hasError: true, error: error.message });
+      }
     }
   }
 

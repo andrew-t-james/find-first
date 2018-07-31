@@ -55,6 +55,14 @@ describe('githubApiRequest', () => {
     expect(result).toEqual(mockCleanedJobs);
   });
 
+  test('should throw a new Error if response not ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: false
+    }));
+    await expect(githubApiRequest()).rejects.toEqual(Error('Oops something went wrong'));
+  });
+
+
   describe('githubJobCleaner', () => {
     test('should return cleaned data', () => {
       const result = githubJobCleaner(mockGithubResponse);
