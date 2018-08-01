@@ -6,8 +6,21 @@ exports[`<SignIn /> should match snapshot 1`] = `
   nav={
     Array [
       Object {
-        "id": "home",
-        "label": "Home",
+        "label": <div
+          className="logo"
+          id="menu-logo"
+        >
+          <h1
+            className="logo__forward"
+          >
+            F
+          </h1>
+          <h1
+            className="logo__backward"
+          >
+            F
+          </h1>
+        </div>,
         "path": "/",
       },
       Object {

@@ -12,7 +12,7 @@
 
 .content {
   grid-area: content;
-  min-height: calc(100vh - 10rem);
+  height: calc(100vh - 10rem);
   overflow-y: scroll;
 }
 
