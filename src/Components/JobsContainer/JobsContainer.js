@@ -40,7 +40,7 @@ export class JobsContainer extends Component {
           <Header />
           <main className="content">
             <section className="cards-container">
-              <h1 className="jobs-container__header">Saved Jobs</h1>
+              <h1 className="jobs-container__header">My Jobs</h1>
               {isLoading
                 ?
                 <div className="loader-container">

@@ -41,7 +41,6 @@ firebase.auth().onAuthStateChanged(async user => {
     history.push('/dashboard');
     renderApp();
   }
-
 });
 
 const renderApp = () => {
