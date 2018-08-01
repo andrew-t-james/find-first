@@ -5,7 +5,7 @@ import Router, { history } from './router/Router';
 import { Provider } from 'react-redux';
 import { firebase } from './firebase/firebase';
 import configureStore from './store/configureStore';
-import { googleSignInAction } from './Actions/auth';
+import { googleSignInAction, twitterLoginAction, githubLoginAction, facebookLoginAction } from './Actions/auth';
 
 const store = configureStore();
 
@@ -15,14 +15,27 @@ const app = (
   </Provider>
 );
 
-ReactDOM.render(app, document.getElementById('app'));
-
 firebase.auth().onAuthStateChanged(async user => {
-  if (user) {
+  const provider = user.providerData[0].providerId;
+
+  if (provider.includes('github')) {
+    await store.dispatch(githubLoginAction(user));
+    history.push('/dashboard');
+  } else if (provider.includes('google')) {
     await store.dispatch(googleSignInAction(user));
+    history.push('/dashboard');
+  } else if (provider.includes('twitter')) {
+    await store.dispatch(twitterLoginAction(user));
+    history.push('/dashboard');
+  } else if (provider.includes('facebook')) {
+    await store.dispatch(facebookLoginAction(user));
     history.push('/dashboard');
   } else {
     history.push('/');
     console.log('log out');
   }
 });
+
+ReactDOM.render(app, document.getElementById('app'));
+
+

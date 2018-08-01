@@ -6,7 +6,6 @@
   }
 
   &--buttons {
-    position: relative;
     margin-bottom: 2rem;
   }
 
@@ -25,13 +24,6 @@
 
   &__image {
     max-height: 5rem;
-  }
-
-  & img {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-40%, -50%);
   }
 
   &__save-job {
@@ -123,5 +115,13 @@
 @media screen and (min-width: 830px) {
   .job-detail--buttons {
     flex-direction: row;
+    position: relative;
+
+    & img {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-40%, -50%);
+    }
   }
 }
