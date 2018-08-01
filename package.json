@@ -14,7 +14,8 @@
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json --watch",
     "test:coverage": "jest --config=jest.config.json --env=jsdom --coverage",
     "start": "node server/server.js",
-    "eslint": "./node_modules/eslint/bin/eslint.js ./src/**/**/*.js"
+    "eslint": "./node_modules/eslint/bin/eslint.js ./src/**/**/*.js",
+    "deploy": "yarn run build && mv dist/index.html dist/200.html && surge dist find-first.surge.sh"
   },
   "dependencies": {
     "babel-cli": "6.26.0",

@@ -51,7 +51,5 @@ const renderApp = () => {
   } else {
     ReactDOM.render(app, document.getElementById('app'));
   }
-};
-
 
 
