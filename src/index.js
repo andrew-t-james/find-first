@@ -21,6 +21,7 @@ firebase.auth().onAuthStateChanged(async user => {
     console.log('log out');
     renderApp();
   }
+
   const provider = user.providerData[0].providerId;
 
   if (provider.includes('github')) {

@@ -12,7 +12,7 @@
 
 .content {
   grid-area: content;
-  min-height: 100vh;
+  min-height: calc(100vh - 10rem);
   overflow-y: scroll;
 }
 
@@ -45,7 +45,7 @@
 
   .content {
     grid-area: content;
-    height: calc(100vh - 8rem);
+    height: calc(100vh - 14rem);
   }
 
   .footer {
