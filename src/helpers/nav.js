@@ -1,7 +1,7 @@
 import React from 'react';
 
 const logo =
-  <div className="logo" id="menu-logo">
+  <div className="logo menu-logo">
     <h1 className="logo__forward">F</h1>
     <h1 className="logo__backward">F</h1>
   </div>;

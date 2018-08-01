@@ -9,8 +9,7 @@ exports[`<Home /> should match snapshot 1`] = `
     Array [
       Object {
         "label": <div
-          className="logo"
-          id="menu-logo"
+          className="logo menu-logo"
         >
           <h1
             className="logo__forward"
