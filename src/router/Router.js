@@ -28,7 +28,6 @@ export const AppRouter = ({ jobs, savedJobs, isAuthenticated }) => (
       }} />
       <Route path="/saved-jobs/:id" exact render={({ match }) => {
         const job = savedJobs.find(job => job.id === match.params.id);
-        console.log(job);
         return (
           <SavedJobDetail {...job}/>
         );

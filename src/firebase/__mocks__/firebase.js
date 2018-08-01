@@ -29,6 +29,7 @@ export const firebase = {
 export const logout = jest.fn();
 export const googleOAuthLogin = () => new Promise(resolve => resolve(mockUser));
 export const githubOAuthLogin = () => new Promise(resolve => resolve(mockUser));
+export const getState = () => new Promise(resolve => resolve());
 
 const database = {
   ref: () => ({

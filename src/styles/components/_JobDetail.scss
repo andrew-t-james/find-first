@@ -23,7 +23,7 @@
   }
 
   &__image {
-    max-height: 5rem;
+    max-height: 4rem;
   }
 
   &__save-job {
@@ -115,15 +115,11 @@
 @media screen and (min-width: 830px) {
   .job-detail {
 
-  &--buttons {
-    flex-direction: row;
-    position: relative;
-    margin: 5rem;
-  }
-
-  &__image {
-    max-height: 6rem;
-  }
+    &--buttons {
+      flex-direction: row;
+      position: relative;
+      margin: 5rem;
+    }
 
     & img {
       position: absolute;

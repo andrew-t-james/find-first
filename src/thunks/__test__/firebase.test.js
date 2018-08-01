@@ -8,19 +8,27 @@ jest.mock('../../firebase/firebase.js');
 
 describe('addJobToFirebase', () => {
   let mockDispatch;
+  const getState = () => ({
+    user: {
+      id: 1
+    }
+  });
+
   const mockJob = {
     title: 'title',
     description: 'description',
     url: 'some-url'
   };
 
-  beforeEach(() => mockDispatch = jest.fn());
+  beforeEach(() => {
+    mockDispatch = jest.fn();
+  });
 
   test('should call dispatch with isLoadingAction with a parameter of true', async () => {
     const thunk = addJobToFirebase(mockJob);
     const actionToDispatch = isLoadingAction(true);
 
-    await thunk(mockDispatch);
+    await thunk(mockDispatch, getState);
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 
@@ -28,7 +36,7 @@ describe('addJobToFirebase', () => {
     const thunk = addJobToFirebase(mockJob);
     const actionToDispatch = isLoadingAction(false);
 
-    await thunk(mockDispatch);
+    await thunk(mockDispatch, getState);
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 });
@@ -40,6 +48,13 @@ describe('getSavedJobsFromFirebase', () => {
     description: 'description',
     url: 'some-url'
   };
+
+  const getState = () => ({
+    user: {
+      id: 1
+    }
+  });
+
   const mockJobsResponse = [mockJob, mockJob];
 
   beforeEach(() => mockDispatch = jest.fn());
@@ -48,7 +63,7 @@ describe('getSavedJobsFromFirebase', () => {
     const thunk = getSavedJobsFromFirebase(mockJob);
     const actionToDispatch = isLoadingAction(true);
 
-    await thunk(mockDispatch);
+    await thunk(mockDispatch, getState);
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 
@@ -56,7 +71,7 @@ describe('getSavedJobsFromFirebase', () => {
     const thunk = getSavedJobsFromFirebase(mockJob);
     const actionToDispatch = isLoadingAction(false);
 
-    await thunk(mockDispatch);
+    await thunk(mockDispatch, getState);
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 
@@ -64,7 +79,7 @@ describe('getSavedJobsFromFirebase', () => {
     const thunk = getSavedJobsFromFirebase();
     const actionToDispatch = saveJobAction(mockJobsResponse);
 
-    await thunk(mockDispatch);
+    await thunk(mockDispatch, getState);
     expect(mockDispatch).toHaveBeenCalled();
   });
 });

@@ -41,6 +41,7 @@ firebase.auth().onAuthStateChanged(async user => {
     history.push('/dashboard');
     renderApp();
   }
+
 });
 
 const renderApp = () => {
@@ -51,5 +52,7 @@ const renderApp = () => {
   } else {
     ReactDOM.render(app, document.getElementById('app'));
   }
+};
+
 
 
