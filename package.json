@@ -9,7 +9,7 @@
     "yarn": "1.7.0"
   },
   "scripts": {
-    "build": "webpack --mode production --env production",
+    "build": "rm -rf dist/main* && webpack --mode production --env production",
     "dev": "webpack-dev-server --mode development",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json --watch",
     "test:coverage": "jest --config=jest.config.json --env=jsdom --coverage",
