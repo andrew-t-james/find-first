@@ -27,7 +27,7 @@ export const Header = ({ user, toggleMenu, slideMenuActive, recentJobs }) => {
           <h2 className="user-info__heading">{user.name}</h2>
           <img className="user-info__image" src={user.image} alt={user.name}/>
           <div className="user-info__recent-jobs">
-            <p>Pending Applications {recentJobs}</p>
+            <p>Pending Applications: {recentJobs}</p>
           </div>
         </div>
         : null
