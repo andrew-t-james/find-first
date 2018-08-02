@@ -57,6 +57,10 @@
   color: lighten(#62748B, 20%);
   }
 
+  &__location {
+    max-width: 15rem;
+  }
+
   &__image--section {
     display: flex;
     justify-content: space-between;
