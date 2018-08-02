@@ -69,6 +69,10 @@
   height: 100vh;
 }
 
+.copy-section {
+  display: none;
+}
+
 // MENU bars and Animation
 .wrapper-menu {
   width: 30px;
@@ -120,9 +124,10 @@
 @media screen and (min-width: 1024px) {
   .home {
     display: grid;
+    height: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "logo-section logo-section login-section login-section" "logo-section logo-section login-section login-section" "logo-section logo-section login-section login-section";
+    grid-template-areas: "logo-section logo-section copy-section copy-section" "logo-section logo-section copy-section copy-section" "logo-section logo-section copy-section copy-section";
   }
 
   .logo-section, {
@@ -133,8 +138,29 @@
     flex-direction: column;
   }
 
-  .login-section {
-    grid-area: login-section;
+  .copy-section {
+    grid-area: copy-section;
+    display: block;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+    color: var(--primary-font);
+
+    &__header  {
+      font-weight: 100;
+      font-size: 5rem;
+      margin-bottom: 5rem;
+      text-transform: uppercase;
+    }
+
+    &__paragraph {
+      width: 70%;
+      font-size: 2rem;
+    }
   }
 
   .wrapper-menu {
