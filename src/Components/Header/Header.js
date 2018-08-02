@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { toggleMenu } from '../../Actions/menu';
 
 
-export const Header = ({ user, toggleMenu, slideMenuActive }) => {
+export const Header = ({ user, toggleMenu, slideMenuActive, recentJobs }) => {
   return (
     <section className="header">
       <div
@@ -26,6 +26,9 @@ export const Header = ({ user, toggleMenu, slideMenuActive }) => {
         <div className="user-info">
           <h2 className="user-info__heading">{user.name}</h2>
           <img className="user-info__image" src={user.image} alt={user.name}/>
+          <div className="user-info__recent-jobs">
+            <p>Pending Applications {recentJobs}</p>
+          </div>
         </div>
         : null
       }
@@ -35,7 +38,8 @@ export const Header = ({ user, toggleMenu, slideMenuActive }) => {
 
 export const mapStateToProps = state => ({
   user: state.user,
-  slideMenuActive: state.slideMenuActive
+  slideMenuActive: state.slideMenuActive,
+  recentJobs: state.savedJobs.length
 });
 
 export const mapDispatchToProps = dispatch => ({

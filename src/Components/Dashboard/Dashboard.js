@@ -25,8 +25,8 @@ export class Dashboard extends Component {
   }
 
   componentDidMount = async () => {
-    const { jobs } = this.props;
-
+    const { jobs, getSavedJobs } = this.props;
+    await getSavedJobs();
     if (!jobs.length) {
       await this.props.githubJobs();
       this.setState({ jobs: this.props.jobs });
