@@ -15,12 +15,12 @@ export const Footer = ({ googleLogout }) => {
           Dashboard
         </NavLink>
         <NavLink className="footer__nav--item" exact to="/saved-jobs">
-          <i className="far fa-user-circle"></i>
+          <i className="fas fa-archive"></i>
           My Jobs
         </NavLink>
         <NavLink className="footer__nav--item" exact to="/sign-in">
-          <i className="fas fa-sign-in-alt"></i>
-          Sign In
+          <i className="far fa-user-circle"></i>
+          Profile
         </NavLink>
         <button
           onClick={() => googleLogout(logout, googleSignOutAction)}

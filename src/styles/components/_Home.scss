@@ -73,6 +73,13 @@
   display: none;
 }
 
+.copy-section__header--small {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: darken(#424949, 10%);
+}
+
 // MENU bars and Animation
 .wrapper-menu {
   width: 30px;
