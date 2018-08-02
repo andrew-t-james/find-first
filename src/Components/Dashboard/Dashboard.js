@@ -25,11 +25,11 @@ export class Dashboard extends Component {
   }
 
   componentDidMount = async () => {
-    const { jobs, getSavedJobs } = this.props;
-    await getSavedJobs();
+    const { jobs, githubJobs } = this.props;
     if (!jobs.length) {
-      await this.props.githubJobs();
+      await githubJobs();
       this.setState({ jobs: this.props.jobs });
+      this.handleLoadSavedJobs();
     }
   }
 
@@ -38,6 +38,11 @@ export class Dashboard extends Component {
     this.setState({ [name]: value });
 
     this.filterJobs(value);
+  }
+
+  handleLoadSavedJobs = () => {
+    const { getSavedJobs } = this.props;
+    getSavedJobs();
   }
 
   filterJobs = value => {
