@@ -4,7 +4,6 @@ exports[`<Home /> should match snapshot 1`] = `
 <e
   active={true}
   closeMenu={[Function]}
-  extraComponent={[Function]}
   nav={
     Array [
       Object {
@@ -44,7 +43,7 @@ exports[`<Home /> should match snapshot 1`] = `
   reactRouter={true}
 >
   <section
-    className="home"
+    className="home fade-in"
   >
     <div
       className="home__menu--icon wrapper-menu open"
@@ -85,7 +84,7 @@ exports[`<Home /> should match snapshot 1`] = `
           <span
             className="logo__title-thin"
           >
-            First
+            Firdst
           </span>
         </h1>
       </div>
@@ -108,7 +107,7 @@ exports[`<Home /> should match snapshot 1`] = `
       <p
         className="copy-section__paragraph"
       >
-        Find First helps you search, organize and track all of your dev job applications in one place.
+        Find First helps you search, organize and track your dev job applications in one location.
       </p>
     </div>
   </section>
