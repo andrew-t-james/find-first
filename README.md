@@ -1,10 +1,9 @@
 <p align=center>
-  <img src="./src/images/logo.png" alt="VWC Logo" />
+  <img src="./src/images/logo.png" alt="Find First Logo" />
 </p>
 
 # Find First
-The Find First Web App is Jobs Search Organization application.
-
+The Find First Web App is Jobs Search Organization application. Developed to help keep track of your dev job search process in one location.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
