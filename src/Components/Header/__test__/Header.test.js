@@ -9,10 +9,17 @@ describe('<Header />', () => {
     name: 'Joben',
     image: 'some-url-here'
   };
-
+  const mockState = {
+    savedJobs: [1, 2]
+  };
   const mockSliderAction = true;
 
-  beforeEach(() => wrapper = shallow(<Header toggleMenu={mockSliderAction} user={mockUser}/>));
+  beforeEach(() => wrapper = shallow(<Header
+    toggleMenu={mockSliderAction}
+    user={mockUser}
+    recentJobs={mockState}
+  />
+  ));
 
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();

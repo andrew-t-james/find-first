@@ -75,7 +75,7 @@
 
 .copy-section__header--small {
   margin-top: 2rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   color: darken(#424949, 10%);
 }
@@ -127,6 +127,12 @@
   transform: rotate(-90deg) translateX(-3px);
 }
 
+
+@media screen and (min-width: 584px) {
+  .copy-section__header--small {
+    font-size: 3rem;
+  }
+}
 
 @media screen and (min-width: 1024px) {
   .home {

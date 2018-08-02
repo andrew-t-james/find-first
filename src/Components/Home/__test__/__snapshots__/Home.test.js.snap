@@ -89,6 +89,13 @@ exports[`<Home /> should match snapshot 1`] = `
           </span>
         </h1>
       </div>
+      <div>
+        <h2
+          className="copy-section__header--small"
+        >
+          Find a dev Job that fits you First
+        </h2>
+      </div>
     </div>
     <div
       className="copy-section"
@@ -96,12 +103,12 @@ exports[`<Home /> should match snapshot 1`] = `
       <h2
         className="copy-section__header"
       >
-        Find the dev Job that fits you First
+        Finding a job is a pain 😠
       </h2>
       <p
         className="copy-section__paragraph"
       >
-        Find First is a powerful job search tool that helps you search for, organize and track all of your applications in one place.
+        Find First helps you search, organize and track all of your dev job applications in one place.
       </p>
     </div>
   </section>

@@ -27,7 +27,7 @@ export const Header = ({ user, toggleMenu, slideMenuActive, recentJobs }) => {
           <h2 className="user-info__heading">{user.name}</h2>
           <img className="user-info__image" src={user.image} alt={user.name}/>
           <div className="user-info__recent-jobs">
-            <p>Pending Applications: {recentJobs}</p>
+            <p>Pending Applications: {recentJobs.length}</p>
           </div>
         </div>
         : null
@@ -39,7 +39,7 @@ export const Header = ({ user, toggleMenu, slideMenuActive, recentJobs }) => {
 export const mapStateToProps = state => ({
   user: state.user,
   slideMenuActive: state.slideMenuActive,
-  recentJobs: state.savedJobs.length
+  recentJobs: state.savedJobs
 });
 
 export const mapDispatchToProps = dispatch => ({

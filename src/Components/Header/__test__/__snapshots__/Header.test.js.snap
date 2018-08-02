@@ -46,6 +46,13 @@ exports[`<Header /> should match snapshot 1`] = `
       className="user-info__image"
       src="some-url-here"
     />
+    <div
+      className="user-info__recent-jobs"
+    >
+      <p>
+        Pending Applications: 
+      </p>
+    </div>
   </div>
 </section>
 `;

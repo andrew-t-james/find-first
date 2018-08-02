@@ -27,7 +27,7 @@ exports[`<Footer /> should match snapshot 1`] = `
       to="/saved-jobs"
     >
       <i
-        className="far fa-user-circle"
+        className="fas fa-archive"
       />
       My Jobs
     </NavLink>
@@ -39,9 +39,9 @@ exports[`<Footer /> should match snapshot 1`] = `
       to="/sign-in"
     >
       <i
-        className="fas fa-sign-in-alt"
+        className="far fa-user-circle"
       />
-      Sign In
+      Profile
     </NavLink>
     <button
       className="footer__nav--item sign-out"
