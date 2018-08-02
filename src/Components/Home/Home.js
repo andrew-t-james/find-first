@@ -45,7 +45,7 @@ export const Home = props => {
         <div className="copy-section">
           <h2 className="copy-section__header">Finding a job is a pain 😠</h2>
           <p className="copy-section__paragraph">
-            Find First helps you search, organize and track dev job applications in one location.
+            Find First helps you search, organize and track your dev job applications in one location.
           </p>
         </div>
       </section>
