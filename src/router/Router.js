@@ -8,7 +8,6 @@ import Dashboard from '../Components/Dashboard/Dashboard';
 import SignIn from '../Components/SignIn/SignIn';
 import JobDetail from '../Components/JobDetail/JobDetail';
 import JobsContainer from '../Components/JobsContainer/JobsContainer';
-import NotFound from '../Components/404/404';
 import { SavedJobDetail } from '../Components/SavedJobCard/SavedJobDetail';
 import { PrivateRoute } from './PrivateRoute';
 
