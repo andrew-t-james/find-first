@@ -36,7 +36,7 @@ export const Home = props => {
             <h1 className="logo__backward">F</h1>
           </div>
           <div className="logo__title">
-            <h1>Find<span className="logo__title-thin">First</span></h1>
+            <h1>Find<span className="logo__title-thin">Firdst</span></h1>
           </div>
           <div>
             <h2 className="copy-section__header--small">Find a dev Job that fits you First</h2>
@@ -45,7 +45,7 @@ export const Home = props => {
         <div className="copy-section">
           <h2 className="copy-section__header">Finding a job is a pain 😠</h2>
           <p className="copy-section__paragraph">
-            Find First helps you search, organize and track all of your dev job applications in one place.
+            Find First helps you search, organize and track dev job applications in one location.
           </p>
         </div>
       </section>
