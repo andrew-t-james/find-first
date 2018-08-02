@@ -6,7 +6,6 @@ export const addJobToFirebase = newJob => {
   return async (dispatch, getState) => {
     dispatch(isLoadingAction(true));
     const userId = getState().user.id;
-    console.log(userId);
     await database.ref(`users/${userId}/saved-jobs`).push(newJob);
 
     dispatch(isLoadingAction(false));

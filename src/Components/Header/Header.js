@@ -4,10 +4,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { toggleMenu } from '../../Actions/menu';
 
-import logo from '../../images/compass-regular.svg';
 
 export const Header = ({ user, toggleMenu, slideMenuActive }) => {
-
   return (
     <section className="header">
       <div

@@ -8,10 +8,11 @@ import { nav } from '../../helpers/nav';
 import SignIn from '../SignIn/SignIn';
 
 import menuIcon from '../../images/menu.svg';
-import logo from '../../images/compass-regular.svg';
+
 const logoComponent = () => (
   <img src={logo} />
 );
+
 export const Home = props => {
   const { slideMenuActive, toggleMenu } = props;
 
