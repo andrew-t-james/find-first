@@ -116,6 +116,15 @@
 @media screen and (min-width: 830px) {
   .job-detail {
 
+    &__header {
+      height: 17rem;
+    }
+
+    &-container {
+      position: relative;
+      bottom: 10rem;
+    }
+
     &--buttons {
       flex-direction: row;
       position: relative;
